@@ -132,7 +132,7 @@ plugins:
   # https://squidfunk.github.io/mkdocs-material/setup/setting-up-tags/
   # https://squidfunk.github.io/mkdocs-material/plugins/tags/#meta.tags
   - tags
-  -
+
 markdown_extensions:
   - toc:
       permalink: true
