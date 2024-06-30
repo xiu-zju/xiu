@@ -1,1 +1,7 @@
 site_name: My Docs
+
+theme:
+  name: 'material'
+  language: 'zh'
+  icon:
+    logo: material/notebook-outline
