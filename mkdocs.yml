@@ -67,6 +67,14 @@ theme:
         name: 切换至日间模式
 
 extra_css:
+  # [数学公式支持]
+  # https://squidfunk.github.io/mkdocs-material/reference/math/#katex
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
+  # [自定义 css]
+  # 不使用底部的翻页
+  - mkdocs/css/no-footer.css
+  # 无序列表符号自定义
+  - mkdocs/css/unordered-list-symbols.css
   - https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css
   - https://cdn.tonycrane.cc/lxgw/lxgwscreen.css
   - https://cdn.tonycrane.cc/utils/katex.min.css
@@ -76,37 +84,6 @@ extra_css:
   - css/flink.css
   - css/changelog_extra.css
   # - css/heti.css
-
-markdown_extensions:
-  - toc:
-      permalink: true
-      toc_depth: 4
-  - meta
-  - def_list
-  - attr_list
-  - md_in_html
-  - sane_lists
-  - admonition
-  - pymdownx.keys
-  - pymdownx.mark
-  - pymdownx.tilde
-  - pymdownx.critic
-  - pymdownx.details
-  - pymdownx.snippets
-  - pymdownx.magiclink
-  - pymdownx.superfences
-  - pymdownx.inlinehilite
-  - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  - pymdownx.tabbed:
-      alternate_style: true 
-  - pymdownx.tasklist:
-      custom_checkbox: true
-  - pymdownx.highlight:
-      anchor_linenums: true
-  - pymdownx.arithmatex:
-      generic: true
 
 validation:
   nav:
@@ -155,7 +132,37 @@ plugins:
   # https://squidfunk.github.io/mkdocs-material/setup/setting-up-tags/
   # https://squidfunk.github.io/mkdocs-material/plugins/tags/#meta.tags
   - tags
+  -
 markdown_extensions:
+  - toc:
+      permalink: true
+      toc_depth: 4
+  - meta
+  - def_list
+  - attr_list
+  - md_in_html
+  - sane_lists
+  - admonition
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.snippets
+  - pymdownx.magiclink
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.arithmatex:
+      generic: true
   # [数学公式支持]
   # https://squidfunk.github.io/mkdocs-material/reference/math/#katex
   - pymdownx.arithmatex:
@@ -198,15 +205,6 @@ extra_javascript:
   - mkdocs/javascripts/katex.js
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
-extra_css:
-  # [数学公式支持]
-  # https://squidfunk.github.io/mkdocs-material/reference/math/#katex
-  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
-  # [自定义 css]
-  # 不使用底部的翻页
-  - mkdocs/css/no-footer.css
-  # 无序列表符号自定义
-  - mkdocs/css/unordered-list-symbols.css
 
 
 
