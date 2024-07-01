@@ -11,7 +11,7 @@
 
 前31个字符
 
-## 1.1.3关键字![[关键字]]
+## 1.1.3关键字
 Which one below is NOT a keyword of the C programming language? ____	
 A. define	
 B. if

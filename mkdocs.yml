@@ -38,18 +38,33 @@ theme:
     - navigation.tabs
     - navigation.indexes
     - navigation.top
-  font: false
+  font:
+    text: "Noto Serif SC, SimSun, serif"
+    code: "JetBrains Mono"
   icon:
     logo: material/notebook-outline
     # [添加 GitHub 仓库]
     # https://squidfunk.github.io/mkdocs-material/setup/adding-a-git-repository/#repository-icon
-    repo: fontawesome/brands/github
+    repo: fontawesome/brands/github-alt
+    admonition:
+      info: fontawesome/solid/anchor
+      note: fontawesome/solid/pen-nib
+      abstract: fontawesome/solid/list
+      tip: fontawesome/solid/lightbulb
+      success: fontawesome/solid/check
+      question: fontawesome/solid/circle-question
+      warning: fontawesome/solid/triangle-exclamation
+      failure: material/alien
+      danger: fontawesome/solid/virus
+      bug: fontawesome/solid/robot
+      example: fontawesome/solid/flask
+      quote: fontawesome/solid/link
   palette:
     # 日间模式
     - scheme: default
       # 主颜色
       # https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#primary-color
-      primary: indigo
+      primary: grey
       # 链接等可交互元件的高亮色
       # https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#accent-color
       accent: indigo
@@ -60,30 +75,11 @@ theme:
         name: 切换至夜间模式
     # 夜间模式
     - scheme: slate
-      primary: indigo
+      primary: black
       accent: indigo
       toggle:
         icon: material/weather-sunny
         name: 切换至日间模式
-
-extra_css:
-  # [数学公式支持]
-  # https://squidfunk.github.io/mkdocs-material/reference/math/#katex
-  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
-  # [自定义 css]
-  # 不使用底部的翻页
-  - mkdocs/css/no-footer.css
-  # 无序列表符号自定义
-  - mkdocs/css/unordered-list-symbols.css
-  - https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css
-  - https://cdn.tonycrane.cc/lxgw/lxgwscreen.css
-  - https://cdn.tonycrane.cc/utils/katex.min.css
-  - css/tasklist.css
-  - css/custom.css
-  - css/card.css
-  - css/flink.css
-  - css/changelog_extra.css
-  # - css/heti.css
 
 validation:
   nav:
@@ -98,6 +94,18 @@ validation:
 
 
 extra:
+  analytics:
+    provider: google
+    feedback:
+      title: 激励
+      ratings:
+        - icon: fontawesome/regular/hand-back-fist
+          name: 激励
+          data: 1
+          note: >-
+            <center> 你愿意请我喝一杯吗(*´∀`)~♥ </center>
+            <img src="https://s2.loli.net/2024/07/01/ydYtQnqeWTwrsRf.jpg" width=200px>
+
   # [添加社交网络图标和链接]
   # https://squidfunk.github.io/mkdocs-material/setup/setting-up-the-footer/#social-links
   # 搜索图标：https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/#search
@@ -112,12 +120,9 @@ extra:
     - name: xiu's QQ 768958636
       icon: fontawesome/brands/qq
       link:
-    - name: 小红书 | 暂无
-      icon: fontawesome/solid/images
-      link:
     - name: 打赏支持
       icon: fontawesome/solid/mug-saucer
-      link: https://yang-xijie.github.io/ME/support/
+      link:
 
 plugins:
   # [搜索功能]
@@ -127,7 +132,6 @@ plugins:
       lang:
         - zh
         - en
-        - ja
   # [给单篇文章添加标签]
   # https://squidfunk.github.io/mkdocs-material/setup/setting-up-tags/
   # https://squidfunk.github.io/mkdocs-material/plugins/tags/#meta.tags
@@ -199,21 +203,14 @@ markdown_extensions:
   # https://squidfunk.github.io/mkdocs-material/reference/footnotes/
   - footnotes
 
-extra_javascript:
-  # [数学公式支持]
-  # https://squidfunk.github.io/mkdocs-material/reference/math/#katex
-  - mkdocs/javascripts/katex.js
-  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js
-  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
-
-
 
 # [Navigtion]
 nav:
-  - Home:
-    - index.md
-  - Note:
-    - C语言笔试复习:
+  - 我:
+    - 个人介绍: 1.md
+  - 笔记:
+    - C语言笔试复习（不完善）:
+      - Note/C语言笔试复习/index.md
       - 0 C语言前瞻: Note/C语言笔试复习/C语言前瞻.md
       - 1 C语言基本语法: Note/C语言笔试复习/C语言基本语法.md
       - 2 数据类型、运算符和表达式: Note/C语言笔试复习/数据类型、运算符和表达式.md
@@ -223,3 +220,7 @@ nav:
       - 5 数组: Note/C语言笔试复习/数组.md
       - 8 指针: Note/C语言笔试复习/指针.md
       - 10 文件: Note/C语言笔试复习/文件.md
+  - 二次元:
+    - 看番推荐: 1.md
+  - 管乐团: 1.md
+  - 琐记: 1.md
