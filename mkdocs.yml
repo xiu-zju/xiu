@@ -128,13 +128,21 @@ plugins:
   # 之前中文搜索是 Insider 的功能（https://squidfunk.github.io/mkdocs-material/blog/2022/chinese-search-support/），现在好像已经是默认功能了，
   - search:
       separator: '[\s\u200b\-]'
-      lang:
-        - zh
-        - en
+  #    lang:
+  #      - zh
+  #      - en
   # [给单篇文章添加标签]
   # https://squidfunk.github.io/mkdocs-material/setup/setting-up-tags/
   # https://squidfunk.github.io/mkdocs-material/plugins/tags/#meta.tags
   - tags
+  - encryptcontent: # now just for one page, need to be improved
+      title_prefix: "🔒 "
+      remember_password: True
+      summary: '这段内容已经被加密保护。'
+      placeholder: '请输入密码'
+      encryption_info_message: '如果你想看这段内容，请联系管理员。'
+      default_expire_dalay: 48
+      decryption_failure_message: '密码错误'
 
 markdown_extensions:
   - toc:
