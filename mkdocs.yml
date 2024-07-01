@@ -227,7 +227,7 @@ extra_javascript:
 # [Navigtion]
 nav:
   - 我:
-    - 个人介绍: 1.md
+    - 个人介绍: index.md
   - 笔记:
     - C语言笔试复习（不完善）:
       - Note/C语言笔试复习/index.md
@@ -241,6 +241,7 @@ nav:
       - 8 指针: Note/C语言笔试复习/指针.md
       - 10 文件: Note/C语言笔试复习/文件.md
   - 二次元:
-    - 看番推荐: 1.md
-  - 管乐团: 1.md
-  - 琐记: 1.md
+    - 看番推荐: index.md
+  - 管乐团: index.md
+  - 琐记:
+    - suoji/index.md
