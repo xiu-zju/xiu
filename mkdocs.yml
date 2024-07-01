@@ -227,7 +227,7 @@ extra_javascript:
 # [Navigtion]
 nav:
   - 我:
-    - 个人介绍: index.md
+    - 个人介绍: Me/1.md
   - 笔记:
     - C语言笔试复习（不完善）:
       - Note/C语言笔试复习/index.md
