@@ -226,6 +226,7 @@ extra_javascript:
 
 # [Navigtion]
 nav:
+  - index.md
   - 我:
     - 个人介绍: Me/1.md
   - 笔记:
