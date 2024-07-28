@@ -5,6 +5,8 @@ repo_name: xiu
 site_author: 胥涵坤
 site_description: 胥涵坤的个人网站
 
+copyright: 'Copyright &copy 2024 xiu. Thanks to Tonycrane for his style.'
+
 theme:
   name: 'material'
   language: 'zh'
@@ -249,6 +251,7 @@ nav:
       - 5 数组: Note/C语言笔试复习/数组.md
       - 8 指针: Note/C语言笔试复习/指针.md
       - 10 文件: Note/C语言笔试复习/文件.md
+    - 反序列化漏洞: Note/Bonus/1.md
   - 二次元:
     - 看番推荐: 2/index.md
     - 漫展: 
