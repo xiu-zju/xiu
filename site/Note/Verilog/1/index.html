@@ -737,6 +737,60 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#wire-and-reg" class="md-nav__link">
+    <span class="md-ellipsis">
+      wire and reg
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blocking-vs-non-blocking-assignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Blocking vs. Non-Blocking Assignment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#always-if" class="md-nav__link">
+    <span class="md-ellipsis">
+      Always if
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-avoid-making-latches" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to avoid making latches
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#always-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      Always case
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#always-casez" class="md-nav__link">
+    <span class="md-ellipsis">
+      Always casez
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1418,6 +1472,60 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#wire-and-reg" class="md-nav__link">
+    <span class="md-ellipsis">
+      wire and reg
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blocking-vs-non-blocking-assignment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Blocking vs. Non-Blocking Assignment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#always-if" class="md-nav__link">
+    <span class="md-ellipsis">
+      Always if
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-avoid-making-latches" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to avoid making latches
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#always-case" class="md-nav__link">
+    <span class="md-ellipsis">
+      Always case
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#always-casez" class="md-nav__link">
+    <span class="md-ellipsis">
+      Always casez
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1610,6 +1718,84 @@ cout = a &amp; b | a &amp; cin | b &amp; cin = (a &amp; b) | (cin &amp; (a ^ b))
 </span><span id="__span-7-12"><span class="k">endmodule</span>
 </span></code></pre></div></td></tr></table></div>
 An XOR gate can also be viewed as a programmable inverter, where one input controls whether the other should be inverted. The following two circuits are both XOR gates: <img alt="alt text" src="../image-4.png" /></p>
+<h2 id="wire-and-reg">wire and reg<a class="headerlink" href="#wire-and-reg" title="Permanent link">&para;</a></h2>
+<p>A note on wire vs. reg: The left-hand-side of an assign statement must be a net type (e.g., wire), while the left-hand-side of a procedural assignment (in an always block) must be a variable type (e.g., reg). These types (wire vs. reg) have nothing to do with what hardware is synthesized, and is just syntax left over from Verilog's use as a hardware simulation language.</p>
+<h2 id="blocking-vs-non-blocking-assignment">Blocking vs. Non-Blocking Assignment<a class="headerlink" href="#blocking-vs-non-blocking-assignment" title="Permanent link">&para;</a></h2>
+<p>There are three types of assignments in Verilog:</p>
+<ul>
+<li>Continuous assignments (assign x = y;). Can only be used when not inside a procedure ("always block").</li>
+<li>Procedural blocking assignment: (x = y;). Can only be used inside a procedure.</li>
+<li>Procedural non-blocking assignment: (x &lt;= y;). Can only be used inside a procedure.</li>
+</ul>
+<p>In a <strong>combinational</strong> always block, use <strong>blocking</strong> assignments. In a <strong>clocked</strong> always block, use <strong>non-blocking</strong> assignments. A full understanding of why is not particularly useful for hardware design and requires a good understanding of how Verilog simulators keep track of events. Not following this rule results in extremely hard to find errors that are both non-deterministic and differ between simulation and synthesized hardware.</p>
+<h2 id="always-if">Always if<a class="headerlink" href="#always-if" title="Permanent link">&para;</a></h2>
+<p>An if statement usually creates a 2-to-1 multiplexer, selecting one input if the condition is true, and the other input if the condition is false.
+<img alt="alt text" src="../image-5.png" /></p>
+<p><div class="language-verilog highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Verilog</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><span class="k">always</span><span class="w"> </span><span class="p">@(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">begin</span>
+</span><span id="__span-8-2"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">condition</span><span class="p">)</span><span class="w"> </span><span class="k">begin</span>
+</span><span id="__span-8-3"><span class="w">        </span><span class="n">out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+</span><span id="__span-8-4"><span class="w">    </span><span class="k">end</span>
+</span><span id="__span-8-5"><span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">begin</span>
+</span><span id="__span-8-6"><span class="w">        </span><span class="n">out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+</span><span id="__span-8-7"><span class="w">    </span><span class="k">end</span>
+</span><span id="__span-8-8"><span class="k">end</span>
+</span></code></pre></div></td></tr></table></div>
+This is equivalent to using a continuous assignment with a conditional operator:
+<div class="language-verilog highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Verilog</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><span class="k">assign</span><span class="w"> </span><span class="n">out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">condition</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+</span></code></pre></div></td></tr></table></div>
+However, the procedural if statement provides a new way to make mistakes. The circuit is combinational only if out is always assigned a value.</p>
+<h2 id="how-to-avoid-making-latches">How to avoid making latches<a class="headerlink" href="#how-to-avoid-making-latches" title="Permanent link">&para;</a></h2>
+<p>Syntactically-correct code does not necessarily result in a reasonable circuit (combinational logic + flip-flops). The usual reason is: "What happens in the cases other than those you specified?". Verilog's answer is: Keep the outputs unchanged.</p>
+<p>This behaviour of "keep outputs unchanged" means the current state needs to be remembered, and thus produces a latch. Combinational logic (e.g., logic gates) cannot remember any state. Watch out for Warning (10240): ... inferring latch(es)" messages. Unless the latch was intentional, it almost always indicates a bug. Combinational circuits must have a value assigned to all outputs under all conditions. This usually means you always need else clauses or a default value assigned to the outputs.</p>
+<h2 id="always-case">Always case<a class="headerlink" href="#always-case" title="Permanent link">&para;</a></h2>
+<p>Case statements in Verilog are nearly equivalent to a sequence of if-elseif-else that compares one expression to a list of others. Its syntax and functionality differs from the switch statement in C.
+<div class="language-verilog highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Verilog</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><span class="k">always</span><span class="w"> </span><span class="p">@(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">begin</span><span class="w">     </span><span class="c1">// This is a combinational circuit</span>
+</span><span id="__span-10-2"><span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="p">(</span><span class="n">in</span><span class="p">)</span>
+</span><span id="__span-10-3"><span class="w">      </span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="o">:</span><span class="w"> </span><span class="k">begin</span><span class="w"> </span>
+</span><span id="__span-10-4"><span class="w">               </span><span class="n">out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">1</span><span class="mb">&#39;b1</span><span class="p">;</span><span class="w">  </span><span class="c1">// begin-end if &gt;1 statement</span>
+</span><span id="__span-10-5"><span class="w">            </span><span class="k">end</span>
+</span><span id="__span-10-6"><span class="w">      </span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="o">:</span><span class="w"> </span><span class="n">out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">1</span><span class="mb">&#39;b0</span><span class="p">;</span>
+</span><span id="__span-10-7"><span class="w">      </span><span class="k">default</span><span class="o">:</span><span class="w"> </span><span class="n">out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">1</span><span class="p">&#39;</span><span class="n">bx</span><span class="p">;</span>
+</span><span id="__span-10-8"><span class="w">    </span><span class="k">endcase</span>
+</span><span id="__span-10-9"><span class="k">end</span>
+</span></code></pre></div></td></tr></table></div>
+- The case statement begins with case and each "case item" ends with a colon. There is no "switch".
+- Each case item can execute exactly one statement. This makes the "break" used in C unnecessary. But this means that if you need more than one statement, you must use begin ... end.
+- Duplicate (and partially overlapping) case items are permitted. The first one that matches is used. C does not allow duplicate case items.</p>
+<h2 id="always-casez">Always casez<a class="headerlink" href="#always-casez" title="Permanent link">&para;</a></h2>
+<div class="language-verilog highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Verilog</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><span class="k">always</span><span class="w"> </span><span class="p">@(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">begin</span>
+</span><span id="__span-11-2"><span class="w">    </span><span class="k">casez</span><span class="w"> </span><span class="p">(</span><span class="n">in</span><span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">])</span>
+</span><span id="__span-11-3"><span class="w">        </span><span class="mh">4</span><span class="p">&#39;</span><span class="nl">bzzz1:</span><span class="w"> </span><span class="n">out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0</span><span class="p">;</span><span class="w">   </span><span class="c1">// in[3:1] can be anything</span>
+</span><span id="__span-11-4"><span class="w">        </span><span class="mh">4</span><span class="p">&#39;</span><span class="nl">bzz1z:</span><span class="w"> </span><span class="n">out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">1</span><span class="p">;</span>
+</span><span id="__span-11-5"><span class="w">        </span><span class="mh">4</span><span class="p">&#39;</span><span class="nl">bz1zz:</span><span class="w"> </span><span class="n">out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">2</span><span class="p">;</span>
+</span><span id="__span-11-6"><span class="w">        </span><span class="mh">4</span><span class="mb">&#39;b1</span><span class="nl">zzz:</span><span class="w"> </span><span class="n">out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">3</span><span class="p">;</span>
+</span><span id="__span-11-7"><span class="w">        </span><span class="k">default</span><span class="o">:</span><span class="w"> </span><span class="n">out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0</span><span class="p">;</span>
+</span><span id="__span-11-8"><span class="w">    </span><span class="k">endcase</span>
+</span><span id="__span-11-9"><span class="k">end</span>
+</span></code></pre></div></td></tr></table></div>
 
 
 
