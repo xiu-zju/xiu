@@ -240,6 +240,8 @@ nav:
   - 我:
     - 个人介绍: Me/1.md
   - 笔记:
+    - Verilog:
+      - note1: Note/Verilog/1.md
     - C语言笔试复习（不完善）:
       - Note/C语言笔试复习/index.md
       - 0 C语言前瞻: Note/C语言笔试复习/C语言前瞻.md
