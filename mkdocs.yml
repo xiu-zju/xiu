@@ -1,9 +1,9 @@
-site_name: xiu的个人网站
+site_name: xiu的笔记本
 site_url: https://xiu-zju.github.io/xiu/
 repo_url: https://github.com/xiu-zju/xiu
 repo_name: xiu
 site_author: 胥涵坤
-site_description: 胥涵坤的个人网站
+site_description: 胥涵坤的笔记本
 
 copyright: 'Copyright &copy 2024 xiu. Thanks to Tonycrane for his style.'
 
@@ -199,28 +199,20 @@ extra_javascript:
 
 # [Navigtion]
 nav:
-  - 我:
-    - 个人介绍: Me/1.md
-  - 笔记:
+  - 语言类:
     - Verilog:
-      - note1: Note/Verilog/1.md
+      - yuyan/Verilog/index.md
+      - note1: yuyan/Verilog/1.md
     - C语言笔试复习（不完善）:
-      - Note/C语言笔试复习/index.md
-      - 0 C语言前瞻: Note/C语言笔试复习/C语言前瞻.md
-      - 1 C语言基本语法: Note/C语言笔试复习/C语言基本语法.md
-      - 2 数据类型、运算符和表达式: Note/C语言笔试复习/数据类型、运算符和表达式.md
-      - 2.5 关键字: Note/C语言笔试复习/关键字.md
-      - 3 选择结构: Note/C语言笔试复习/选择结构.md
-      - 4 循环: Note/C语言笔试复习/循环.md
-      - 5 数组: Note/C语言笔试复习/数组.md
-      - 8 指针: Note/C语言笔试复习/指针.md
-      - 10 文件: Note/C语言笔试复习/文件.md
-    - 反序列化漏洞: Note/Bonus/1.md
-  - 二次元:
-    - 看番推荐: 2/index.md
-    - 漫展: 
-      - BW 2024: 2/manzhan/bw2024.md
-  - 管乐团:
-    - ZJUWO/index.md
-  - 琐记:
-    - suoji/index.md
+      - yuyan/C/index.md
+      - 0 C语言前瞻: yuyan/C/C语言前瞻.md
+      - 1 C语言基本语法: yuyan/C/C语言基本语法.md
+      - 2 数据类型、运算符和表达式: yuyan/C/数据类型、运算符和表达式.md
+      - 2.5 关键字: yuyan/C/关键字.md
+      - 3 选择结构: yuyan/C/选择结构.md
+      - 4 循环: yuyan/C/循环.md
+      - 5 数组: yuyan/C/数组.md
+      - 8 指针: yuyan/C/指针.md
+      - 10 文件: yuyan/C/文件.md
+  - 杂项:
+    - 反序列化漏洞: misc/Bonus/1.md
