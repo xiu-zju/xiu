@@ -12,22 +12,26 @@
         <meta name="author" content="胥涵坤">
       
       
+        <link rel="canonical" href="https://xiu-zju.github.io/xiu/misc/Bonus/1/">
+      
+      
+        <link rel="prev" href="../../../yuyan/C/%E6%96%87%E4%BB%B6/">
       
       
       
-      <link rel="icon" href="/xiu/assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
     
     
       
-        <title>xiu的笔记本</title>
+        <title>反序列化漏洞 - xiu的笔记本</title>
       
     
     
-      <link rel="stylesheet" href="/xiu/assets/stylesheets/main.6543a935.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6543a935.min.css">
       
         
-        <link rel="stylesheet" href="/xiu/assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
   
@@ -87,17 +91,17 @@
     
       <link rel="stylesheet" href="https://cdn.tonycrane.cc/lxgw/lxgwscreen.css">
     
-      <link rel="stylesheet" href="/xiu/css/tasklist.css">
+      <link rel="stylesheet" href="../../../css/tasklist.css">
     
-      <link rel="stylesheet" href="/xiu/css/custom.css">
+      <link rel="stylesheet" href="../../../css/custom.css">
     
-      <link rel="stylesheet" href="/xiu/css/card.css">
+      <link rel="stylesheet" href="../../../css/card.css">
     
-      <link rel="stylesheet" href="/xiu/css/flink.css">
+      <link rel="stylesheet" href="../../../css/flink.css">
     
-      <link rel="stylesheet" href="/xiu/css/changelog_extra.css">
+      <link rel="stylesheet" href="../../../css/changelog_extra.css">
     
-    <script>__md_scope=new URL("/xiu/",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -132,6 +136,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#python" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -142,7 +151,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="/xiu/." title="xiu的笔记本" class="md-header__button md-logo" aria-label="xiu的笔记本" data-md-component="logo">
+    <a href="../../.." title="xiu的笔记本" class="md-header__button md-logo" aria-label="xiu的笔记本" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4h-2M3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3m2-2v2h2V5H5m0 14h2v-2H5v2m0-6h2v-2H5v2Z"/></svg>
@@ -162,7 +171,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              反序列化漏洞
             
           </span>
         </div>
@@ -279,7 +288,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/xiu/yuyan/Verilog/" class="md-tabs__link">
+        <a href="../../../yuyan/Verilog/" class="md-tabs__link">
           
   
     
@@ -298,11 +307,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="/xiu/misc/Bonus/1/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
           
   
     
@@ -337,7 +348,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/xiu/." title="xiu的笔记本" class="md-nav__button md-logo" aria-label="xiu的笔记本" data-md-component="logo">
+    <a href="../../.." title="xiu的笔记本" class="md-nav__button md-logo" aria-label="xiu的笔记本" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4h-2M3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3m2-2v2h2V5H5m0 14h2v-2H5v2m0-6h2v-2H5v2Z"/></svg>
@@ -434,7 +445,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/xiu/yuyan/Verilog/" class="md-nav__link ">
+            <a href="../../../yuyan/Verilog/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -467,7 +478,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/xiu/yuyan/Verilog/1/" class="md-nav__link">
+      <a href="../../../yuyan/Verilog/1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -535,7 +546,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/xiu/yuyan/C/" class="md-nav__link ">
+            <a href="../../../yuyan/C/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -568,7 +579,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/xiu/yuyan/C/C%E8%AF%AD%E8%A8%80%E5%89%8D%E7%9E%BB/" class="md-nav__link">
+      <a href="../../../yuyan/C/C%E8%AF%AD%E8%A8%80%E5%89%8D%E7%9E%BB/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -589,7 +600,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/xiu/yuyan/C/C%E8%AF%AD%E8%A8%80%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" class="md-nav__link">
+      <a href="../../../yuyan/C/C%E8%AF%AD%E8%A8%80%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -610,7 +621,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/xiu/yuyan/C/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E3%80%81%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="md-nav__link">
+      <a href="../../../yuyan/C/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E3%80%81%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -631,7 +642,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/xiu/yuyan/C/%E5%85%B3%E9%94%AE%E5%AD%97/" class="md-nav__link">
+      <a href="../../../yuyan/C/%E5%85%B3%E9%94%AE%E5%AD%97/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -652,7 +663,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/xiu/yuyan/C/%E9%80%89%E6%8B%A9%E7%BB%93%E6%9E%84/" class="md-nav__link">
+      <a href="../../../yuyan/C/%E9%80%89%E6%8B%A9%E7%BB%93%E6%9E%84/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -673,7 +684,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/xiu/yuyan/C/%E5%BE%AA%E7%8E%AF/" class="md-nav__link">
+      <a href="../../../yuyan/C/%E5%BE%AA%E7%8E%AF/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -694,7 +705,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/xiu/yuyan/C/%E6%95%B0%E7%BB%84/" class="md-nav__link">
+      <a href="../../../yuyan/C/%E6%95%B0%E7%BB%84/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -715,7 +726,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/xiu/yuyan/C/%E6%8C%87%E9%92%88/" class="md-nav__link">
+      <a href="../../../yuyan/C/%E6%8C%87%E9%92%88/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -736,7 +747,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/xiu/yuyan/C/%E6%96%87%E4%BB%B6/" class="md-nav__link">
+      <a href="../../../yuyan/C/%E6%96%87%E4%BB%B6/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -769,8 +780,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -779,17 +792,20 @@
     
     
       
+        
+        
+      
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -800,7 +816,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             杂项
@@ -811,10 +827,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/xiu/misc/Bonus/1/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    反序列化漏洞
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -823,6 +859,71 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      反序列化漏洞概述
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pickle" class="md-nav__link">
+    <span class="md-ellipsis">
+      pickle 模块及其危险性
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      恶意反序列化示例
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      防护措施
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      结论
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -852,6 +953,61 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      反序列化漏洞概述
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pickle" class="md-nav__link">
+    <span class="md-ellipsis">
+      pickle 模块及其危险性
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      恶意反序列化示例
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      防护措施
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      结论
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -863,8 +1019,182 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+  
+    <a href="https://github.com/xiu-zju/xiu/edit/master/docs/misc/Bonus/1.md" title="编辑此页" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="python">Python 中的反序列化漏洞<a class="headerlink" href="#python" title="Permanent link">&para;</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>才...才不是因为会有15%的bonus才写的呢！（</p>
+</div>
+<p>反序列化漏洞在许多编程语言中都是一个严重的安全问题，Python 也不例外。特别是 Python 的 pickle 模块，如果使用不当，容易成为攻击者的目标。本文将详细探讨 Python 中的反序列化漏洞、常见攻击方法及其防护措施。</p>
+<h2 id="_1">反序列化漏洞概述<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>反序列化是将序列化数据（通常是二进制或字符串形式）重新转换为对象的过程。序列化用于持久化对象或在网络上传输对象。然而，如果反序列化过程处理了恶意构造的数据，可能导致任意代码执行（Remote Code Execution, RCE），进而危及系统安全。</p>
+<h2 id="pickle">pickle 模块及其危险性<a class="headerlink" href="#pickle" title="Permanent link">&para;</a></h2>
+<p>pickle 是 Python 内置的序列化模块，支持序列化几乎所有 Python 对象。它的强大功能使其在某些场景下非常有用，但也带来了安全风险，因为 pickle 可以序列化和反序列化包含任意代码的对象。</p>
+<p>以下是一个简单的 pickle 使用示例：</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><span class="kn">import</span> <span class="nn">pickle</span>
+</span><span id="__span-0-2">
+</span><span id="__span-0-3"><span class="c1"># 序列化对象</span>
+</span><span id="__span-0-4"><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;value&#39;</span><span class="p">}</span>
+</span><span id="__span-0-5"><span class="n">serialized_data</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</span><span id="__span-0-6">
+</span><span id="__span-0-7"><span class="c1"># 反序列化对象</span>
+</span><span id="__span-0-8"><span class="n">deserialized_data</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">serialized_data</span><span class="p">)</span>
+</span><span id="__span-0-9"><span class="nb">print</span><span class="p">(</span><span class="n">deserialized_data</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<p>在上述代码中，pickle.dumps 将字典对象序列化为字节数据，pickle.loads 则将其反序列化为原始对象。尽管此过程看似安全，但如果反序列化的数据来自不可信来源，可能引发安全问题。</p>
+<h2 id="_2">恶意反序列化示例<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>假设我们有一个包含恶意代码的序列化数据，反序列化该数据将执行恶意代码。以下示例展示了如何利用 pickle 进行攻击：</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><span class="kn">import</span> <span class="nn">pickle</span>
+</span><span id="__span-1-2"><span class="kn">import</span> <span class="nn">os</span>
+</span><span id="__span-1-3">
+</span><span id="__span-1-4"><span class="c1"># 创建恶意数据</span>
+</span><span id="__span-1-5"><span class="k">class</span> <span class="nc">Malicious</span><span class="p">:</span>
+</span><span id="__span-1-6">    <span class="k">def</span> <span class="nf">__reduce__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-1-7">        <span class="k">return</span> <span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;ls&#39;</span><span class="p">,))</span>
+</span><span id="__span-1-8">
+</span><span id="__span-1-9"><span class="n">malicious_data</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">Malicious</span><span class="p">())</span>
+</span><span id="__span-1-10">
+</span><span id="__span-1-11"><span class="c1"># 反序列化恶意数据</span>
+</span><span id="__span-1-12"><span class="n">pickle</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">malicious_data</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<p>在这个示例中，定义了一个 Malicious 类，其 <strong>reduce</strong> 方法返回一个可调用对象和参数元组。这会在反序列化时执行 os.system('ls')，列出当前目录内容。攻击者可以利用类似手段执行任意系统命令。</p>
+<h2 id="_3">防护措施<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>为了防止反序列化漏洞，建议采取以下防护措施：</p>
+<ol>
+<li>
+<p><strong>避免使用 pickle 反序列化不可信数据</strong>：pickle 的灵活性使其在处理不受信任的数据时非常危险。尽量避免使用 pickle 反序列化来自不可信来源的数据。</p>
+</li>
+<li>
+<p><strong>使用更安全的序列化模块</strong>：
+  如果不需要序列化复杂对象，可以使用更安全的序列化模块，如 <code>json</code>。<code>json</code> 模块只支持基本数据类型的序列化和反序列化，不会执行代码，从而更安全。</p>
+</li>
+</ol>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><span class="kn">import</span> <span class="nn">json</span>
+</span><span id="__span-2-2">
+</span><span id="__span-2-3"><span class="c1"># 序列化</span>
+</span><span id="__span-2-4"><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;value&#39;</span><span class="p">}</span>
+</span><span id="__span-2-5"><span class="n">serialized_data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</span><span id="__span-2-6">
+</span><span id="__span-2-7"><span class="c1"># 反序列化</span>
+</span><span id="__span-2-8"><span class="n">deserialized_data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">serialized_data</span><span class="p">)</span>
+</span><span id="__span-2-9"><span class="nb">print</span><span class="p">(</span><span class="n">deserialized_data</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<ol>
+<li>
+<p><strong>验证和清理输入数据</strong>：
+   - 在反序列化之前，尽可能验证数据的来源和格式，确保其安全。例如，可以使用签名和哈希验证数据的完整性和真实性。</p>
+</li>
+<li>
+<p><strong>使用受限环境</strong>：
+   - 如果必须使用 pickle，可以在一个受限环境中运行反序列化代码，例如使用沙箱（sandbox）技术或其他隔离机制，限制代码执行的权限。</p>
+</li>
+<li>
+<p><strong>限制可反序列化的类</strong>：
+   - 可以通过自定义 Unpickler 类并覆盖其 find_class 方法，限制反序列化时可用的类，从而减少攻击面。</p>
+</li>
+</ol>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><span class="kn">import</span> <span class="nn">pickle</span>
+</span><span id="__span-3-2">
+</span><span id="__span-3-3"><span class="k">class</span> <span class="nc">RestrictedUnpickler</span><span class="p">(</span><span class="n">pickle</span><span class="o">.</span><span class="n">Unpickler</span><span class="p">):</span>
+</span><span id="__span-3-4">    <span class="k">def</span> <span class="nf">find_class</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">module</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+</span><span id="__span-3-5">        <span class="k">if</span> <span class="n">module</span> <span class="o">==</span> <span class="s2">&quot;builtins&quot;</span> <span class="ow">and</span> <span class="n">name</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">&quot;list&quot;</span><span class="p">,</span> <span class="s2">&quot;dict&quot;</span><span class="p">,</span> <span class="s2">&quot;set&quot;</span><span class="p">,</span> <span class="s2">&quot;tuple&quot;</span><span class="p">}:</span>
+</span><span id="__span-3-6">            <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">find_class</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+</span><span id="__span-3-7">        <span class="k">raise</span> <span class="n">pickle</span><span class="o">.</span><span class="n">UnpicklingError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;global &#39;</span><span class="si">{</span><span class="n">module</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&#39; is forbidden&quot;</span><span class="p">)</span>
+</span><span id="__span-3-8">
+</span><span id="__span-3-9"><span class="k">def</span> <span class="nf">restricted_loads</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+</span><span id="__span-3-10">    <span class="k">return</span> <span class="n">RestrictedUnpickler</span><span class="p">(</span><span class="n">io</span><span class="o">.</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">s</span><span class="p">))</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+</span></code></pre></div></td></tr></table></div>
+<h2 id="_4">结论<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>反序列化漏洞是一个严重的安全问题，在 Python 中尤为值得关注。开发者应当充分了解反序列化的风险，并采取适当的防护措施，避免将应用程序暴露在潜在的安全威胁中。通过谨慎选择序列化模块、验证输入数据、使用受限环境和限制反序列化类，可以有效降低反序列化漏洞带来的风险。</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        激励
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="激励" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M144 64c0-8.8 7.2-16 16-16s16 7.2 16 16c0 9.1 5.1 17.4 13.3 21.5s17.9 3.2 25.1-2.3c2.7-2 6-3.2 9.6-3.2 8.8 0 16 7.2 16 16 0 9.1 5.1 17.4 13.3 21.5s17.9 3.2 25.1-2.3c2.7-2 6-3.2 9.6-3.2 8.8 0 16 7.2 16 16 0 9.1 5.1 17.4 13.3 21.5s17.9 3.2 25.1-2.3c2.7-2 6-3.2 9.6-3.2 8.8 0 16 7.2 16 16v104c0 31.3-20 58-48 67.9-9.6 3.4-16 12.5-16 22.6V488c0 13.3 10.7 24 24 24s24-10.7 24-24V370.2c38-20.1 64-60.1 64-106.2V160c0-35.3-28.7-64-64-64-2.8 0-5.6.2-8.3.5A63.831 63.831 0 0 0 288 64c-2.8 0-5.6.2-8.3.5A63.831 63.831 0 0 0 224 32c-2.8 0-5.6.2-8.3.5A63.831 63.831 0 0 0 160 0c-35.3 0-64 28.7-64 64v64.3c-11.7 7.4-22.5 16.4-32 26.9l17.8 16.1L64 155.2l-9.4 10.5C40 181.8 32 202.8 32 224.6v12.8c0 49.6 24.2 96.1 64.8 124.5l13.8-19.7-13.8 19.7 8.9 6.2c6.9 4.8 14.4 8.6 22.3 11.3V488c0 13.3 10.7 24 24 24s24-10.7 24-24V359.9c0-12.6-9.8-23.1-22.4-23.9-7.3-.5-14.3-2.9-20.3-7.1l-13.1 18.7 13.1-18.7-8.9-6.2C96.6 303.1 80 271.3 80 237.4v-12.8c0-9.9 3.7-19.4 10.3-26.8l9.4-10.5c3.8-4.2 7.9-8.1 12.3-11.6V208c0 8.8 7.2 16 16 16s16-7.2 16-16V64z"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              <center> 你愿意请我喝一杯吗(*´∀`)~♥ </center> <img src="https://s2.loli.net/2024/07/01/ydYtQnqeWTwrsRf.jpg" width=200px>
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
               </article>
             </div>
           
@@ -944,14 +1274,14 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "/xiu/", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit", "content.code.annotate", "navigation.tracking"], "search": "/xiu/assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit", "content.code.annotate", "navigation.tracking"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="/xiu/assets/javascripts/bundle.ad660dcc.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.ad660dcc.min.js"></script>
       
         <script src="https://cdn.tonycrane.cc/utils/katex.min.js"></script>
       
-        <script src="/xiu/js/katex.js"></script>
+        <script src="../../../js/katex.js"></script>
       
     
   </body>
