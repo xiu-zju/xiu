@@ -45,6 +45,7 @@ npm install -g reveal-md
 
 ### 自定义域名
 如果你有自己的域名，可以将github-pages的网址解析到你自己的域名。先在代理商那里创建一个CNAME条目到github-pages的网址。然后在仓库的根目录创建一个CNAME文件，写入你的域名，在pages里面设置下就好了。
+
 如果你想省略后面的/site/index.md，可以在根目录下创建一个index.html，放入以下代码:
 
 ```html
