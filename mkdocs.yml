@@ -216,3 +216,4 @@ nav:
       - 10 文件: yuyan/C/文件.md
   - 杂项:
     - 反序列化漏洞: misc/Bonus/1.md
+    - reveal-md制作slides: misc/reveal.md
