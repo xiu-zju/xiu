@@ -12,28 +12,28 @@
         <meta name="author" content="胥涵坤">
       
       
-        <link rel="canonical" href="https://xiu-zju.github.io/xiu/yuyan/C/C%E8%AF%AD%E8%A8%80%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">
+        <link rel="canonical" href="https://xiu-zju.github.io/xiu/yuyan/Verilog/circuit/3/">
       
       
-        <link rel="prev" href="../C%E8%AF%AD%E8%A8%80%E5%89%8D%E7%9E%BB/">
+        <link rel="prev" href="../2/">
       
       
-        <link rel="next" href="../%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E3%80%81%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
+        <link rel="next" href="../../../C/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
     
     
       
-        <title>1 C语言基本语法 - xiu的笔记本</title>
+        <title>Arithmetic circuits - xiu的笔记本</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.6543a935.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.6543a935.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
   
@@ -93,17 +93,17 @@
     
       <link rel="stylesheet" href="https://cdn.tonycrane.cc/lxgw/lxgwscreen.css">
     
-      <link rel="stylesheet" href="../../../css/tasklist.css">
+      <link rel="stylesheet" href="../../../../css/tasklist.css">
     
-      <link rel="stylesheet" href="../../../css/custom.css">
+      <link rel="stylesheet" href="../../../../css/custom.css">
     
-      <link rel="stylesheet" href="../../../css/card.css">
+      <link rel="stylesheet" href="../../../../css/card.css">
     
-      <link rel="stylesheet" href="../../../css/flink.css">
+      <link rel="stylesheet" href="../../../../css/flink.css">
     
-      <link rel="stylesheet" href="../../../css/changelog_extra.css">
+      <link rel="stylesheet" href="../../../../css/changelog_extra.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -139,7 +139,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#11" class="md-skip">
+        <a href="#arithmetic-circuits" class="md-skip">
           跳转至
         </a>
       
@@ -153,7 +153,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../.." title="xiu的笔记本" class="md-header__button md-logo" aria-label="xiu的笔记本" data-md-component="logo">
+    <a href="../../../.." title="xiu的笔记本" class="md-header__button md-logo" aria-label="xiu的笔记本" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4h-2M3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3m2-2v2h2V5H5m0 14h2v-2H5v2m0-6h2v-2H5v2Z"/></svg>
@@ -173,7 +173,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1 C语言基本语法
+              Arithmetic circuits
             
           </span>
         </div>
@@ -294,7 +294,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../Verilog/" class="md-tabs__link">
+        <a href="../../" class="md-tabs__link">
           
   
     
@@ -317,7 +317,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../misc/Bonus/1/" class="md-tabs__link">
+        <a href="../../../../misc/Bonus/1/" class="md-tabs__link">
           
   
     
@@ -352,7 +352,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="xiu的笔记本" class="md-nav__button md-logo" aria-label="xiu的笔记本" data-md-component="logo">
+    <a href="../../../.." title="xiu的笔记本" class="md-nav__button md-logo" aria-label="xiu的笔记本" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4h-2M3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3m2-2v2h2V5H5m0 14h2v-2H5v2m0-6h2v-2H5v2Z"/></svg>
@@ -428,6 +428,8 @@
                 
   
   
+    
+  
   
   
     
@@ -447,16 +449,16 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_1" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../Verilog/" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -473,7 +475,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1_1">
             <span class="md-nav__icon md-icon"></span>
             Verilog
@@ -489,7 +491,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../Verilog/1/" class="md-nav__link">
+      <a href="../../1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -507,8 +509,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -520,11 +524,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_1_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_1_3" checked>
         
           
           <label class="md-nav__link" for="__nav_1_1_3" id="__nav_1_1_3_label" tabindex="0">
@@ -538,7 +542,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_1_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_1_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1_1_3">
             <span class="md-nav__icon md-icon"></span>
             Circuits
@@ -549,140 +553,12 @@
                 
   
   
-  
-  
-    
-    
-      
-        
-      
-        
-      
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_1_3_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_1_1_3_1" id="__nav_1_1_3_1_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Combinational logic
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_1_1_3_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_1_1_3_1">
-            <span class="md-nav__icon md-icon"></span>
-            Combinational logic
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Verilog/circuit/2/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Multiplexers
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../Verilog/circuit/3/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Arithmetic circuits
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
   
     
     
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
       
         
       
@@ -698,36 +574,26 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_1_3_1" checked>
         
           
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
-              
+          <label class="md-nav__link" for="__nav_1_1_3_1" id="__nav_1_1_3_1_label" tabindex="0">
+            
   
   <span class="md-ellipsis">
-    C语言笔试复习（不完善）
+    Combinational logic
   </span>
   
 
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_1_2">
             <span class="md-nav__icon md-icon"></span>
-            C语言笔试复习（不完善）
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_1_1_3_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1_1_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Combinational logic
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
             
               
                 
@@ -736,11 +602,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../C%E8%AF%AD%E8%A8%80%E5%89%8D%E7%9E%BB/" class="md-nav__link">
+      <a href="../2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    0 C语言前瞻
+    Multiplexers
   </span>
   
 
@@ -770,7 +636,7 @@
           
   
   <span class="md-ellipsis">
-    1 C语言基本语法
+    Arithmetic circuits
   </span>
   
 
@@ -781,7 +647,7 @@
         
   
   <span class="md-ellipsis">
-    1 C语言基本语法
+    Arithmetic circuits
   </span>
   
 
@@ -803,27 +669,54 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#111" class="md-nav__link">
+  <a href="#half-adder" class="md-nav__link">
     <span class="md-ellipsis">
-      1.1.1标识符的组成规则
+      Half Adder
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#112" class="md-nav__link">
+  <a href="#full-adder" class="md-nav__link">
     <span class="md-ellipsis">
-      1.1.2有效长度
+      Full Adder
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#113" class="md-nav__link">
+  <a href="#adder3" class="md-nav__link">
     <span class="md-ellipsis">
-      1.1.3关键字
+      Adder3
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examsm2014-q4j" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exams/m2014 q4j
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overflow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adder100" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adder100
     </span>
   </a>
   
@@ -838,6 +731,102 @@
 
               
             
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../C/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    C语言笔试复习（不完善）
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            C语言笔试复习（不完善）
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
               
                 
   
@@ -845,7 +834,49 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E3%80%81%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="md-nav__link">
+      <a href="../../../C/C%E8%AF%AD%E8%A8%80%E5%89%8D%E7%9E%BB/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    0 C语言前瞻
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C/C%E8%AF%AD%E8%A8%80%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 C语言基本语法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../C/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E3%80%81%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -866,7 +897,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E5%85%B3%E9%94%AE%E5%AD%97/" class="md-nav__link">
+      <a href="../../../C/%E5%85%B3%E9%94%AE%E5%AD%97/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -887,7 +918,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E9%80%89%E6%8B%A9%E7%BB%93%E6%9E%84/" class="md-nav__link">
+      <a href="../../../C/%E9%80%89%E6%8B%A9%E7%BB%93%E6%9E%84/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -908,7 +939,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E5%BE%AA%E7%8E%AF/" class="md-nav__link">
+      <a href="../../../C/%E5%BE%AA%E7%8E%AF/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -929,7 +960,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E6%95%B0%E7%BB%84/" class="md-nav__link">
+      <a href="../../../C/%E6%95%B0%E7%BB%84/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -950,7 +981,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E6%8C%87%E9%92%88/" class="md-nav__link">
+      <a href="../../../C/%E6%8C%87%E9%92%88/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -971,7 +1002,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E6%96%87%E4%BB%B6/" class="md-nav__link">
+      <a href="../../../C/%E6%96%87%E4%BB%B6/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1051,7 +1082,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../misc/Bonus/1/" class="md-nav__link">
+      <a href="../../../../misc/Bonus/1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1072,7 +1103,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../misc/reveal/" class="md-nav__link">
+      <a href="../../../../misc/reveal/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1120,27 +1151,54 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#111" class="md-nav__link">
+  <a href="#half-adder" class="md-nav__link">
     <span class="md-ellipsis">
-      1.1.1标识符的组成规则
+      Half Adder
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#112" class="md-nav__link">
+  <a href="#full-adder" class="md-nav__link">
     <span class="md-ellipsis">
-      1.1.2有效长度
+      Full Adder
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#113" class="md-nav__link">
+  <a href="#adder3" class="md-nav__link">
     <span class="md-ellipsis">
-      1.1.3关键字
+      Adder3
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examsm2014-q4j" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exams/m2014 q4j
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overflow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adder100" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adder100
     </span>
   </a>
   
@@ -1161,7 +1219,7 @@
                   
 
   
-    <a href="https://github.com/xiu-zju/xiu/edit/master/docs/yuyan/C/C语言基本语法.md" title="编辑此页" class="md-content__button md-icon">
+    <a href="https://github.com/xiu-zju/xiu/edit/master/docs/yuyan/Verilog/circuit/3.md" title="编辑此页" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -1169,221 +1227,192 @@
   
 
 
-<h1 id="11">1.1标识符<a class="headerlink" href="#11" title="Permanent link">&para;</a></h1>
-<h2 id="111">1.1.1标识符的组成规则<a class="headerlink" href="#111" title="Permanent link">&para;</a></h2>
-<ol>
-<li>必须由字母、数字和下划线组成</li>
-<li>第一个字符必须是<strong>字母或下划线</strong></li>
-<li>字母要区分大小写</li>
-<li>不能与关键字同名</li>
-</ol>
-<h2 id="112">1.1.2有效长度<a class="headerlink" href="#112" title="Permanent link">&para;</a></h2>
-<p>前31个字符</p>
-<h2 id="113">1.1.3关键字<a class="headerlink" href="#113" title="Permanent link">&para;</a></h2>
-<p>Which one below is NOT a keyword of the C programming language? ____  <br />
-A. define <br />
-B. if
-C. typedef
-D. while</p>
-<blockquote>
-<p>A <code>define</code> 不是关键字，是预处理指令，你甚至可以 <code>int define;</code> 而 <code>if</code>、<code>typedef</code>、<code>while</code> 显然都是关键字。</p>
-</blockquote>
-<p>Which one below is NOT a valid identifier in the C programming language? ____ 
-A. printf
-B.  _ever
-C. "char"
-D. true</p>
-<blockquote>
-<p>C，因为 <code>int "char";</code> 肯定是非法的，标识符<strong>必须以字母或下划线开头</strong>。对于 A，printf 只是一个函数名，不是关键字，所以是合法的。对于 D，C 语言中 true 并不是关键字，也可以使用。</p>
-</blockquote>
-<h1 id="12">1.2输入与输出<a class="headerlink" href="#12" title="Permanent link">&para;</a></h1>
-<h2 id="121-printf">1.2.1 printf<a class="headerlink" href="#121-printf" title="Permanent link">&para;</a></h2>
-<p><strong>转化声明符</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">类型</th>
-<th style="text-align: left;">格式字符串</th>
-<th style="text-align: left;">输出形式</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">整形</td>
-<td style="text-align: left;">%d</td>
-<td style="text-align: left;">带符号的十进制</td>
-</tr>
-<tr>
-<td style="text-align: left;">整型</td>
-<td style="text-align: left;">%o</td>
-<td style="text-align: left;">无符号的八进制</td>
-</tr>
-<tr>
-<td style="text-align: left;">整型</td>
-<td style="text-align: left;">%x</td>
-<td style="text-align: left;">无符号的十六进制</td>
-</tr>
-<tr>
-<td style="text-align: left;">整型</td>
-<td style="text-align: left;">%u</td>
-<td style="text-align: left;">无符号的十进制</td>
-</tr>
-<tr>
-<td style="text-align: left;">浮点型</td>
-<td style="text-align: left;">%f</td>
-<td style="text-align: left;">小数，6位</td>
-</tr>
-<tr>
-<td style="text-align: left;">浮点型</td>
-<td style="text-align: left;">%e</td>
-<td style="text-align: left;">指数，6位</td>
-</tr>
-<tr>
-<td style="text-align: left;">浮点型</td>
-<td style="text-align: left;">%g</td>
-<td style="text-align: left;">优化的小数（去掉无意义的0）</td>
-</tr>
-<tr>
-<td style="text-align: left;">字符型</td>
-<td style="text-align: left;">%c</td>
-<td style="text-align: left;">字符</td>
-</tr>
-<tr>
-<td style="text-align: left;">字符型</td>
-<td style="text-align: left;">%s</td>
-<td style="text-align: left;">字符串</td>
-</tr>
-</tbody>
-</table>
-<p>附加格式</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">字符</th>
-<th style="text-align: left;">输出</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">%md</td>
-<td style="text-align: left;">当数据长度&lt;m时，左补空格，否则按实际输出 ^1</td>
-</tr>
-<tr>
-<td style="text-align: left;">%nf</td>
-<td style="text-align: left;">指定小数点后位数（四舍五入）</td>
-</tr>
-<tr>
-<td style="text-align: left;">%ns</td>
-<td style="text-align: left;">对字符串，输出指定位数</td>
-</tr>
-<tr>
-<td style="text-align: left;">%-md</td>
-<td style="text-align: left;">输入数据在域内左对齐</td>
-</tr>
-<tr>
-<td style="text-align: left;">%+md</td>
-<td style="text-align: left;">在有符号的正数前加正号</td>
-</tr>
-<tr>
-<td style="text-align: left;">%0md</td>
-<td style="text-align: left;">在左边的空格用0补</td>
-</tr>
-<tr>
-<td style="text-align: left;">%#o</td>
-<td style="text-align: left;">在八进制前显示0</td>
-</tr>
-<tr>
-<td style="text-align: left;">%#x</td>
-<td style="text-align: left;">在十六进制前显示0x</td>
-</tr>
-<tr>
-<td style="text-align: left;">%ld</td>
-<td style="text-align: left;">在d,o,x,u前，long型</td>
-</tr>
-<tr>
-<td style="text-align: left;">%lf</td>
-<td style="text-align: left;">在e,f,g前，double型</td>
-</tr>
-</tbody>
-</table>
-<p><strong>重点</strong></p>
-<p>关于%e的用法</p>
-<p>在C语言中，<code>%e</code>是用于格式化输出浮点数的格式控制符。它表示以指数形式输出浮点数，使用小写字母"e"表示指数部分。具体来说，<code>%e</code>将浮点数表示为<code>[-]d.ddddde±dd</code>的形式，其中第一个<code>d</code>是整数部分，后面的小数部分以及指数部分都用小写字母"e"表示。</p>
-<p>以下是一个简单的例子：</p>
-<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<h1 id="arithmetic-circuits">Arithmetic circuits<a class="headerlink" href="#arithmetic-circuits" title="Permanent link">&para;</a></h1>
+<h2 id="half-adder">Half Adder<a class="headerlink" href="#half-adder" title="Permanent link">&para;</a></h2>
+<div class="language-verilog highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Verilog</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
-</span><span id="__span-0-2">
-</span><span id="__span-0-3"><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-4"><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">12345.6789</span><span class="p">;</span>
-</span><span id="__span-0-5"><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Number in scientific notation: %e</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">number</span><span class="p">);</span>
-</span><span id="__span-0-6"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-0-7"><span class="p">}</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><span class="k">module</span><span class="w"> </span><span class="n">half_adder</span><span class="p">(</span><span class="w"> </span>
+</span><span id="__span-0-2"><span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span>
+</span><span id="__span-0-3"><span class="w">    </span><span class="k">output</span><span class="w"> </span><span class="n">cout</span><span class="p">,</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-0-4"><span class="w">    </span><span class="k">assign</span><span class="w"> </span><span class="n">cout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+</span><span id="__span-0-5"><span class="w">    </span><span class="k">assign</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+</span><span id="__span-0-6"><span class="k">endmodule</span>
 </span></code></pre></div></td></tr></table></div>
-<p>这个程序将输出：</p>
-<div class="language-text highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1">Number in scientific notation: 1.234568e+004
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>sum = a ^ b     <br />
+cout = a &amp; b</p>
+</div>
+<h2 id="full-adder">Full Adder<a class="headerlink" href="#full-adder" title="Permanent link">&para;</a></h2>
+<div class="language-verilog highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Verilog</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><span class="k">module</span><span class="w"> </span><span class="n">full_adder</span><span class="p">(</span><span class="w"> </span>
+</span><span id="__span-1-2"><span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">cin</span><span class="p">,</span>
+</span><span id="__span-1-3"><span class="w">    </span><span class="k">output</span><span class="w"> </span><span class="n">cout</span><span class="p">,</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-1-4"><span class="w">    </span><span class="k">assign</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="n">cin</span><span class="p">;</span>
+</span><span id="__span-1-5"><span class="w">    </span><span class="k">assign</span><span class="w"> </span><span class="n">cout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">cin</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">cin</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+</span><span id="__span-1-6"><span class="k">endmodule</span>
 </span></code></pre></div></td></tr></table></div>
-<p>在这个例子中，<code>%e</code>将<code>12345.6789</code>格式化为科学计数法形式，即<code>1.234568e+04</code>。指数部分表示10的幂，因此<code>e+04</code>表示10的4次方。</p>
-<p>%e也可以与其他格式字符串的语法相结合</p>
-<div class="language-C highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%12.3e&quot;</span><span class="p">,</span><span class="mf">918.48</span><span class="p">);</span>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>sum = a ^ b ^ cin     <br />
+cout = a &amp; b | a &amp; cin | b &amp; cin = (a &amp; b) | (cin &amp; (a ^ b))</p>
+</div>
+<p><div class="language-verilog highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Verilog</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><span class="k">module</span><span class="w"> </span><span class="n">top_module</span><span class="p">(</span><span class="w"> </span>
+</span><span id="__span-2-2"><span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">cin</span><span class="p">,</span>
+</span><span id="__span-2-3"><span class="w">    </span><span class="k">output</span><span class="w"> </span><span class="n">cout</span><span class="p">,</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-2-4"><span class="w">    </span><span class="k">assign</span><span class="w"> </span><span class="p">{</span><span class="n">cout</span><span class="p">,</span><span class="n">sum</span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">cin</span><span class="p">;</span>
+</span><span id="__span-2-5"><span class="k">endmodule</span>
 </span></code></pre></div></td></tr></table></div>
-<p>这将会输出</p>
-<p><code>9.185e+002</code></p>
-<p><code>printf("%12.3e", 918.48)</code> 是一个格式化输出语句，它使用了 <code>%e</code> 格式控制符来表示浮点数，并且包含了一些宽度和精度的设置。让我们逐个解释这个语句：</p>
-<ul>
-<li><code>%e</code>: 表示以科学计数法的形式输出浮点数。</li>
-<li><code>%12.3e</code>: 这个部分中的数字控制了输出的格式。</li>
-<li><code>12</code>: 表示输出的总宽度为12个字符，包括小数点和指数部分。</li>
-<li><code>.3</code>: 表示输出的小数部分精确到3位。</li>
-<li><code>e</code>: 表示使用科学计数法表示浮点数。</li>
-</ul>
-<p>现在，让我们应用这些设置到 <code>918.48</code> 这个浮点数：</p>
-<ol>
-<li>浮点数 <code>918.48</code> 以科学计数法表示为 <code>9.1848e+02</code>。</li>
-<li>总宽度为12个字符，所以在输出中会填充一些空格，使得整个输出占据12个字符的宽度。</li>
-<li>小数部分精确到3位，所以输出的小数部分是 <code>.185</code>。</li>
-<li>最终输出为 <code>"  9.185e+002"</code>。</li>
-</ol>
-<p>这样，<code>printf("%12.3e", 918.48)</code> 将会输出 <code>"   9.185e+002"</code>。</p>
-<h2 id="122-scanf">1.2.2 scanf<a class="headerlink" href="#122-scanf" title="Permanent link">&para;</a></h2>
-<div class="language-C highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%4d%2d&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">a</span><span class="p">,</span><span class="o">&amp;</span><span class="n">b</span><span class="p">);</span>
+重点关注下<code>assign {cout,sum} = a + b + cin;</code>这一行。</p>
+<h2 id="adder3">Adder3<a class="headerlink" href="#adder3" title="Permanent link">&para;</a></h2>
+<p>Now that you know how to build a full adder, make 3 instances of it to create a 3-bit binary ripple-carry adder. The adder adds two 3-bit numbers and a carry-in to produce a 3-bit sum and carry out. To encourage you to actually instantiate full adders, also output the carry-out from each full adder in the ripple-carry adder. cout[2] is the final carry-out from the last full adder, and is the carry-out you usually see.
+<div class="language-verilog highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Verilog</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><span class="k">module</span><span class="w"> </span><span class="n">top_module</span><span class="p">(</span><span class="w"> </span>
+</span><span id="__span-3-2"><span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="p">[</span><span class="mh">2</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span>
+</span><span id="__span-3-3"><span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="n">cin</span><span class="p">,</span>
+</span><span id="__span-3-4"><span class="w">    </span><span class="k">output</span><span class="w"> </span><span class="p">[</span><span class="mh">2</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">cout</span><span class="p">,</span>
+</span><span id="__span-3-5"><span class="w">    </span><span class="k">output</span><span class="w"> </span><span class="p">[</span><span class="mh">2</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-3-6"><span class="w">    </span><span class="k">assign</span><span class="w"> </span><span class="n">sum</span><span class="p">[</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="n">b</span><span class="p">[</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="n">cin</span><span class="p">;</span>
+</span><span id="__span-3-7"><span class="w">    </span><span class="k">assign</span><span class="w"> </span><span class="n">cout</span><span class="p">[</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">b</span><span class="p">[</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">b</span><span class="p">[</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">cin</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">cin</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mh">0</span><span class="p">];</span>
+</span><span id="__span-3-8"><span class="w">    </span><span class="k">assign</span><span class="w"> </span><span class="n">sum</span><span class="p">[</span><span class="mh">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mh">1</span><span class="p">]</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="n">b</span><span class="p">[</span><span class="mh">1</span><span class="p">]</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="n">cout</span><span class="p">[</span><span class="mh">0</span><span class="p">];</span>
+</span><span id="__span-3-9"><span class="w">    </span><span class="k">assign</span><span class="w"> </span><span class="n">cout</span><span class="p">[</span><span class="mh">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mh">1</span><span class="p">]</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">b</span><span class="p">[</span><span class="mh">1</span><span class="p">]</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">b</span><span class="p">[</span><span class="mh">1</span><span class="p">]</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">cout</span><span class="p">[</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">cout</span><span class="p">[</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mh">1</span><span class="p">];</span>
+</span><span id="__span-3-10"><span class="w">    </span><span class="k">assign</span><span class="w"> </span><span class="n">sum</span><span class="p">[</span><span class="mh">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mh">2</span><span class="p">]</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="n">b</span><span class="p">[</span><span class="mh">2</span><span class="p">]</span><span class="w"> </span><span class="o">^</span><span class="w"> </span><span class="n">cout</span><span class="p">[</span><span class="mh">1</span><span class="p">];</span>
+</span><span id="__span-3-11"><span class="w">    </span><span class="k">assign</span><span class="w"> </span><span class="n">cout</span><span class="p">[</span><span class="mh">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mh">2</span><span class="p">]</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">b</span><span class="p">[</span><span class="mh">2</span><span class="p">]</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">b</span><span class="p">[</span><span class="mh">2</span><span class="p">]</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">cout</span><span class="p">[</span><span class="mh">1</span><span class="p">]</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">cout</span><span class="p">[</span><span class="mh">1</span><span class="p">]</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mh">2</span><span class="p">];</span>
+</span><span id="__span-3-12"><span class="k">endmodule</span>
 </span></code></pre></div></td></tr></table></div>
-<p>若输入123456，则a=1234，b=56</p>
-<div class="language-C highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><span class="c1">//若在%后有*说明符，则表示本次输入不传给任意值</span>
-</span><span id="__span-4-2"><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%2d%*3d%2d&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">a</span><span class="p">,</span><span class="o">&amp;</span><span class="n">b</span><span class="p">);</span>
+<div class="language-verilog highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Verilog</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><span class="k">module</span><span class="w"> </span><span class="n">top_module</span><span class="p">(</span><span class="w"> </span>
+</span><span id="__span-4-2"><span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="p">[</span><span class="mh">2</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span>
+</span><span id="__span-4-3"><span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="n">cin</span><span class="p">,</span>
+</span><span id="__span-4-4"><span class="w">    </span><span class="k">output</span><span class="w"> </span><span class="p">[</span><span class="mh">2</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">cout</span><span class="p">,</span>
+</span><span id="__span-4-5"><span class="w">    </span><span class="k">output</span><span class="w"> </span><span class="p">[</span><span class="mh">2</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-4-6"><span class="w">    </span><span class="n">fadd</span><span class="w"> </span><span class="n">U1</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mh">0</span><span class="p">],</span><span class="n">b</span><span class="p">[</span><span class="mh">0</span><span class="p">],</span><span class="n">cin</span><span class="p">,</span><span class="n">cout</span><span class="p">[</span><span class="mh">0</span><span class="p">],</span><span class="n">sum</span><span class="p">[</span><span class="mh">0</span><span class="p">]);</span>
+</span><span id="__span-4-7"><span class="w">    </span><span class="n">fadd</span><span class="w"> </span><span class="n">U2</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mh">1</span><span class="p">],</span><span class="n">b</span><span class="p">[</span><span class="mh">1</span><span class="p">],</span><span class="n">cout</span><span class="p">[</span><span class="mh">0</span><span class="p">],</span><span class="n">cout</span><span class="p">[</span><span class="mh">1</span><span class="p">],</span><span class="n">sum</span><span class="p">[</span><span class="mh">1</span><span class="p">]);</span>
+</span><span id="__span-4-8"><span class="w">    </span><span class="n">fadd</span><span class="w"> </span><span class="n">U3</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mh">2</span><span class="p">],</span><span class="n">b</span><span class="p">[</span><span class="mh">2</span><span class="p">],</span><span class="n">cout</span><span class="p">[</span><span class="mh">1</span><span class="p">],</span><span class="n">cout</span><span class="p">[</span><span class="mh">2</span><span class="p">],</span><span class="n">sum</span><span class="p">[</span><span class="mh">2</span><span class="p">]);</span>
+</span><span id="__span-4-9"><span class="k">endmodule</span>
+</span><span id="__span-4-10">
+</span><span id="__span-4-11"><span class="k">module</span><span class="w"> </span><span class="n">fadd</span><span class="p">(</span><span class="w"> </span>
+</span><span id="__span-4-12"><span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span><span class="w"> </span><span class="n">cin</span><span class="p">,</span>
+</span><span id="__span-4-13"><span class="w">    </span><span class="k">output</span><span class="w"> </span><span class="n">cout</span><span class="p">,</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-4-14"><span class="w">    </span><span class="k">assign</span><span class="w"> </span><span class="p">{</span><span class="n">cout</span><span class="p">,</span><span class="n">sum</span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">cin</span><span class="p">;</span>
+</span><span id="__span-4-15"><span class="k">endmodule</span>
+</span></code></pre></div></td></tr></table></div></p>
+<h2 id="examsm2014-q4j">Exams/m2014 q4j<a class="headerlink" href="#examsm2014-q4j" title="Permanent link">&para;</a></h2>
+<p>Implement the following circuit:
+<img alt="alt text" src="../image.png" />
+<div class="language-verilog highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Verilog</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><span class="k">module</span><span class="w"> </span><span class="n">top_module</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-5-2"><span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">x</span><span class="p">,</span>
+</span><span id="__span-5-3"><span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">y</span><span class="p">,</span>
+</span><span id="__span-5-4"><span class="w">    </span><span class="k">output</span><span class="w"> </span><span class="p">[</span><span class="mh">4</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">sum</span>
+</span><span id="__span-5-5"><span class="p">);</span>
+</span><span id="__span-5-6">
+</span><span id="__span-5-7"><span class="w">    </span><span class="c1">// This circuit is a 4-bit ripple-carry adder with carry-out.</span>
+</span><span id="__span-5-8"><span class="w">    </span><span class="k">assign</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">;</span><span class="w">   </span><span class="c1">// Verilog addition automatically produces the carry-out bit.</span>
+</span><span id="__span-5-9">
+</span><span id="__span-5-10"><span class="w">    </span><span class="c1">// Verilog quirk: Even though the value of (x+y) includes the carry-out, (x+y) is still considered to be a 4-bit number (The max width of the two operands).</span>
+</span><span id="__span-5-11"><span class="w">    </span><span class="c1">// This is correct:</span>
+</span><span id="__span-5-12"><span class="w">    </span><span class="k">assign</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">);</span>
+</span><span id="__span-5-13"><span class="w">    </span><span class="c1">// But this is incorrect:</span>
+</span><span id="__span-5-14"><span class="w">    </span><span class="k">assign</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">};</span><span class="w"> </span><span class="c1">// Concatenation operator: This discards the carry-out!</span>
+</span><span id="__span-5-15"><span class="k">endmodule</span>
+</span></code></pre></div></td></tr></table></div></p>
+<h2 id="overflow">Overflow<a class="headerlink" href="#overflow" title="Permanent link">&para;</a></h2>
+<p>Assume that you have two 8-bit 2's complement numbers, a[7:0] and b[7:0]. These numbers are added to produce s[7:0]. Also compute whether a (signed) overflow has occurred.</p>
+<p>Hint:
+<strong>A signed overflow occurs when adding two positive numbers produces a negative result, or adding two negative numbers produces a positive result.</strong> There are several methods to detect overflow: It could be computed by comparing the signs of the input and output numbers, or derived from the carry-out of bit n and n-1.</p>
+<div class="language-verilog highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Verilog</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><span class="k">module</span><span class="w"> </span><span class="n">top_module</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-6-2"><span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="p">[</span><span class="mh">7</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">a</span><span class="p">,</span>
+</span><span id="__span-6-3"><span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="p">[</span><span class="mh">7</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">b</span><span class="p">,</span>
+</span><span id="__span-6-4"><span class="w">    </span><span class="k">output</span><span class="w"> </span><span class="p">[</span><span class="mh">7</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">s</span><span class="p">,</span>
+</span><span id="__span-6-5"><span class="w">    </span><span class="k">output</span><span class="w"> </span><span class="n">overflow</span>
+</span><span id="__span-6-6"><span class="p">);</span><span class="w"> </span>
+</span><span id="__span-6-7"><span class="w">    </span><span class="k">assign</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+</span><span id="__span-6-8"><span class="w">    </span><span class="c1">// 溢出发生条件：两个操作数符号位相同，但结果符号位不同</span>
+</span><span id="__span-6-9"><span class="w">    </span><span class="k">assign</span><span class="w"> </span><span class="n">overflow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mh">7</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">b</span><span class="p">[</span><span class="mh">7</span><span class="p">])</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mh">7</span><span class="p">]</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mh">7</span><span class="p">]);</span>
+</span><span id="__span-6-10"><span class="k">endmodule</span>
 </span></code></pre></div></td></tr></table></div>
-<p>若输入1234567
-则a=12，b=67</p>
-<div class="language-C highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%.2f&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">a</span><span class="p">);</span>
+<h2 id="adder100">Adder100<a class="headerlink" href="#adder100" title="Permanent link">&para;</a></h2>
+<div class="language-verilog highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Verilog</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><span class="k">module</span><span class="w"> </span><span class="n">top_module</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-7-2"><span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="p">[</span><span class="mh">99</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">a</span><span class="p">,</span>
+</span><span id="__span-7-3"><span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="p">[</span><span class="mh">99</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">b</span><span class="p">,</span>
+</span><span id="__span-7-4"><span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="n">cin</span><span class="p">,</span>
+</span><span id="__span-7-5"><span class="w">    </span><span class="k">output</span><span class="w"> </span><span class="n">cout</span><span class="p">,</span>
+</span><span id="__span-7-6"><span class="w">    </span><span class="k">output</span><span class="w"> </span><span class="p">[</span><span class="mh">99</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">sum</span>
+</span><span id="__span-7-7"><span class="p">);</span>
+</span><span id="__span-7-8">
+</span><span id="__span-7-9"><span class="w">    </span><span class="c1">// The concatenation {cout, sum} is a 101-bit vector.</span>
+</span><span id="__span-7-10"><span class="w">    </span><span class="k">assign</span><span class="w"> </span><span class="p">{</span><span class="n">cout</span><span class="p">,</span><span class="w"> </span><span class="n">sum</span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">+</span><span class="n">cin</span><span class="p">;</span>
+</span><span id="__span-7-11">
+</span><span id="__span-7-12"><span class="k">endmodule</span>
 </span></code></pre></div></td></tr></table></div>
-<p>不合法</p>
-<div class="language-C highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%[^m]&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">a</span><span class="p">);</span>
-</span></code></pre></div></td></tr></table></div>
-<p>非常厉害，m是任意一个字符，一直读到m字符为止。</p>
-<h1 id="_1">本章做题分析<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>class不可以用作用户标识符，因为他是C++中的关键字</p>
-<p><div class="language-C highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><span class="n">scanf</span><span class="p">(</span><span class="s">&quot;a=%d,b=%d&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">a</span><span class="p">,</span><span class="o">&amp;</span><span class="n">b</span><span class="p">);</span>
-</span></code></pre></div></td></tr></table></div>
-这条语句是合法的</p>
-<p>include 不是C语言中的关键字</p>
-<div class="language-C highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1234</span><span class="p">;</span>
-</span><span id="__span-8-2"><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%2d&quot;</span><span class="p">,</span><span class="n">a</span><span class="p">);</span>
-</span></code></pre></div></td></tr></table></div>
-<p>此时输出的是1234，因为[[#^1]]</p>
-<div class="language-C highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">;</span>
-</span><span id="__span-9-2"><span class="n">a</span><span class="o">=</span><span class="n">b</span><span class="o">=</span><span class="n">c</span><span class="o">=</span><span class="mi">5</span><span class="p">;</span>
-</span></code></pre></div></td></tr></table></div>
-<p>这是合法的。而
-<div class="language-C highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="o">=</span><span class="n">b</span><span class="o">=</span><span class="n">c</span><span class="o">=</span><span class="mi">5</span><span class="p">;</span>
-</span></code></pre></div></td></tr></table></div>
-这是不合法的。</p>
 
 
 
@@ -1506,14 +1535,14 @@ D. true</p>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit", "content.code.annotate", "navigation.tracking"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit", "content.code.annotate", "navigation.tracking"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.ad660dcc.min.js"></script>
       
         <script src="https://cdn.tonycrane.cc/utils/katex.min.js"></script>
       
-        <script src="../../../js/katex.js"></script>
+        <script src="../../../../js/katex.js"></script>
       
     
   </body>
