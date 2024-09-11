@@ -5,7 +5,7 @@ repo_name: xiu
 site_author: 胥涵坤
 site_description: 胥涵坤的笔记本
 
-copyright: 'Copyright &copy 2024 xiu. Thanks to Tonycrane for his style.'
+copyright: 'Copyright &copy 2024 xiu.'
 
 theme:
   name: 'material'
@@ -91,7 +91,7 @@ extra:
       link:
     - name: 打赏支持
       icon: fontawesome/solid/mug-saucer
-      link: http://127.0.0.1:8000/xiu/Me/dashang/?h=%E4%BD%A0%E6%84%BF%E6%84%8F
+      link: http://xiu-zju.github.io/xiu/Me/dashang/?h=%E4%BD%A0%E6%84%BF%E6%84%8F
 
 plugins:
   - search:
@@ -191,7 +191,6 @@ extra_css:
 extra_javascript:
   # - https://gcore.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js
   - https://cdn.tonycrane.cc/utils/katex.min.js
-  - js/katex.js
   # - js/heti.js
   # - js/scheme.js # this is in template 'base.html'
 
@@ -227,3 +226,6 @@ nav:
   - 课程:
     - 大学物理实验:
       - 绪论: courses/dawushiyan/1/1.md
+    - 会计学:
+      - 成绩构成: courses/accounting/0.md
+      - 总论: courses/accounting/1.md
