@@ -224,3 +224,6 @@ nav:
   - 杂项:
     - 反序列化漏洞: misc/Bonus/1.md
     - reveal-md制作slides: misc/reveal.md
+  - 课程:
+    - 大学物理实验:
+      - 绪论: courses/dawushiyan/1/1.md
