@@ -12,28 +12,26 @@
         <meta name="author" content="胥涵坤">
       
       
-        <link rel="canonical" href="https://xiu-zju.github.io/xiu/courses/accounting/0/">
+        <link rel="canonical" href="https://xiu-zju.github.io/xiu/courses/ads/1/1/">
       
       
-        <link rel="prev" href="../../dawushiyan/1/1/">
+        <link rel="prev" href="../../../accounting/1/">
       
       
-        <link rel="next" href="../1/">
       
-      
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
     
     
       
-        <title>成绩构成 - xiu的笔记本</title>
+        <title>AVL, Splay, Amortized - xiu的笔记本</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.6543a935.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.6543a935.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
   
@@ -93,17 +91,17 @@
     
       <link rel="stylesheet" href="https://cdn.tonycrane.cc/lxgw/lxgwscreen.css">
     
-      <link rel="stylesheet" href="../../../css/tasklist.css">
+      <link rel="stylesheet" href="../../../../css/tasklist.css">
     
-      <link rel="stylesheet" href="../../../css/custom.css">
+      <link rel="stylesheet" href="../../../../css/custom.css">
     
-      <link rel="stylesheet" href="../../../css/card.css">
+      <link rel="stylesheet" href="../../../../css/card.css">
     
-      <link rel="stylesheet" href="../../../css/flink.css">
+      <link rel="stylesheet" href="../../../../css/flink.css">
     
-      <link rel="stylesheet" href="../../../css/changelog_extra.css">
+      <link rel="stylesheet" href="../../../../css/changelog_extra.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -139,7 +137,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#avl-trees" class="md-skip">
           跳转至
         </a>
       
@@ -153,7 +151,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../.." title="xiu的笔记本" class="md-header__button md-logo" aria-label="xiu的笔记本" data-md-component="logo">
+    <a href="../../../.." title="xiu的笔记本" class="md-header__button md-logo" aria-label="xiu的笔记本" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4h-2M3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3m2-2v2h2V5H5m0 14h2v-2H5v2m0-6h2v-2H5v2Z"/></svg>
@@ -173,7 +171,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              成绩构成
+              AVL, Splay, Amortized
             
           </span>
         </div>
@@ -290,7 +288,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../yuyan/Verilog/" class="md-tabs__link">
+        <a href="../../../../yuyan/Verilog/" class="md-tabs__link">
           
   
     
@@ -313,7 +311,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../misc/Bonus/1/" class="md-tabs__link">
+        <a href="../../../../misc/Bonus/1/" class="md-tabs__link">
           
   
     
@@ -343,7 +341,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../dawushiyan/1/1/" class="md-tabs__link">
+        <a href="../../../dawushiyan/1/1/" class="md-tabs__link">
           
   
     
@@ -381,7 +379,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="xiu的笔记本" class="md-nav__button md-logo" aria-label="xiu的笔记本" data-md-component="logo">
+    <a href="../../../.." title="xiu的笔记本" class="md-nav__button md-logo" aria-label="xiu的笔记本" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4h-2M3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7H3m2-2v2h2V5H5m0 14h2v-2H5v2m0-6h2v-2H5v2Z"/></svg>
@@ -480,7 +478,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../yuyan/Verilog/" class="md-nav__link ">
+            <a href="../../../../yuyan/Verilog/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -513,7 +511,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../yuyan/Verilog/1/" class="md-nav__link">
+      <a href="../../../../yuyan/Verilog/1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -624,7 +622,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../yuyan/Verilog/circuit/2/" class="md-nav__link">
+      <a href="../../../../yuyan/Verilog/circuit/2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -645,7 +643,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../yuyan/Verilog/circuit/3/" class="md-nav__link">
+      <a href="../../../../yuyan/Verilog/circuit/3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -666,7 +664,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../yuyan/Verilog/circuit/4/" class="md-nav__link">
+      <a href="../../../../yuyan/Verilog/circuit/4/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -737,7 +735,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../yuyan/Verilog/circuit/5/" class="md-nav__link">
+      <a href="../../../../yuyan/Verilog/circuit/5/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -821,7 +819,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../yuyan/C/" class="md-nav__link ">
+            <a href="../../../../yuyan/C/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -854,7 +852,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../yuyan/C/C%E8%AF%AD%E8%A8%80%E5%89%8D%E7%9E%BB/" class="md-nav__link">
+      <a href="../../../../yuyan/C/C%E8%AF%AD%E8%A8%80%E5%89%8D%E7%9E%BB/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -875,7 +873,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../yuyan/C/C%E8%AF%AD%E8%A8%80%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" class="md-nav__link">
+      <a href="../../../../yuyan/C/C%E8%AF%AD%E8%A8%80%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -896,7 +894,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../yuyan/C/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E3%80%81%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="md-nav__link">
+      <a href="../../../../yuyan/C/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E3%80%81%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -917,7 +915,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../yuyan/C/%E5%85%B3%E9%94%AE%E5%AD%97/" class="md-nav__link">
+      <a href="../../../../yuyan/C/%E5%85%B3%E9%94%AE%E5%AD%97/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -938,7 +936,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../yuyan/C/%E9%80%89%E6%8B%A9%E7%BB%93%E6%9E%84/" class="md-nav__link">
+      <a href="../../../../yuyan/C/%E9%80%89%E6%8B%A9%E7%BB%93%E6%9E%84/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -959,7 +957,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../yuyan/C/%E5%BE%AA%E7%8E%AF/" class="md-nav__link">
+      <a href="../../../../yuyan/C/%E5%BE%AA%E7%8E%AF/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -980,7 +978,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../yuyan/C/%E6%95%B0%E7%BB%84/" class="md-nav__link">
+      <a href="../../../../yuyan/C/%E6%95%B0%E7%BB%84/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1001,7 +999,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../yuyan/C/%E6%8C%87%E9%92%88/" class="md-nav__link">
+      <a href="../../../../yuyan/C/%E6%8C%87%E9%92%88/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1022,7 +1020,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../yuyan/C/%E6%96%87%E4%BB%B6/" class="md-nav__link">
+      <a href="../../../../yuyan/C/%E6%96%87%E4%BB%B6/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1102,7 +1100,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../misc/Bonus/1/" class="md-nav__link">
+      <a href="../../../../misc/Bonus/1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1123,7 +1121,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../misc/reveal/" class="md-nav__link">
+      <a href="../../../../misc/reveal/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1244,7 +1242,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../dawushiyan/1/1/" class="md-nav__link">
+      <a href="../../../dawushiyan/1/1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1270,10 +1268,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -1287,11 +1283,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
         
           
           <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
@@ -1305,7 +1301,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             会计学
@@ -1316,30 +1312,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    成绩构成
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../accounting/0/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1348,44 +1324,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      线上
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      线下
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1398,7 +1336,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1/" class="md-nav__link">
+      <a href="../../../accounting/1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1424,8 +1362,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -1437,11 +1377,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
@@ -1455,7 +1395,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
             高级数据结构与算法分析
@@ -1466,10 +1406,28 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../ads/1/1/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    AVL, Splay, Amortized
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1478,6 +1436,243 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#avl-trees" class="md-nav__link">
+    <span class="md-ellipsis">
+      AVL trees
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AVL trees">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      为什么选择平衡二叉树？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      性质
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      旋转 rotation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avl-trees_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      构造 AVL Trees
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="构造 AVL Trees">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rr-rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      RR-rotation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ll-rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      LL-rotation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lr-rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      LR-rotation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rl-rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      RL-rotation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      分析
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#splay-trees" class="md-nav__link">
+    <span class="md-ellipsis">
+      Splay Trees
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Splay Trees">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      置顶操作
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="置顶操作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zig" class="md-nav__link">
+    <span class="md-ellipsis">
+      zig
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zig-zig" class="md-nav__link">
+    <span class="md-ellipsis">
+      zig-zig
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zig-zag" class="md-nav__link">
+    <span class="md-ellipsis">
+      zig-zag
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      删除操作
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#amortized-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Amortized Analysis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Amortized Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      引入
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aggregate-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      聚合分析 Aggregate analysis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accounting-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      记账分析 Accounting method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#potential-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      势能分析 Potential method
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1515,8 +1710,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1525,20 +1718,221 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#avl-trees" class="md-nav__link">
     <span class="md-ellipsis">
-      线上
+      AVL trees
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AVL trees">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      为什么选择平衡二叉树？
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      线下
+      性质
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      旋转 rotation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avl-trees_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      构造 AVL Trees
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="构造 AVL Trees">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rr-rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      RR-rotation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ll-rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      LL-rotation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lr-rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      LR-rotation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rl-rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      RL-rotation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      分析
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#splay-trees" class="md-nav__link">
+    <span class="md-ellipsis">
+      Splay Trees
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Splay Trees">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      置顶操作
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="置顶操作">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#zig" class="md-nav__link">
+    <span class="md-ellipsis">
+      zig
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zig-zig" class="md-nav__link">
+    <span class="md-ellipsis">
+      zig-zig
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zig-zag" class="md-nav__link">
+    <span class="md-ellipsis">
+      zig-zag
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      删除操作
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#amortized-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Amortized Analysis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Amortized Analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      引入
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aggregate-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      聚合分析 Aggregate analysis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accounting-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      记账分析 Accounting method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#potential-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      势能分析 Potential method
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1557,7 +1951,7 @@
                   
 
   
-    <a href="https://github.com/xiu-zju/xiu/edit/master/docs/courses/accounting/0.md" title="编辑此页" class="md-content__button md-icon">
+    <a href="https://github.com/xiu-zju/xiu/edit/master/docs/courses/ads/1/1.md" title="编辑此页" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -1565,16 +1959,94 @@
   
 
 
-<h1 id="_1">成绩构成<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 id="_2">线上<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+  <h1>AVL, Splay, Amortized</h1>
+
+<h2 id="avl-trees">AVL trees<a class="headerlink" href="#avl-trees" title="Permanent link">&para;</a></h2>
+<p>AVL 树，是一种平衡的二叉搜索树。</p>
+<h3 id="_1">为什么选择平衡二叉树？<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>Average search time是搜索每个节点花费时间的平均。</p>
+<p>Average search time =  3.5</p>
+<p><img src="../image.png" alt="description" width="500"/></p>
+<p>Average search time =  3.1</p>
+<p><img src="../image-1.png" alt="description" width="600"/></p>
+<h3 id="_2">性质<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <ol>
-<li>单元测试 + 课程测试 + 作业 30%</li>
+<li>空二叉树是一个 AVL 树</li>
+<li>如果 T 是一棵 AVL 树，那么其左右子树也是 AVL 树，并且 <span class="arithmatex"><span class="MathJax_Preview">|h(ls) - h(rs)| &lt; 1</span><script type="math/tex">|h(ls) - h(rs)| < 1</script></span>，h 是其左右子树的高度</li>
+<li>树高为 <span class="arithmatex"><span class="MathJax_Preview">O(log n)</span><script type="math/tex">O(log n)</script></span></li>
 </ol>
-<h2 id="_3">线下<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p><strong>Definition</strong></p>
+<p>The balance factor BF( node ) = hL - hR .  In an AVL tree, BF( node ) = -1, 0, 1.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>错误示范：
+<img src="../image-2.png" alt="description" width="200"/>
+正确示范：
+<img src="../image-3.png" alt="description" width="170"/></p>
+</div>
+<h3 id="rotation">旋转 rotation<a class="headerlink" href="#rotation" title="Permanent link">&para;</a></h3>
+<p><img src="../image-4.png" alt="description" width="800"/>
+旋转的简要操作：</p>
 <ol>
-<li>课堂表现 10% （考勤、课堂提问与讨论）</li>
-<li>期末考试 60% （单选、判断、业务处理、计算分析题）</li>
+<li>左旋就向左旋，右旋就向右旋</li>
+<li>左旋：原非根节点的左子树掉到原根节点的右子树；右旋：原非根节点的右子树掉到原根节点的左子树</li>
 </ol>
+<h3 id="avl-trees_1">构造 AVL Trees<a class="headerlink" href="#avl-trees_1" title="Permanent link">&para;</a></h3>
+<h4 id="rr-rotation">RR-rotation<a class="headerlink" href="#rr-rotation" title="Permanent link">&para;</a></h4>
+<p><img alt="alt text" src="../CleanShot%202024-09-12%20at%2014.15.28%402x.png" />
+对于发现错误的节点(finder)来说，它发现错误是在它的右节点的右子树上面的节点引发的，所以准备进行RR-rotation。</p>
+<p>这时候只需要以finder进行一次右旋即可。</p>
+<p><img alt="alt text" src="../CleanShot%202024-09-12%20at%2014.20.36%402x.png" /></p>
+<h4 id="ll-rotation">LL-rotation<a class="headerlink" href="#ll-rotation" title="Permanent link">&para;</a></h4>
+<p>同上RR-rotation，改成左。</p>
+<h4 id="lr-rotation">LR-rotation<a class="headerlink" href="#lr-rotation" title="Permanent link">&para;</a></h4>
+<p><img alt="alt text" src="../CleanShot%202024-09-12%20at%2014.24.08%402x.png" /></p>
+<p>finder发现引发错误的来源是左节点的右子树上的节点引发的。此时的做法是：</p>
+<ol>
+<li>finder<strong>的左节点</strong>左旋</li>
+<li>finder右旋</li>
+</ol>
+<p><img alt="alt text" src="../CleanShot%202024-09-12%20at%2014.27.50%402x.png" /></p>
+<h4 id="rl-rotation">RL-rotation<a class="headerlink" href="#rl-rotation" title="Permanent link">&para;</a></h4>
+<p>同上LR-rotation，改下左右。
+<img alt="alt text" src="../CleanShot%202024-09-12%20at%2014.28.36%402x.png" />
+<img alt="alt text" src="../CleanShot%202024-09-12%20at%2014.29.24%402x.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>增加一个节点会导致<strong>插入节点一路向上到根节点</strong>的BF值改变。</p>
+<p>增加一个节点不一定会出现问题。</p>
+<p>出现问题只需解决最低的finder，它上面的finder会随着改变自动变合法。</p>
+</div>
+<h3 id="_3">分析<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p><img alt="alt text" src="../CleanShot%202024-09-12%20at%2014.38.33%402x.png" />
+既然说不要求掌握，那就这样吧（逃</p>
+<h2 id="splay-trees">Splay Trees<a class="headerlink" href="#splay-trees" title="Permanent link">&para;</a></h2>
+<p><strong>Splay 树</strong>, 或 <strong>伸展树</strong>，是一种平衡二叉查找树，它通过 <strong>Splay/伸展操作</strong> 不断将某个节点旋转到根节点，使得整棵树仍然满足二叉查找树的性质，能够在均摊 <span class="arithmatex"><span class="MathJax_Preview">O(log N)</span><script type="math/tex">O(log N)</script></span> 时间内完成插入，查找和删除操作，并且保持平衡而不至于退化为链。</p>
+<h3 id="_4">置顶操作<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p><img alt="alt text" src="../CleanShot%202024-09-12%20at%2014.51.23%402x.png" /></p>
+<h4 id="zig">zig<a class="headerlink" href="#zig" title="Permanent link">&para;</a></h4>
+<p>直接转X和P，将X变为根</p>
+<h4 id="zig-zig">zig-zig<a class="headerlink" href="#zig-zig" title="Permanent link">&para;</a></h4>
+<p>先转G-P，再转P-X，将X变为根</p>
+<h4 id="zig-zag">zig-zag<a class="headerlink" href="#zig-zag" title="Permanent link">&para;</a></h4>
+<p>视情况将X变为根。</p>
+<h3 id="_5">删除操作<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p><img alt="alt text" src="../CleanShot%202024-09-12%20at%2015.05.01%402x.png" />
+找到要删除的节点时，splay树已经将其变成根了。删除根，留下左右两个子树。接下来找左子树的最大值，此时左子树的最大值变成了根。根据binary search tree，左子树的最大值没有右节点。最后只需将右子树接过去就好了。</p>
+<h2 id="amortized-analysis">Amortized Analysis<a class="headerlink" href="#amortized-analysis" title="Permanent link">&para;</a></h2>
+<h3 id="_6">引入<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>均摊分析（Amortized Analysis）是一种用于分析算法和动态数据结构性能的技术。它不仅仅关注单次操作的成本，还通过评估一系列操作的平均成本，为整体性能提供更加准确的评估。均摊分析<strong>不涉及概率</strong>，且只能确保最坏情况性能的每次操作耗费的平均时间，并不能确认系统的平均性能。在最坏情况下，均摊分析通过将高成本操作的开销分摊到低成本操作上，确保整体操作的平均成本保持在合理范围内。</p>
+<p><img alt="alt text" src="../CleanShot%202024-09-12%20at%2015.30.34%402x.png" /></p>
+<p>均摊分析通常采用三种主要分析方法：聚合分析、记账分析和势能分析。这些方法各有侧重，分别适用于不同的场景，但它们的共同目标是通过均衡操作成本，优化数据结构在最坏情况下的整体性能表现。</p>
+<p>以下三种分析均用栈来分析(Pop, Push, Multipop)：</p>
+<h3 id="aggregate-analysis">聚合分析 Aggregate analysis<a class="headerlink" href="#aggregate-analysis" title="Permanent link">&para;</a></h3>
+<p>证明对所有的n，由n个操作所构成的序列的总时间在最坏情况下为T(n)，每一个操作的平均成本为T(n)/n；</p>
+<h3 id="accounting-method">记账分析 Accounting method<a class="headerlink" href="#accounting-method" title="Permanent link">&para;</a></h3>
+<p>在平摊分析的记帐方法中，决定每一个操作的均摊成本，对不同的操作赋予不同的费用，某些操作的费用比它们的实际代价或多或少。我们对一个操作的收费的数量称为平摊代价。当一个操作的平摊代价超过了它的实际代价时，两者的差值就被当作存款(credit)，并赋予数据结构中的一些特定对象，可以用来补偿那些平摊代价低于其实际代价的操作。这种方法与聚集分析不同的是，对后者，所有操作都具有相同的平摊代价。数据结构中存储的总存款等于总的平摊代价和总的实际代价之差。</p>
+<h3 id="potential-method">势能分析 Potential method<a class="headerlink" href="#potential-method" title="Permanent link">&para;</a></h3>
+<p>在平摊分析中，势能方法（potential  method）不是将已预付的工作作为存在数据结构特定对象中存款来表示，而是将存款总体上表示成一种“势能”或“势”，它在需要时可以释放出来，以支付后面的操作。势是与整个数据结构而不是其中的个别对象发生联系的。</p>
+<p><img alt="alt text" src="../CleanShot%202024-09-12%20at%2016.37.58%402x-2.png" />
+<img alt="alt text" src="../CleanShot%202024-09-12%20at%2016.38.40%402x-1.png" /></p>
 
 
 
@@ -1697,10 +2169,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit", "content.code.annotate", "navigation.tracking"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit", "content.code.annotate", "navigation.tracking"], "search": "../../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.ad660dcc.min.js"></script>
       
         <script src="https://cdn.tonycrane.cc/utils/katex.min.js"></script>
       
