@@ -140,12 +140,10 @@ markdown_extensions:
       custom_checkbox: true
   - pymdownx.highlight:
       anchor_linenums: true
-  - pymdownx.arithmatex:
-      generic: true
   # [数学公式支持]
   # https://squidfunk.github.io/mkdocs-material/reference/math/#katex
   - pymdownx.arithmatex:
-      generic: true
+      generic: false
   # [图片功能支持]
   # https://squidfunk.github.io/mkdocs-material/reference/images/
   # 给 Markdown 图片语法后面添加 `{width="300"}` 设置大小
@@ -229,3 +227,5 @@ nav:
     - 会计学:
       - 成绩构成: courses/accounting/0.md
       - 总论: courses/accounting/1.md
+    - 高级数据结构与算法分析:
+      - AVL, Splay, Amortized: courses/ads/1/1.md
