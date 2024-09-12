@@ -2019,7 +2019,7 @@
 </div>
 <h3 id="_3">分析<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p><img alt="alt text" src="../CleanShot%202024-09-12%20at%2014.38.33%402x.png" />
-既然说不要求掌握，那就这样吧（逃</p>
+对于计算有很大用。</p>
 <h2 id="splay-trees">Splay Trees<a class="headerlink" href="#splay-trees" title="Permanent link">&para;</a></h2>
 <p><strong>Splay 树</strong>, 或 <strong>伸展树</strong>，是一种平衡二叉查找树，它通过 <strong>Splay/伸展操作</strong> 不断将某个节点旋转到根节点，使得整棵树仍然满足二叉查找树的性质，能够在均摊 <span class="arithmatex"><span class="MathJax_Preview">O(log N)</span><script type="math/tex">O(log N)</script></span> 时间内完成插入，查找和删除操作，并且保持平衡而不至于退化为链。</p>
 <h3 id="_4">置顶操作<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
@@ -2027,9 +2027,9 @@
 <h4 id="zig">zig<a class="headerlink" href="#zig" title="Permanent link">&para;</a></h4>
 <p>直接转X和P，将X变为根</p>
 <h4 id="zig-zig">zig-zig<a class="headerlink" href="#zig-zig" title="Permanent link">&para;</a></h4>
-<p>先转G-P，再转P-X，将X变为根</p>
+<p>先转上，再转下，将X变为根</p>
 <h4 id="zig-zag">zig-zag<a class="headerlink" href="#zig-zag" title="Permanent link">&para;</a></h4>
-<p>视情况将X变为根。</p>
+<p>先转下，再转上，将X变为根。</p>
 <h3 id="_5">删除操作<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p><img alt="alt text" src="../CleanShot%202024-09-12%20at%2015.05.01%402x.png" />
 找到要删除的节点时，splay树已经将其变成根了。删除根，留下左右两个子树。接下来找左子树的最大值，此时左子树的最大值变成了根。根据binary search tree，左子树的最大值没有右节点。最后只需将右子树接过去就好了。</p>
