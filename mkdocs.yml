@@ -104,6 +104,7 @@ plugins:
   # https://squidfunk.github.io/mkdocs-material/plugins/tags/#meta.tags
   - tags
   - encryptcontent: # now just for one page, need to be improved
+      password: !ENV ${MY_SECRET_PASSWORD}
       title_prefix: "🔒 "
       remember_password: True
       summary: '这段内容已经被加密保护。'
@@ -218,6 +219,9 @@ nav:
       - 5 数组: yuyan/C/数组.md
       - 8 指针: yuyan/C/指针.md
       - 10 文件: yuyan/C/文件.md
+    - HTML: 
+      - 排版标签: yuyan/qianduan/1/1.md
+      - 字体标签和超链接: yuyan/qianduan/1/2.md
   - 杂项:
     - 反序列化漏洞: misc/Bonus/1.md
     - reveal-md制作slides: misc/reveal.md
