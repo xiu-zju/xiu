@@ -231,5 +231,6 @@ nav:
     - 会计学:
       - 成绩构成: courses/accounting/0.md
       - 总论: courses/accounting/1.md
+      - 第一章: courses/accounting/2.md
     - 高级数据结构与算法分析:
       - AVL, Splay, Amortized: courses/ads/1/1.md
