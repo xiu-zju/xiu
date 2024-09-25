@@ -15,6 +15,8 @@
         <link rel="canonical" href="https://xiu-zju.github.io/xiu/courses/ads/2/2/">
       
       
+        <link rel="prev" href="../../1/1/">
+      
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
@@ -22,7 +24,7 @@
     
     
       
-        <title>2 - xiu的笔记本</title>
+        <title>RB Trees, B+ Tree - xiu的笔记本</title>
       
     
     
@@ -135,7 +137,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#b" class="md-skip">
           跳转至
         </a>
       
@@ -169,7 +171,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              2
+              RB Trees, B+ Tree
             
           </span>
         </div>
@@ -325,16 +327,20 @@
         
   
   
+    
+  
   
     
     
       
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../../../dawushiyan/1/1/" class="md-tabs__link">
           
   
@@ -1236,8 +1242,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -1250,17 +1258,20 @@
     
     
       
+        
+        
+      
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -1271,7 +1282,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             课程
@@ -1470,10 +1481,14 @@
                 
   
   
+    
   
   
+  
     
     
+      
+        
       
         
       
@@ -1483,11 +1498,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
@@ -1501,7 +1516,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
             高级数据结构与算法分析
@@ -1524,6 +1539,175 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    RB Trees, B+ Tree
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    RB Trees, B+ Tree
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      红黑树
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="红黑树">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      性质
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      插入
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="插入">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#root" class="md-nav__link">
+    <span class="md-ellipsis">
+      插入节点是root
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#u" class="md-nav__link">
+    <span class="md-ellipsis">
+      U是红色
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#u_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      U是黑色
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      删除
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="删除">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#case-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Case 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#case-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Case 2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#case-x" class="md-nav__link">
+    <span class="md-ellipsis">
+      Case X
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1561,6 +1745,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1584,6 +1770,90 @@
       性质
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      插入
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="插入">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#root" class="md-nav__link">
+    <span class="md-ellipsis">
+      插入节点是root
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#u" class="md-nav__link">
+    <span class="md-ellipsis">
+      U是红色
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#u_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      U是黑色
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      删除
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="删除">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#case-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Case 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#case-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Case 2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#case-x" class="md-nav__link">
+    <span class="md-ellipsis">
+      Case X
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1615,12 +1885,11 @@
   
 
 
-  <h1>2</h1>
-
+<h1 id="b">红黑树, B+树<a class="headerlink" href="#b" title="Permanent link">&para;</a></h1>
 <h2 id="_1">红黑树<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>红黑树是一种<strong>自平衡</strong>的<strong>二叉搜索树</strong>。每个节点额外存储了一个 color 字段 ("RED" or "BLACK")，用于确保树在插入和删除时保持平衡。</p>
 <h3 id="_2">性质<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>一棵合法的红黑树必须遵循以下四（五？条性质：</p>
+<p>一棵合法的红黑树必须遵循以下五条性质：</p>
 <ol>
 <li>节点为红色或黑色</li>
 <li>NIL 节点（空叶子节点）为黑色</li>
@@ -1630,10 +1899,51 @@
 </ol>
 <p>下图为一棵合法的红黑树：</p>
 <p><img alt="alt text" src="../image.png" /></p>
-<p><img alt="alt text" src="../CleanShot%202024-09-14%20at%2016.51.56%402x.png" />
-<img alt="alt text" src="../CleanShot%202024-09-14%20at%2016.51.41%402x.png" />
-<img alt="alt text" src="../CleanShot%202024-09-14%20at%2016.55.15%402x.png" />
-插入的节点默认是红色的。</p>
+<p>插入的节点默认是红色的。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>这不是一个合法的红黑树。  <br />
+<img src="../2.png" alt="description" width="300"/> <img src="../1.png" alt="description" width="300"/>  </p>
+</div>
+<h3 id="_3">插入<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>插入节点默认是<strong>红色</strong>，这样只可能违反根叶黑或不红红性质。</p>
+<h4 id="root">插入节点是root<a class="headerlink" href="#root" title="Permanent link">&para;</a></h4>
+<p>直接变黑。</p>
+<h4 id="u">U是红色<a class="headerlink" href="#u" title="Permanent link">&para;</a></h4>
+<p>G变红，U和P变黑，然后将G变为X继续检查。</p>
+<h4 id="u_1">U是黑色<a class="headerlink" href="#u_1" title="Permanent link">&para;</a></h4>
+<p>LL,RR,LR,RL-rotation, then change the color.
+<img alt="alt text" src="../CleanShot%202024-09-22%20at%2021.33.18%402x.png" /></p>
+<h3 id="_4">删除<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>红黑树的删除是一个十分繁琐的过程。</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>接下来说的孩子不包括空节点!</p>
+</div>
+<h4 id="case-1">Case 1<a class="headerlink" href="#case-1" title="Permanent link">&para;</a></h4>
+<p>没有孩子。<br />
+- 红色孩子：直接删除
+- 黑色孩子：最复杂，放到最后讲</p>
+<h4 id="case-2">Case 2<a class="headerlink" href="#case-2" title="Permanent link">&para;</a></h4>
+<p>只有左子树/只有右子树。 
+根据红黑树的性质，这种情况一定是一黑一红。
+<strong>操作：</strong></p>
+<ol>
+<li>直接用下面的节点替换掉上面的节点</li>
+<li>将替换后的节点变成黑色</li>
+</ol>
+<h4 id="case-x">Case X<a class="headerlink" href="#case-x" title="Permanent link">&para;</a></h4>
+<p><img alt="alt text" src="../CleanShot%202024-09-22%20at%2022.08.52%402x.png" />
+<img alt="alt text" src="../CleanShot%202024-09-22%20at%2022.11.12%402x.png" />
+<img alt="alt text" src="../CleanShot%202024-09-22%20at%2022.17.38%402x.png" />
+<img alt="alt text" src="../CleanShot%202024-09-22%20at%2022.18.22%402x.png" />
+<img alt="alt text" src="../CleanShot%202024-09-22%20at%2022.21.47%402x.png" />
+<img alt="alt text" src="../CleanShot%202024-09-22%20at%2022.23.10%402x.png" />
+<img alt="alt text" src="../CleanShot%202024-09-22%20at%2022.23.34%402x.png" />
+<img alt="alt text" src="../CleanShot%202024-09-22%20at%2022.24.14%402x.png" />
+<img alt="alt text" src="../CleanShot%202024-09-22%20at%2022.25.03%402x.png" />
+<img alt="alt text" src="../CleanShot%202024-09-22%20at%2022.26.18%402x.png" />
+<img alt="alt text" src="../CleanShot%202024-09-22%20at%2022.27.44%402x.png" /></p>
 
 
 
