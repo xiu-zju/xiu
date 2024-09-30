@@ -226,8 +226,6 @@ nav:
     - 反序列化漏洞: misc/Bonus/1.md
     - reveal-md制作slides: misc/reveal.md
   - 课程:
-    - 大学物理实验:
-      - 绪论: courses/dawushiyan/1/1.md
     - 会计学:
       - 成绩构成: courses/accounting/0.md
       - 总论: courses/accounting/1.md
@@ -235,3 +233,8 @@ nav:
     - 高级数据结构与算法分析:
       - AVL, Splay, Amortized: courses/ads/1/1.md
       - RB Trees, B+ Tree: courses/ads/2/2.md
+    - 计算机组成:
+      - Chapter 1: courses/jz/1/1.md
+      - Chapter 2: courses/jz/2/2.md
+    - 大学物理实验:
+      - 绪论: courses/dawushiyan/1/1.md
