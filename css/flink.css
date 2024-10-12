@@ -42,10 +42,16 @@
   font-size: 0.93em;
 }
 .flink-list-item:hover {
-  background-color: rgba(68,138,255,.1);
+  background-color: rgba(251, 158, 225, 0.1);
 }
 .flink-list-item {
   width: calc(50% - 15px) !important;
+}
+.flink-list-item:hover {
+  background-color: rgba(155, 240, 162, 0.2);
+  /* 新增缩放和阴影效果 */
+  transform: scale(1.05);
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.12), 0 0 6px 0 rgba(0, 0, 0, 0.04);
 }
 
 @media screen and (max-width: 1310px) {
