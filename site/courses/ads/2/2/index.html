@@ -18,7 +18,7 @@
         <link rel="prev" href="../../1/1/">
       
       
-        <link rel="next" href="../../../jz/1/1/">
+        <link rel="next" href="../../3/3/">
       
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>RB Trees, B+ Tree - xiu的笔记本</title>
+        <title>Red-Black Trees & B+ Tree - xiu的笔记本</title>
       
     
     
@@ -173,7 +173,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              RB Trees, B+ Tree
+              Red-Black Trees & B+ Tree
             
           </span>
         </div>
@@ -1488,6 +1488,10 @@
       
         
       
+        
+      
+        
+      
     
     
       
@@ -1530,7 +1534,7 @@
         
   
   <span class="md-ellipsis">
-    AVL, Splay, Amortized
+    AVL Trees, Splay Trees & Amortized
   </span>
   
 
@@ -1560,7 +1564,7 @@
           
   
   <span class="md-ellipsis">
-    RB Trees, B+ Tree
+    Red-Black Trees & B+ Tree
   </span>
   
 
@@ -1571,7 +1575,7 @@
         
   
   <span class="md-ellipsis">
-    RB Trees, B+ Tree
+    Red-Black Trees & B+ Tree
   </span>
   
 
@@ -1728,6 +1732,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      删除操作
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1737,6 +1750,48 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Invert File Index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Leftist Heap & Skew Heap
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -2104,6 +2159,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      删除操作
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2145,12 +2209,12 @@
 <li>根节点必须为黑色（？</li>
 </ol>
 <p>下图为一棵合法的红黑树：</p>
-<p><img alt="alt text" src="../image.png" /></p>
+<p><img alt="alt text" src="../image/image.png" /></p>
 <p>插入的节点默认是红色的。</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>这不是一个合法的红黑树。  <br />
-<img src="../2.png" alt="description" width="300"/> <img src="../1.png" alt="description" width="300"/>  </p>
+<img src="../image/2.png" alt="description" width="300"/> <img src="../image/1.png" alt="description" width="300"/>  </p>
 </div>
 <h3 id="_3">插入<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>插入节点默认是<strong>红色</strong>，这样只可能违反根叶黑或不红红性质。</p>
@@ -2160,7 +2224,7 @@
 <p>G变红，U和P变黑，然后将G变为X继续检查。</p>
 <h4 id="u_1">U是黑色<a class="headerlink" href="#u_1" title="Permanent link">&para;</a></h4>
 <p>LL,RR,LR,RL-rotation, then change the color.（向上递归）</p>
-<p><img alt="alt text" src="../CleanShot%202024-09-22%20at%2021.33.18%402x.png" /></p>
+<p><img alt="alt text" src="../image/CleanShot%202024-09-22%20at%2021.33.18%402x.png" /></p>
 <h3 id="_4">删除<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>红黑树的删除是一个十分繁琐的过程。</p>
 <div class="admonition warning">
@@ -2180,21 +2244,63 @@
 <li>将替换后的节点变成黑色</li>
 </ol>
 <h4 id="case-x">Case X<a class="headerlink" href="#case-x" title="Permanent link">&para;</a></h4>
-<p><img alt="alt text" src="../CleanShot%202024-09-22%20at%2022.08.52%402x.png" />
-<img alt="alt text" src="../CleanShot%202024-09-22%20at%2022.11.12%402x.png" />
-<img alt="alt text" src="../CleanShot%202024-09-22%20at%2022.17.38%402x.png" />
-<img alt="alt text" src="../CleanShot%202024-09-22%20at%2022.18.22%402x.png" />
-<img alt="alt text" src="../CleanShot%202024-09-22%20at%2022.21.47%402x.png" />
-<img alt="alt text" src="../CleanShot%202024-09-22%20at%2022.23.10%402x.png" />
-<img alt="alt text" src="../CleanShot%202024-09-22%20at%2022.23.34%402x.png" />
-<img alt="alt text" src="../CleanShot%202024-09-22%20at%2022.24.14%402x.png" />
-<img alt="alt text" src="../CleanShot%202024-09-22%20at%2022.25.03%402x.png" />
-<img alt="alt text" src="../CleanShot%202024-09-22%20at%2022.26.18%402x.png" />
-<img alt="alt text" src="../CleanShot%202024-09-22%20at%2022.27.44%402x.png" /></p>
+<p><img alt="alt text" src="../image/CleanShot%202024-09-22%20at%2022.08.52%402x.png" />
+<img alt="alt text" src="../image/CleanShot%202024-09-22%20at%2022.11.12%402x.png" />
+<img alt="alt text" src="../image/CleanShot%202024-09-22%20at%2022.17.38%402x.png" />
+<img alt="alt text" src="../image/CleanShot%202024-09-22%20at%2022.18.22%402x.png" />
+<img alt="alt text" src="../image/CleanShot%202024-09-22%20at%2022.21.47%402x.png" />
+<img alt="alt text" src="../image/CleanShot%202024-09-22%20at%2022.23.10%402x.png" />
+<img alt="alt text" src="../image/CleanShot%202024-09-22%20at%2022.23.34%402x.png" />
+<img alt="alt text" src="../image/CleanShot%202024-09-22%20at%2022.24.14%402x.png" />
+<img alt="alt text" src="../image/CleanShot%202024-09-22%20at%2022.25.03%402x.png" />
+<img alt="alt text" src="../image/CleanShot%202024-09-22%20at%2022.26.18%402x.png" />
+<img alt="alt text" src="../image/CleanShot%202024-09-22%20at%2022.27.44%402x.png" /></p>
 <h2 id="b_1">B+树<a class="headerlink" href="#b_1" title="Permanent link">&para;</a></h2>
 <h3 id="_5">定义与性质<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p><img alt="alt text" src="../CleanShot%202024-09-27%20at%2021.32.25%402x.png" /></p>
+<p><img alt="alt text" src="../image/CleanShot%202024-09-27%20at%2021.32.25%402x.png" />
+<strong>一个 Order M 的 B+ 树定义如下：</strong></p>
+<ul>
+<li>根节点要么是叶节点，要么有 2 到 <span class="arithmatex"><span class="MathJax_Preview">M</span><script type="math/tex">M</script></span> 个子节点</li>
+<li>所有除了根节点的非叶节点都有 <span class="arithmatex"><span class="MathJax_Preview">\lceil \frac{M}{2} \rceil</span><script type="math/tex">\lceil \frac{M}{2} \rceil</script></span> 到 <span class="arithmatex"><span class="MathJax_Preview">M</span><script type="math/tex">M</script></span> 个子节点</li>
+<li>所有叶节点深度相同</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>实际上，所有数据都存储在叶节点里</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<ul>
+<li>A 2-3 tree with 3 nonleaf nodes must have 18 keys at most. <strong>(T)</strong></li>
+</ul>
+<details>
+<summary>解释</summary>
+<p>一个非叶节点为根节点，其余两个节点最多有 2*3=6 个叶节点孩子；一个叶子存放 3 个 key，一共 18 个</p>
+</details>
+</div>
 <h3 id="_6">插入操作<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p><img alt="alt text" src="../image/234TreeInsert.png" /></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>对于叶子节点，最多可以存 M 个 Key；对于内节点，最多可以存 M-1 个 Key</p>
+</div>
+<p>以2-3树为例子，插入操作如下：</p>
+<ol>
+<li>与内部节点所存键值比较，找到合适叶节点插入。</li>
+<li>如果插入后该节点键数不超过3，则插入结束。</li>
+<li>若超过3个节点（也就是4个节点），按照大小分成两个节点，父节点增加一个值。若父节点增加后不超过2，则插入结束。</li>
+<li>若父节点超过了2个值（3个值），将该节点分为两个节点，左节点继承key[0], 右节点继承key[2], key[1]作为新的键值传给父节点，递归。</li>
+</ol>
+<h3 id="_7">删除操作<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<ol>
+<li>删除后若无异常，结束。</li>
+<li>若低于m/2，则考虑<ol>
+<li>借旁边节点的</li>
+<li>若不能借（借了低于m/2），则合并</li>
+</ol>
+</li>
+<li>递归向上</li>
+</ol>
 
 
 
