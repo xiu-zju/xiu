@@ -1748,8 +1748,86 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#deletemin" class="md-nav__link">
+    <span class="md-ellipsis">
+      DeleteMin
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decrease-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      Decrease Key
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#amortized-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Amortized analysis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Amortized analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#potential-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Potential method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accounting-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accounting method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aggregate-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aggregate analysis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      各类堆的操作复杂度
+    </span>
+  </a>
   
 </li>
       
@@ -2025,8 +2103,86 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#deletemin" class="md-nav__link">
+    <span class="md-ellipsis">
+      DeleteMin
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decrease-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      Decrease Key
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#amortized-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Amortized analysis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Amortized analysis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#potential-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Potential method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accounting-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accounting method
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aggregate-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aggregate analysis
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      各类堆的操作复杂度
+    </span>
+  </a>
   
 </li>
       
@@ -2064,7 +2220,10 @@ A binomial tree, Bk, of height k is formed by attaching a binomial tree, Bk–1,
 <p><img alt="alt text" src="../image/CleanShot%202024-10-15%20at%2010.22.25%402x.png" /></p>
 <div class="admonition note">
 <p class="admonition-title">性质</p>
-<p>Bk consists of a root with <strong>k</strong> children, which are <strong>B0, B1, B2, ... , Bk-1</strong>. Bk has exactly <strong>2^k</strong> nodes. The number of nodes at depth d is <strong>C k d</strong>.</p>
+<p>Bk consists of a root with <strong>k</strong> children, which are <strong>B0, B1, B2, ... , Bk-1</strong>. Bk has exactly <strong><span class="arithmatex">\(2^k\)</span></strong> nodes. The number of nodes at depth d is 
+$
+\binom{k}{d}
+$.</p>
 </div>
 <p>A priority queue of any size can be uniquely represented by a collection of binomial trees. 因为每个数都可以转换成唯一的二进制数。</p>
 <p><img alt="alt text" src="../image/CleanShot%202024-10-15%20at%2010.40.05%402x.png" /></p>
@@ -2089,6 +2248,276 @@ L = \lfloor \log_2{N} \rfloor + 1
 \]</div>
 <p>其中 <span class="arithmatex">\( \lfloor x \rfloor \)</span> 表示向下取整。</p>
 </div>
+<h3 id="deletemin">DeleteMin<a class="headerlink" href="#deletemin" title="Permanent link">&para;</a></h3>
+<p><img alt="alt text" src="../image/CleanShot%202024-10-16%20at%2019.22.29%402x.png" /></p>
+<h3 id="decrease-key">Decrease Key<a class="headerlink" href="#decrease-key" title="Permanent link">&para;</a></h3>
+<h2 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">&para;</a></h2>
+<p>Binomial queue = <strong>array</strong> of binomial trees</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Operation</th>
+<th style="text-align: center;">Property</th>
+<th style="text-align: center;">Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">DeleteMin</td>
+<td style="text-align: center;">Find all the subtrees quickly</td>
+<td style="text-align: center;">Left_child_next_sibling with linkes lists</td>
+</tr>
+<tr>
+<td style="text-align: center;">Merge</td>
+<td style="text-align: center;">The children are ordered by their sizes</td>
+<td style="text-align: center;">The new tree will be the largest. Hence maintain the subtrees <strong>in decreasing sizes</strong>.</td>
+</tr>
+</tbody>
+</table>
+<div class="language-C highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">BinNode</span><span class="w"> </span><span class="o">*</span><span class="n">Position</span><span class="p">;</span>
+</span><span id="__span-0-2"><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">Collection</span><span class="w"> </span><span class="o">*</span><span class="n">BinQueue</span><span class="p">;</span>
+</span><span id="__span-0-3"><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">BinNode</span><span class="w"> </span><span class="o">*</span><span class="n">BinTree</span><span class="p">;</span><span class="w">  </span><span class="cm">/* missing from p.176 */</span>
+</span><span id="__span-0-4">
+</span><span id="__span-0-5"><span class="k">struct</span><span class="w"> </span><span class="nc">BinNode</span><span class="w"> </span>
+</span><span id="__span-0-6"><span class="p">{</span><span class="w"> </span>
+</span><span id="__span-0-7"><span class="w">    </span><span class="n">ElementType</span><span class="w"> </span><span class="n">Element</span><span class="p">;</span>
+</span><span id="__span-0-8"><span class="w">    </span><span class="n">Position</span><span class="w"> </span><span class="n">LeftChild</span><span class="p">;</span>
+</span><span id="__span-0-9"><span class="w">    </span><span class="n">Position</span><span class="w"> </span><span class="n">NextSibling</span><span class="p">;</span>
+</span><span id="__span-0-10"><span class="p">}</span><span class="w"> </span><span class="p">;</span>
+</span><span id="__span-0-11">
+</span><span id="__span-0-12"><span class="k">struct</span><span class="w"> </span><span class="nc">Collection</span><span class="w"> </span>
+</span><span id="__span-0-13"><span class="p">{</span><span class="w"> </span>
+</span><span id="__span-0-14"><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">CurrentSize</span><span class="p">;</span><span class="w">  </span><span class="cm">/* total number of nodes */</span>
+</span><span id="__span-0-15"><span class="w">    </span><span class="n">BinTree</span><span class="w"> </span><span class="n">TheTrees</span><span class="p">[</span><span class="w"> </span><span class="n">MaxTrees</span><span class="w"> </span><span class="p">];</span>
+</span><span id="__span-0-16"><span class="p">}</span><span class="w"> </span><span class="p">;</span>
+</span></code></pre></div></td></tr></table></div>
+<p><div class="language-C highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><span class="n">BinTree</span><span class="w"> </span><span class="nf">CombineTrees</span><span class="p">(</span><span class="w"> </span><span class="n">BinTree</span><span class="w"> </span><span class="n">T1</span><span class="p">,</span><span class="w"> </span><span class="n">BinTree</span><span class="w"> </span><span class="n">T2</span><span class="w"> </span><span class="p">)</span>
+</span><span id="__span-1-2"><span class="p">{</span><span class="w">  </span><span class="cm">/* merge equal-sized T1 and T2 */</span>
+</span><span id="__span-1-3"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">T1</span><span class="o">-&gt;</span><span class="n">Element</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">T2</span><span class="o">-&gt;</span><span class="n">Element</span><span class="w"> </span><span class="p">)</span>
+</span><span id="__span-1-4"><span class="w">        </span><span class="cm">/* attach the larger one to the smaller one */</span>
+</span><span id="__span-1-5"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">CombineTrees</span><span class="p">(</span><span class="w"> </span><span class="n">T2</span><span class="p">,</span><span class="w"> </span><span class="n">T1</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-1-6"><span class="w">    </span><span class="cm">/* insert T2 to the front of the children list of T1 */</span>
+</span><span id="__span-1-7"><span class="w">    </span><span class="n">T2</span><span class="o">-&gt;</span><span class="n">NextSibling</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">T1</span><span class="o">-&gt;</span><span class="n">LeftChild</span><span class="p">;</span>
+</span><span id="__span-1-8"><span class="w">    </span><span class="n">T1</span><span class="o">-&gt;</span><span class="n">LeftChild</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">T2</span><span class="p">;</span>
+</span><span id="__span-1-9"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">T1</span><span class="p">;</span>
+</span><span id="__span-1-10"><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<center>
+<img alt="alt text" src="../image/CleanShot%202024-10-16%20at%2019.38.58%402x.png" width="200px" />
+</center></p>
+<p><div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><span class="n">BinQueue</span><span class="w"> </span><span class="nf">Merge</span><span class="p">(</span><span class="w"> </span><span class="n">BinQueue</span><span class="w"> </span><span class="n">H1</span><span class="p">,</span><span class="w"> </span><span class="n">BinQueue</span><span class="w"> </span><span class="n">H2</span><span class="w"> </span><span class="p">)</span>
+</span><span id="__span-2-2"><span class="p">{</span><span class="w">   </span><span class="n">BinTree</span><span class="w"> </span><span class="n">T1</span><span class="p">,</span><span class="w"> </span><span class="n">T2</span><span class="p">,</span><span class="w"> </span><span class="n">Carry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w">   </span>
+</span><span id="__span-2-3"><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">;</span>
+</span><span id="__span-2-4"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">H1</span><span class="o">-&gt;</span><span class="n">CurrentSize</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">H2</span><span class="o">-&gt;</span><span class="w"> </span><span class="n">CurrentSize</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">Capacity</span><span class="w"> </span><span class="p">)</span><span class="w">  </span><span class="n">ErrorMessage</span><span class="p">();</span>
+</span><span id="__span-2-5"><span class="w">    </span><span class="n">H1</span><span class="o">-&gt;</span><span class="n">CurrentSize</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">H2</span><span class="o">-&gt;</span><span class="w"> </span><span class="n">CurrentSize</span><span class="p">;</span>
+</span><span id="__span-2-6"><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">H1</span><span class="o">-&gt;</span><span class="n">CurrentSize</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="o">*=</span><span class="mi">2</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-7"><span class="w">        </span><span class="n">T1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">H1</span><span class="o">-&gt;</span><span class="n">TheTrees</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w"> </span><span class="n">T2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">H2</span><span class="o">-&gt;</span><span class="n">TheTrees</span><span class="p">[</span><span class="n">i</span><span class="p">];</span><span class="w"> </span><span class="cm">/* current trees */</span>
+</span><span id="__span-2-8"><span class="w">        </span><span class="k">switch</span><span class="p">(</span><span class="w"> </span><span class="mi">4</span><span class="o">*!!</span><span class="n">Carry</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="o">*!!</span><span class="n">T2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="o">!!</span><span class="n">T1</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// 将操作数变为0和1</span>
+</span><span id="__span-2-9"><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="mi">0</span><span class="p">:</span><span class="w"> </span><span class="cm">/* 000 */</span>
+</span><span id="__span-2-10"><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="w"> </span><span class="cm">/* 001 */</span><span class="w">  </span><span class="k">break</span><span class="p">;</span><span class="w">   </span>
+</span><span id="__span-2-11"><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="mi">2</span><span class="p">:</span><span class="w"> </span><span class="cm">/* 010 */</span><span class="w">  </span><span class="n">H1</span><span class="o">-&gt;</span><span class="n">TheTrees</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">T2</span><span class="p">;</span><span class="w"> </span>
+</span><span id="__span-2-12"><span class="w">                           </span><span class="n">H2</span><span class="o">-&gt;</span><span class="n">TheTrees</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w"> </span>
+</span><span id="__span-2-13"><span class="w">                           </span><span class="k">break</span><span class="p">;</span>
+</span><span id="__span-2-14"><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="mi">4</span><span class="p">:</span><span class="w"> </span><span class="cm">/* 100 */</span><span class="w">  </span><span class="n">H1</span><span class="o">-&gt;</span><span class="n">TheTrees</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Carry</span><span class="p">;</span><span class="w"> </span>
+</span><span id="__span-2-15"><span class="w">                           </span><span class="n">Carry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w"> </span>
+</span><span id="__span-2-16"><span class="w">                           </span><span class="k">break</span><span class="p">;</span>
+</span><span id="__span-2-17"><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="mi">3</span><span class="p">:</span><span class="w"> </span><span class="cm">/* 011 */</span><span class="w">  </span><span class="n">Carry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CombineTrees</span><span class="p">(</span><span class="w"> </span><span class="n">T1</span><span class="p">,</span><span class="w"> </span><span class="n">T2</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-2-18"><span class="w">                           </span><span class="n">H1</span><span class="o">-&gt;</span><span class="n">TheTrees</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">H2</span><span class="o">-&gt;</span><span class="n">TheTrees</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w"> </span>
+</span><span id="__span-2-19"><span class="w">                           </span><span class="k">break</span><span class="p">;</span>
+</span><span id="__span-2-20"><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="mi">5</span><span class="p">:</span><span class="w"> </span><span class="cm">/* 101 */</span><span class="w">  </span><span class="n">Carry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CombineTrees</span><span class="p">(</span><span class="w"> </span><span class="n">T1</span><span class="p">,</span><span class="w"> </span><span class="n">Carry</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-2-21"><span class="w">                           </span><span class="n">H1</span><span class="o">-&gt;</span><span class="n">TheTrees</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w"> </span>
+</span><span id="__span-2-22"><span class="w">                           </span><span class="k">break</span><span class="p">;</span>
+</span><span id="__span-2-23"><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="mi">6</span><span class="p">:</span><span class="w"> </span><span class="cm">/* 110 */</span><span class="w">  </span><span class="n">Carry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CombineTrees</span><span class="p">(</span><span class="w"> </span><span class="n">T2</span><span class="p">,</span><span class="w"> </span><span class="n">Carry</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-2-24"><span class="w">                           </span><span class="n">H2</span><span class="o">-&gt;</span><span class="n">TheTrees</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w"> </span>
+</span><span id="__span-2-25"><span class="w">                           </span><span class="k">break</span><span class="p">;</span>
+</span><span id="__span-2-26"><span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="mi">7</span><span class="p">:</span><span class="w"> </span><span class="cm">/* 111 */</span><span class="w">  </span><span class="n">H1</span><span class="o">-&gt;</span><span class="n">TheTrees</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Carry</span><span class="p">;</span><span class="w"> </span>
+</span><span id="__span-2-27"><span class="w">                           </span><span class="n">Carry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CombineTrees</span><span class="p">(</span><span class="w"> </span><span class="n">T1</span><span class="p">,</span><span class="w"> </span><span class="n">T2</span><span class="w"> </span><span class="p">);</span><span class="w"> </span>
+</span><span id="__span-2-28"><span class="w">                           </span><span class="n">H2</span><span class="o">-&gt;</span><span class="n">TheTrees</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w"> </span>
+</span><span id="__span-2-29"><span class="w">                           </span><span class="k">break</span><span class="p">;</span>
+</span><span id="__span-2-30"><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="cm">/* end switch */</span>
+</span><span id="__span-2-31"><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="cm">/* end for-loop */</span>
+</span><span id="__span-2-32"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">H1</span><span class="p">;</span>
+</span><span id="__span-2-33"><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><span class="n">ElementType</span><span class="w">  </span><span class="nf">DeleteMin</span><span class="p">(</span><span class="w"> </span><span class="n">BinQueue</span><span class="w"> </span><span class="n">H</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+</span><span id="__span-3-2"><span class="w">    </span><span class="n">BinQueue</span><span class="w"> </span><span class="n">DeletedQueue</span><span class="p">;</span><span class="w"> </span>
+</span><span id="__span-3-3"><span class="w">    </span><span class="n">Position</span><span class="w"> </span><span class="n">DeletedTree</span><span class="p">,</span><span class="w"> </span><span class="n">OldRoot</span><span class="p">;</span>
+</span><span id="__span-3-4"><span class="w">    </span><span class="n">ElementType</span><span class="w"> </span><span class="n">MinItem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Infinity</span><span class="p">;</span><span class="w">  </span><span class="cm">/* the minimum item to be returned */</span><span class="w">  </span>
+</span><span id="__span-3-5"><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">,</span><span class="w"> </span><span class="n">MinTree</span><span class="p">;</span><span class="w"> </span><span class="cm">/* MinTree is the index of the tree with the minimum item */</span>
+</span><span id="__span-3-6">
+</span><span id="__span-3-7"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">IsEmpty</span><span class="p">(</span><span class="w"> </span><span class="n">H</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">)</span><span class="w">  </span><span class="p">{</span>
+</span><span id="__span-3-8"><span class="w">        </span><span class="n">PrintErrorMessage</span><span class="p">();</span>
+</span><span id="__span-3-9"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="err">–</span><span class="n">Infinity</span><span class="p">;</span><span class="w"> </span>
+</span><span id="__span-3-10"><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-3-11">
+</span><span id="__span-3-12"><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">MaxTrees</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="cm">/* Step 1: find the minimum item */</span>
+</span><span id="__span-3-13"><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">H</span><span class="o">-&gt;</span><span class="n">TheTrees</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">H</span><span class="o">-&gt;</span><span class="n">TheTrees</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">Element</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">MinItem</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+</span><span id="__span-3-14"><span class="w">        </span><span class="n">MinItem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">H</span><span class="o">-&gt;</span><span class="n">TheTrees</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">Element</span><span class="p">;</span><span class="w">  </span><span class="n">MinTree</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w">    </span>
+</span><span id="__span-3-15"><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="cm">/* end if */</span>
+</span><span id="__span-3-16"><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="cm">/* end for-i-loop */</span>
+</span><span id="__span-3-17">
+</span><span id="__span-3-18"><span class="w">    </span><span class="n">DeletedTree</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">H</span><span class="o">-&gt;</span><span class="n">TheTrees</span><span class="p">[</span><span class="w"> </span><span class="n">MinTree</span><span class="w"> </span><span class="p">];</span><span class="w">  </span>
+</span><span id="__span-3-19"><span class="w">    </span><span class="n">H</span><span class="o">-&gt;</span><span class="n">TheTrees</span><span class="p">[</span><span class="w"> </span><span class="n">MinTree</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span><span class="w">   </span><span class="cm">/* Step 2: remove the MinTree from H =&gt; H’ */</span><span class="w"> </span>
+</span><span id="__span-3-20"><span class="w">    </span><span class="n">OldRoot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DeletedTree</span><span class="p">;</span><span class="w">   </span><span class="cm">/* Step 3.1: remove the root */</span><span class="w"> </span>
+</span><span id="__span-3-21"><span class="w">    </span><span class="n">DeletedTree</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DeletedTree</span><span class="o">-&gt;</span><span class="n">LeftChild</span><span class="p">;</span><span class="w">   </span><span class="n">free</span><span class="p">(</span><span class="n">OldRoot</span><span class="p">);</span>
+</span><span id="__span-3-22"><span class="w">    </span><span class="n">DeletedQueue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Initialize</span><span class="p">();</span><span class="w">   </span><span class="cm">/* Step 3.2: create H” */</span><span class="w"> </span>
+</span><span id="__span-3-23"><span class="w">    </span><span class="n">DeletedQueue</span><span class="o">-&gt;</span><span class="n">CurrentSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="n">MinTree</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="err">–</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">  </span><span class="cm">/* 2MinTree – 1 */</span>
+</span><span id="__span-3-24">
+</span><span id="__span-3-25"><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MinTree</span><span class="w"> </span><span class="err">–</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="err">–</span><span class="w"> </span><span class="err">–</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+</span><span id="__span-3-26"><span class="w">        </span><span class="n">DeletedQueue</span><span class="o">-&gt;</span><span class="n">TheTrees</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DeletedTree</span><span class="p">;</span>
+</span><span id="__span-3-27"><span class="w">        </span><span class="n">DeletedTree</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DeletedTree</span><span class="o">-&gt;</span><span class="n">NextSibling</span><span class="p">;</span>
+</span><span id="__span-3-28"><span class="w">        </span><span class="n">DeletedQueue</span><span class="o">-&gt;</span><span class="n">TheTrees</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">NextSibling</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">NULL</span><span class="p">;</span>
+</span><span id="__span-3-29"><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="cm">/* end for-j-loop */</span>
+</span><span id="__span-3-30">
+</span><span id="__span-3-31"><span class="w">    </span><span class="n">H</span><span class="o">-&gt;</span><span class="n">CurrentSize</span><span class="w">  </span><span class="err">–</span><span class="o">=</span><span class="w"> </span><span class="n">DeletedQueue</span><span class="o">-&gt;</span><span class="n">CurrentSize</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span><span id="__span-3-32"><span class="w">    </span><span class="n">H</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Merge</span><span class="p">(</span><span class="w"> </span><span class="n">H</span><span class="p">,</span><span class="w"> </span><span class="n">DeletedQueue</span><span class="w"> </span><span class="p">);</span><span class="w"> </span><span class="cm">/* Step 4: merge H’ and H” */</span><span class="w"> </span>
+</span><span id="__span-3-33"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">MinItem</span><span class="p">;</span>
+</span><span id="__span-3-34"><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>对照前面的原理图食用更佳（</p>
+</div>
+<h2 id="amortized-analysis">Amortized analysis<a class="headerlink" href="#amortized-analysis" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">第几次</th>
+<th style="text-align: center;">操作成本</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td style="text-align: center;">...</td>
+<td style="text-align: center;">...</td>
+</tr>
+</tbody>
+</table>
+<p>0出现的越早，所需的代价越小。</p>
+<h3 id="potential-method">Potential method<a class="headerlink" href="#potential-method" title="Permanent link">&para;</a></h3>
+<p>定义势能函数
+$$ \phi(i) = \text{number of trees after } i \text{th insertion} $$
+过程：
+$$ B_{k+1},\cdots, B_3, B_2, B_1, B_0 $$
+$$ c_i = i + (k + 1)$$
+$$ \hat{c}_i = i + (k + 1) + x + 1 - (x + k + 1) = 2 $$</p>
+<p>所以：
+$$ \sum_{i=1}^{N}{\hat{c_i}} = \sum_{i=1}^{N}{c_i} + \phi(i) - \phi(0) = 2N $$
+$$ \sum_{i=1}^{N}{c_i} =2N - \phi(0) \leq 2N = O(N)$$</p>
+<h3 id="accounting-method">Accounting method<a class="headerlink" href="#accounting-method" title="Permanent link">&para;</a></h3>
+<p>每一个节点内都有一个硬币，</p>
+<h3 id="aggregate-analysis">Aggregate analysis<a class="headerlink" href="#aggregate-analysis" title="Permanent link">&para;</a></h3>
+<p><img alt="alt text" src="../image/CleanShot%202024-10-16%20at%2020.51.48%402x.png" /></p>
+<h2 id="_1">各类堆的操作复杂度<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
