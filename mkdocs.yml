@@ -207,7 +207,7 @@ nav:
           - Karnaugh Map: yuyan/Verilog/circuit/4.md
         - Sequential logic: 
           - Latches and Flipflops: yuyan/Verilog/circuit/5.md
-    - C语言笔试复习（不完善）:
+    - C:
       - yuyan/C/index.md
       - 0 C语言前瞻: yuyan/C/C语言前瞻.md
       - 1 C语言基本语法: yuyan/C/C语言基本语法.md
