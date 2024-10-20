@@ -197,16 +197,6 @@ extra_javascript:
 # [Navigtion]
 nav:
   - 语言类:
-    - Verilog:
-      - yuyan/Verilog/index.md
-      - Verilog language: yuyan/Verilog/1.md
-      - Circuits:
-        - Combinational logic: 
-          - Multiplexers: yuyan/Verilog/circuit/2.md
-          - Arithmetic circuits: yuyan/Verilog/circuit/3.md
-          - Karnaugh Map: yuyan/Verilog/circuit/4.md
-        - Sequential logic: 
-          - Latches and Flipflops: yuyan/Verilog/circuit/5.md
     - C:
       - yuyan/C/index.md
       - 0 C语言前瞻: yuyan/C/C语言前瞻.md
@@ -228,6 +218,16 @@ nav:
       - Python运算符: yuyan/Python/4/4.md
       - Python推导式: yuyan/Python/5/5.md
       - Python迭代器和生成器: yuyan/Python/6/6.md
+    - Verilog:
+      - yuyan/Verilog/index.md
+      - Verilog language: yuyan/Verilog/1.md
+      - Circuits:
+        - Combinational logic: 
+          - Multiplexers: yuyan/Verilog/circuit/2.md
+          - Arithmetic circuits: yuyan/Verilog/circuit/3.md
+          - Karnaugh Map: yuyan/Verilog/circuit/4.md
+        - Sequential logic: 
+          - Latches and Flipflops: yuyan/Verilog/circuit/5.md
   - 杂项:
     - 反序列化漏洞: misc/Bonus/1.md
     - reveal-md制作slides: misc/reveal.md

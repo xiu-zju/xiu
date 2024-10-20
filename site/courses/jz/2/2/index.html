@@ -138,11 +138,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#chapter-2" class="md-skip">
-          跳转至
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -846,7 +841,7 @@
               
   
   <span class="md-ellipsis">
-    C语言笔试复习（不完善）
+    C
   </span>
   
 
@@ -862,7 +857,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1_2">
             <span class="md-nav__icon md-icon"></span>
-            C语言笔试复习（不完善）
+            C
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1881,19 +1876,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Chapter 2
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -1904,52 +1886,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      数的表示
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#alu" class="md-nav__link">
-    <span class="md-ellipsis">
-      ALU
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ieee-floating-point" class="md-nav__link">
-    <span class="md-ellipsis">
-      IEEE Floating Point
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -2079,43 +2015,6 @@
   
   
   
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      数的表示
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#alu" class="md-nav__link">
-    <span class="md-ellipsis">
-      ALU
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ieee-floating-point" class="md-nav__link">
-    <span class="md-ellipsis">
-      IEEE Floating Point
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -2138,42 +2037,27 @@
   
 
 
-<h1 id="chapter-2">Chapter 2<a class="headerlink" href="#chapter-2" title="Permanent link">&para;</a></h1>
-<h2 id="_1">数的表示<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>同是4位的情况下:</p>
+  <h1>Chapter 2</h1>
+
 <ul>
-<li>unsigned:没有符号位，直接表示数字。[0~15]</li>
-<li>signed-magnitude:第一位是符号位，剩下3位来表示数字。符号位1就是负数，0就是正数。[-7~7]</li>
-<li>1's complement:反码表示，各位取反即可。[-15~0]</li>
-<li>2's complement:补码表示，各位取反加一。[-8~7]</li>
+<li>inst mem ROM (read only)</li>
+<li>data mem RAM</li>
 </ul>
-<h2 id="alu">ALU<a class="headerlink" href="#alu" title="Permanent link">&para;</a></h2>
-<ul>
-<li>加法：加法器、CLA</li>
-<li>减法：转化为加法</li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>注意区分CF(Carry Flag)和OF(Overflow Flag)    </p>
-<ul>
-<li>CF:针对无符号数   </li>
-<li>OF:针对有符号数</li>
-</ul>
-</div>
-<ul>
-<li>位移<ul>
-<li>算数位移：要补符号位</li>
-<li>逻辑位移：不补符号位</li>
-</ul>
-</li>
-</ul>
-<h2 id="ieee-floating-point">IEEE Floating Point<a class="headerlink" href="#ieee-floating-point" title="Permanent link">&para;</a></h2>
+<p>PC:   <br />
+- Program counter (当前程序所在的位置)</p>
+<p>所有的:   <br />
+- rd []
+- rs1 []
+- rs2 []</p>
 
 
 
 
 
 
+
+  
+  
 
 
 
