@@ -237,12 +237,16 @@ nav:
       - 第一章: courses/accounting/2/2.md
       - 第二章: courses/accounting/3/3.md
       - 第三章: courses/accounting/4/4.md
+      - 第四章: courses/accounting/5/5.md
+      - 第五章: courses/accounting/6/6.md
     - 高级数据结构与算法分析:
       - AVL Trees, Splay Trees & Amortized: courses/ads/1/1.md
       - Red-Black Trees & B+ Tree: courses/ads/2/2.md
       - Invert File Index: courses/ads/3/3.md
       - Leftist Heap & Skew Heap: courses/ads/4/4.md
       - Binomial Queue: courses/ads/5/5.md
+      - Backtracking: courses/ads/6/6.md
+      - Divide and Conquer: courses/ads/7/7.md
     - 计算机组成:
       - Chapter 1: courses/jz/1/1.md
       - Chapter 2: courses/jz/2/2.md
