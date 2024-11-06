@@ -69,7 +69,7 @@ extra:
       title: 激励
       ratings:
         - icon: fontawesome/regular/hand-back-fist
-          name: 激励
+          name: 请我喝一杯呗～
           data: 1
           note: >-
             <center> 你愿意请我喝一杯吗(*´∀`)~♥ </center>
@@ -239,6 +239,7 @@ nav:
       - 第三章: courses/accounting/4/4.md
       - 第四章: courses/accounting/5/5.md
       - 第五章: courses/accounting/6/6.md
+      - 第六章: courses/accounting/7/7.md
     - 高级数据结构与算法分析:
       - AVL Trees, Splay Trees & Amortized: courses/ads/1/1.md
       - Red-Black Trees & B+ Tree: courses/ads/2/2.md
