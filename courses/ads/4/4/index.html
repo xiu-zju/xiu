@@ -343,7 +343,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../accounting/1/1/" class="md-tabs__link">
+        <a href="../../../accounting/" class="md-tabs__link">
           
   
     
@@ -853,6 +853,10 @@
       
         
       
+        
+      
+        
+      
     
     
       
@@ -1001,6 +1005,48 @@
   
   <span class="md-ellipsis">
     Python迭代器和生成器
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../yuyan/Python/7/7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python函数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../yuyan/Python/8/8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python装饰器
   </span>
   
 
@@ -1508,6 +1554,10 @@
     
       
         
+          
+        
+      
+        
       
         
       
@@ -1534,16 +1584,24 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
         
           
-          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
-            
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../accounting/" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     会计学
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_1">
@@ -1551,6 +1609,8 @@
             会计学
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
             
               
                 
@@ -2564,7 +2624,7 @@
 <h3 id="operation">Operation<a class="headerlink" href="#operation" title="Permanent link">&para;</a></h3>
 <p>对左偏堆的操作主要是 <strong>Merge</strong> ，其它操作都可以通过 Merge 来调整。</p>
 <ul>
-<li><code>DeleteMin()</code> 或 <code>ExtractMin</code> 可以通过删除 root 并为左右子树调用 Merge 来完成</li>
+<li><code>DeleteMin()</code> 或 <code>ExtractMin()</code> 可以通过删除 root 并为左右子树调用 Merge 来完成</li>
 <li><code>Insert()</code> 可以通过 Merge 原来的左偏堆以及单个节点的树来完成</li>
 </ul>
 <table>
@@ -2594,6 +2654,9 @@
 </tbody>
 </table>
 <h4 id="merge">递归Merge<a class="headerlink" href="#merge" title="Permanent link">&para;</a></h4>
+<div class="admonition warning">
+<p class="admonition-title">递归和迭代产生的结果是完全一样的！</p>
+</div>
 <p><img alt="alt text" src="../image/CleanShot%202024-10-14%20at%2017.25.29%402x.png" /></p>
 <p>这个例子是告诉我们先比较两个数的根节点，然后合并，具体合并过程不用管，这是递归的过程。然后再把树接回去，最后判断下是否需要调整。</p>
 <p>具体点讲：<br />
@@ -2655,6 +2718,9 @@
 </div>
 <h3 id="operation_1">Operation<a class="headerlink" href="#operation_1" title="Permanent link">&para;</a></h3>
 <h4 id="merge_2">递归Merge<a class="headerlink" href="#merge_2" title="Permanent link">&para;</a></h4>
+<div class="admonition warning">
+<p class="admonition-title">递归和迭代产生的结果是完全一样的！</p>
+</div>
 <p><img alt="alt text" src="../image/CleanShot%202024-10-14%20at%2020.22.29%402x.png" /></p>
 <p>详细步骤：<br />
 1. 根小的堆子树u左右交换  <br />
