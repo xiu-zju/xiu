@@ -2689,12 +2689,12 @@
 </span><span id="__span-1-7">
 </span><span id="__span-1-8"><span class="c1">// 静态属性使得其可以在写题时正确互相调用</span>
 </span><span id="__span-1-9"><span class="k">static</span><span class="w"> </span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="nf">Merge1</span><span class="p">(</span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">H1</span><span class="p">,</span><span class="w"> </span><span class="n">Node</span><span class="o">*</span><span class="w"> </span><span class="n">H2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-10"><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">H1</span><span class="o">-&gt;</span><span class="n">left</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span>
+</span><span id="__span-1-10"><span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">H1</span><span class="o">-&gt;</span><span class="n">left</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="c1">// H1是叶节点</span>
 </span><span id="__span-1-11"><span class="w">        </span><span class="n">H1</span><span class="o">-&gt;</span><span class="n">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">H2</span><span class="p">;</span><span class="w"> </span><span class="c1">// 同时做到了swap</span>
 </span><span id="__span-1-12"><span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-13"><span class="w">        </span><span class="n">H1</span><span class="o">-&gt;</span><span class="n">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Merge</span><span class="p">(</span><span class="n">H1</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">,</span><span class="n">H2</span><span class="p">);</span>
+</span><span id="__span-1-13"><span class="w">        </span><span class="n">H1</span><span class="o">-&gt;</span><span class="n">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Merge</span><span class="p">(</span><span class="n">H1</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">,</span><span class="n">H2</span><span class="p">);</span><span class="w"> </span><span class="c1">//若H1的右子树是空的，那就把H2接上去</span>
 </span><span id="__span-1-14"><span class="w">        </span><span class="k">if</span><span class="p">(</span><span class="n">H1</span><span class="o">-&gt;</span><span class="n">left</span><span class="o">-&gt;</span><span class="n">Npl</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">H1</span><span class="o">-&gt;</span><span class="n">right</span><span class="o">-&gt;</span><span class="n">Npl</span><span class="p">)</span>
-</span><span id="__span-1-15"><span class="w">            </span><span class="n">swap</span><span class="p">(</span><span class="n">H1</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">,</span><span class="n">H1</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">);</span>
+</span><span id="__span-1-15"><span class="w">            </span><span class="n">swap</span><span class="p">(</span><span class="n">H1</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">,</span><span class="n">H1</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">);</span><span class="w"> </span><span class="c1">// 根据Npl调整</span>
 </span><span id="__span-1-16"><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="c1">// end else</span>
 </span><span id="__span-1-17"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">H1</span><span class="p">;</span>
 </span><span id="__span-1-18"><span class="p">}</span>
@@ -2757,6 +2757,14 @@
 <p class="admonition-title">Tip</p>
 <p>想要右路径轻节点多，那左倾程度就越大，右路径就越短，右路径轻节点就少；<br />
 想要右路径长，那左倾程度就小，那右路径轻节点就少。</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>The result of inserting keys <span class="arithmatex">\(1\)</span> to <span class="arithmatex">\(2^k−1\)</span> for any <span class="arithmatex">\(k&gt;4\)</span> in order into an initially empty skew heap is always a full binary tree.</p>
+<details class="answer">
+<summary>Answer</summary>
+<p>T</p>
+</details>
 </div>
 
 

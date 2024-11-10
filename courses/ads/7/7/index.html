@@ -2403,38 +2403,77 @@
 
 
 <h1 id="divide-and-conquer">Divide and Conquer<a class="headerlink" href="#divide-and-conquer" title="Permanent link">&para;</a></h1>
-<p><img alt="alt text" src="../image/CleanShot%202024-10-29%20at%2010.44.21%402x.png" /></p>
+<p><img alt="alt text" src="../image/CleanShot%202024-10-29%20at%2010.44.21%402x.png" width="500px" /></p>
 <h2 id="closest-points-problem">Closest Points Problem<a class="headerlink" href="#closest-points-problem" title="Permanent link">&para;</a></h2>
 <h3 id="simple-exhaustive-search">Simple Exhaustive Search<a class="headerlink" href="#simple-exhaustive-search" title="Permanent link">&para;</a></h3>
 <p>Check $ N(N-1)/2 $ pairs of points.<span class="arithmatex">\(T = O(N^2)\)</span>.</p>
 <h3 id="divide-and-conquer_1">Divide and Conquer<a class="headerlink" href="#divide-and-conquer_1" title="Permanent link">&para;</a></h3>
 <p><center>
-<img alt="alt text" src="../image/CleanShot%202024-10-29%20at%2010.50.38%402x.png" />
+<img alt="alt text" src="../image/CleanShot%202024-10-29%20at%2010.50.38%402x.png" width="300px" />
 </center></p>
 <p>回顾分治算法的时间复杂度：</p>
-<p><img alt="alt text" src="../image/CleanShot%202024-10-29%20at%2010.53.10%402x.png" /></p>
-<p>Three methods for solving recurrence: <br />
-- Substitution method
-- Recursion-tree method
-- Master method</p>
+<p><img alt="alt text" src="../image/CleanShot%202024-10-29%20at%2010.53.10%402x.png" width="500px" /></p>
+<p>Three methods for solving recurrence:   </p>
+<ul>
+<li>Substitution method</li>
+<li>Recursion-tree method</li>
+<li>Master method</li>
+</ul>
 <h2 id="substitution-method">Substitution method<a class="headerlink" href="#substitution-method" title="Permanent link">&para;</a></h2>
 <p>guess, then prove by induction.</p>
 <p>正确猜测：<br />
-<img alt="alt text" src="../image/CleanShot%202024-10-29%20at%2011.06.39%402x.png" /></p>
-<p>错误示范：<br />
-<img alt="alt text" src="../image/CleanShot%202024-10-29%20at%2011.09.18%402x.png" /></p>
+<center>
+<img alt="alt text" src="../image/CleanShot%202024-10-29%20at%2011.06.39%402x.png" width="400px" />
+</center>
+错误示范：<br />
+<center>
+<img alt="alt text" src="../image/CleanShot%202024-10-29%20at%2011.09.18%402x.png" width="400px" />
+</center></p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>每过一层就会加一！</p>
 </div>
 <h2 id="recursion-tree-method">Recursion-tree method<a class="headerlink" href="#recursion-tree-method" title="Permanent link">&para;</a></h2>
-<p><img alt="alt text" src="../image/CleanShot%202024-10-29%20at%2011.15.26%402x.png" /></p>
+<p><center>
+<img alt="alt text" src="../image/CleanShot%202024-10-29%20at%2011.15.26%402x.png" width="500px" />
+</center></p>
 <h2 id="master-method">Master method<a class="headerlink" href="#master-method" title="Permanent link">&para;</a></h2>
 <div class="arithmatex">\[\begin{gather}T(N)=aT(\frac{N }{b})+\Theta(N^k \log^pN),a\ge 1,b\gt 1 ,p\ge 0 \\
 \\
 T(N)=\begin{cases}O(N^{\log_ba})\ ,\ if\ \log_ba\gt k \\ O(N^k\log ^{p+1}N)\ ,\ if\ \log_ba=k \\  O(N^k \log ^pN)\ ,\ if\ log_ba\lt k
 \end{cases}
 \end{gather}\]</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p><span class="arithmatex">\(T(n)=4T(N/4)+\log n\)</span></p>
+<details class="answer">
+<summary>Answer</summary>
+<p><span class="arithmatex">\(O(n)\)</span></p>
+</details>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p><span class="arithmatex">\(T(n)=3T(N/2)+n\)</span></p>
+<details class="answer">
+<summary>Answer</summary>
+<p><span class="arithmatex">\(O(n^{\log_2 3})\)</span></p>
+</details>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p><span class="arithmatex">\(T(n)=2T(\sqrt n)+\log n\)</span></p>
+<details class="answer">
+<summary>Answer</summary>
+<p><span class="arithmatex">\(O(\log n · \log \log n)\)</span></p>
+<p><span class="arithmatex">\(T(n)=2T(\sqrt n)+\log n\)</span> <br />
+令<span class="arithmatex">\(m = \log_2 m\)</span>  <br />
+<span class="arithmatex">\(T(2^m)=2T(2^{\frac{m}{2}})+m\)</span>    <br />
+令<span class="arithmatex">\(S(m) = T(2^m)\)</span> <br />
+<span class="arithmatex">\(S(m) = 2T(\frac{m}{2})+m\)</span>    <br />
+<span class="arithmatex">\(S(m) = O(m\log m)\)</span>    <br />
+<span class="arithmatex">\(T(n) = O(\log n · \log \log n)\)</span></p>
+</details>
+</div>
 
 
 

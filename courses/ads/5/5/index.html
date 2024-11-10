@@ -1998,20 +1998,14 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#insert" class="md-nav__link">
     <span class="md-ellipsis">
       Insert
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Insert">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#deletemin" class="md-nav__link">
@@ -2431,20 +2425,14 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#insert" class="md-nav__link">
     <span class="md-ellipsis">
       Insert
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Insert">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#deletemin" class="md-nav__link">
@@ -2591,7 +2579,7 @@ L = \lfloor \log_2{N} \rfloor + 1
 \]</div>
 <p>其中 <span class="arithmatex">\( \lfloor x \rfloor \)</span> 表示向下取整。</p>
 </div>
-<h2 id="insert">Insert<a class="headerlink" href="#insert" title="Permanent link">&para;</a></h2>
+<h3 id="insert">Insert<a class="headerlink" href="#insert" title="Permanent link">&para;</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">注意</p>
 <p>单次Insertion可以看作是一次特殊的merge，单次复杂度是<span class="arithmatex">\(O(\log n)\)</span>。但是这并不意味着从空开始insert n 次复杂度是<span class="arithmatex">\(O(n\log n)\)</span>，通过均摊分析可知是<span class="arithmatex">\(O(n)\)</span>。</p>
@@ -2876,47 +2864,42 @@ $$ \sum_{i=1}^{N}{c_i} =2N - \phi(0) \leq 2N = O(N)$$</p>
 <th style="text-align: center;">Fibonacci</th>
 <th style="text-align: center;">Binary</th>
 <th style="text-align: center;">Link list</th>
-<th style="text-align: center;"></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align: center;">Make heap</td>
-<td style="text-align: center;">O(1)</td>
-<td style="text-align: center;">O(1)</td>
-<td style="text-align: center;">O(1)</td>
-<td style="text-align: center;">O(1)</td>
-<td style="text-align: center;">O(1)</td>
-<td style="text-align: center;">O(1)</td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(1)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(1)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(1)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(1)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(1)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(1)\)</span></td>
 </tr>
 <tr>
 <td style="text-align: center;">Find-Min</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(1)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(1)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(1)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(1)\)</span></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr>
 <td style="text-align: center;">Merge</td>
+<td style="text-align: center;"><span class="arithmatex">\(O(\log n)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(\log n)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(\log n)\)</span></td>
 <td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">O(n)</td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(n)\)</span></td>
 <td style="text-align: center;"></td>
 </tr>
 <tr>
 <td style="text-align: center;">Insert</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(\log n)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(\log n)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(\log n)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(1)\)</span></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 </tr>
@@ -2928,13 +2911,11 @@ $$ \sum_{i=1}^{N}{c_i} =2N - \phi(0) \leq 2N = O(N)$$</p>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
 </tr>
 <tr>
 <td style="text-align: center;">Delete-Min</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(\log n)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(\log n)\)</span></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
@@ -2944,9 +2925,8 @@ $$ \sum_{i=1}^{N}{c_i} =2N - \phi(0) \leq 2N = O(N)$$</p>
 <td style="text-align: center;">Decrease-Key</td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(\log n)\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(O(1)\)</span></td>
 <td style="text-align: center;"></td>
 <td style="text-align: center;"></td>
 </tr>
