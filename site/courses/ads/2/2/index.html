@@ -343,7 +343,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../accounting/1/1/" class="md-tabs__link">
+        <a href="../../../accounting/" class="md-tabs__link">
           
   
     
@@ -853,6 +853,10 @@
       
         
       
+        
+      
+        
+      
     
     
       
@@ -1001,6 +1005,48 @@
   
   <span class="md-ellipsis">
     Python迭代器和生成器
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../yuyan/Python/7/7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python函数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../yuyan/Python/8/8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python装饰器
   </span>
   
 
@@ -1508,6 +1554,10 @@
     
       
         
+          
+        
+      
+        
       
         
       
@@ -1534,16 +1584,24 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
         
           
-          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
-            
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../accounting/" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     会计学
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_1">
@@ -1551,6 +1609,8 @@
             会计学
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
             
               
                 
@@ -2524,6 +2584,9 @@
 
 <h1 id="b">红黑树, B+树<a class="headerlink" href="#b" title="Permanent link">&para;</a></h1>
 <h2 id="_1">红黑树<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><a href="https://www.cs.usfca.edu/~galles/visualization/RedBlack.html">https://www.cs.usfca.edu/~galles/visualization/RedBlack.html</a></p>
+</blockquote>
 <p>红黑树是一种<strong>自平衡</strong>的<strong>二叉搜索树</strong>。每个节点额外存储了一个 color 字段 ("RED" or "BLACK")，用于确保树在插入和删除时保持平衡。</p>
 <h3 id="_2">性质<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>一棵合法的红黑树必须遵循以下五条性质：</p>
@@ -2587,7 +2650,7 @@
 <strong>一个 Order M 的 B+ 树定义如下：</strong></p>
 <ul>
 <li>根节点要么是叶节点，要么有 2 到 <span class="arithmatex">\(M\)</span> 个子节点</li>
-<li>所有除了根节点的非叶节点都有 <span class="arithmatex">\(\lceil \frac{M}{2} \rceil\)</span> 到 <span class="arithmatex">\(M\)</span> 个子节点</li>
+<li>所有<strong>除了根节点</strong>的非叶节点都有 <span class="arithmatex">\(\lceil \frac{M}{2} \rceil\)</span> 到 <span class="arithmatex">\(M\)</span> 个子节点</li>
 <li>所有叶节点深度相同</li>
 </ul>
 <div class="admonition tip">

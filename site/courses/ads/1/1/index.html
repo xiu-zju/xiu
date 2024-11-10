@@ -343,7 +343,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../accounting/1/1/" class="md-tabs__link">
+        <a href="../../../accounting/" class="md-tabs__link">
           
   
     
@@ -853,6 +853,10 @@
       
         
       
+        
+      
+        
+      
     
     
       
@@ -1001,6 +1005,48 @@
   
   <span class="md-ellipsis">
     Python迭代器和生成器
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../yuyan/Python/7/7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python函数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../yuyan/Python/8/8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python装饰器
   </span>
   
 
@@ -1508,6 +1554,10 @@
     
       
         
+          
+        
+      
+        
       
         
       
@@ -1534,16 +1584,24 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
         
           
-          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
-            
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../accounting/" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     会计学
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_1">
@@ -1551,6 +1609,8 @@
             会计学
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
             
               
                 
@@ -2000,6 +2060,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      插入操作
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2016,7 +2085,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       引入
     </span>
@@ -2623,6 +2692,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      插入操作
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2639,7 +2717,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       引入
     </span>
@@ -2719,7 +2797,7 @@
 <li>树高为 <span class="arithmatex">\(O(log n)\)</span></li>
 </ol>
 <p><strong>Definition</strong></p>
-<p>The balance factor BF( node ) = hL - hR .  In an AVL tree, BF( node ) = -1, 0, 1.</p>
+<p>The balance factor BF(node) = h(L) - h(R) .  In an AVL tree, BF(node) = -1, 0, 1.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>错误示范：
@@ -2872,8 +2950,10 @@
 <h3 id="_7">删除操作<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <p><img alt="alt text" src="../CleanShot%202024-09-12%20at%2015.05.01%402x.png" />
 找到要删除的节点时，splay树已经将其变成根了。删除根，留下左右两个子树。接下来找左子树的最大值，此时左子树的最大值变成了根。根据binary search tree，左子树的最大值没有右节点。最后只需将右子树接过去就好了。</p>
+<h3 id="_8">插入操作<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>先像BST一样插入，然后再把这个节点旋转到根节点。</p>
 <h2 id="amortized-analysis">Amortized Analysis<a class="headerlink" href="#amortized-analysis" title="Permanent link">&para;</a></h2>
-<h3 id="_8">引入<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<h3 id="_9">引入<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <p>均摊分析（Amortized Analysis）是一种用于分析算法和动态数据结构性能的技术。它不仅仅关注单次操作的成本，还通过评估一系列操作的平均成本，为整体性能提供更加准确的评估。均摊分析<strong>不涉及概率</strong>，且只能确保最坏情况性能的每次操作耗费的平均时间，并不能确认系统的平均性能。在最坏情况下，均摊分析通过将高成本操作的开销分摊到低成本操作上，确保整体操作的平均成本保持在合理范围内。</p>
 <p><img alt="alt text" src="../CleanShot%202024-09-12%20at%2015.30.34%402x.png" /></p>
 <p>均摊分析通常采用三种主要分析方法：聚合分析、记账分析和势能分析。这些方法各有侧重，分别适用于不同的场景，但它们的共同目标是通过均衡操作成本，优化数据结构在最坏情况下的整体性能表现。</p>
@@ -2885,7 +2965,7 @@
 <h3 id="potential-method">势能分析 Potential method<a class="headerlink" href="#potential-method" title="Permanent link">&para;</a></h3>
 <p>在平摊分析中，势能方法（potential  method）不是将已预付的工作作为存在数据结构特定对象中存款来表示，而是将存款总体上表示成一种“势能”或“势”，它在需要时可以释放出来，以支付后面的操作。势是与整个数据结构而不是其中的个别对象发生联系的。
 <img alt="alt text" src="../CleanShot%202024-09-27%20at%2021.20.00%402x.png" />
-如果能找到O(log n)来约束均摊成本，则实际成本就会被O(log n)约束住。</p>
+如果能找到<span class="arithmatex">\(O(\log n)\)</span>来约束均摊成本，则实际成本就会被<span class="arithmatex">\(O(\log n)\)</span>约束住。</p>
 <p><img alt="alt text" src="../CleanShot%202024-09-27%20at%2021.14.55%402x.png" /></p>
 <p><img alt="alt text" src="../CleanShot%202024-09-12%20at%2016.37.58%402x-2.png" />
 <img alt="alt text" src="../CleanShot%202024-09-12%20at%2016.38.40%402x-1.png" /></p>
