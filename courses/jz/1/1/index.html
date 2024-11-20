@@ -1597,6 +1597,12 @@
       
         
       
+        
+      
+        
+      
+        
+      
     
     
       
@@ -1691,7 +1697,7 @@
         
   
   <span class="md-ellipsis">
-    第二章
+    第二章 会计要素与复式记账
   </span>
   
 
@@ -1712,7 +1718,7 @@
         
   
   <span class="md-ellipsis">
-    第三章
+    第三章 会计循环
   </span>
   
 
@@ -1733,7 +1739,7 @@
         
   
   <span class="md-ellipsis">
-    第四章
+    第四章 货币资金与交易性金融资产
   </span>
   
 
@@ -1754,7 +1760,7 @@
         
   
   <span class="md-ellipsis">
-    第五章
+    第五章 应收款项
   </span>
   
 
@@ -1775,7 +1781,70 @@
         
   
   <span class="md-ellipsis">
-    第六章
+    第六章 存货
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../accounting/8/8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第七章
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../accounting/9/9/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第八章 固定资产
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../accounting/10/10/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第九章
   </span>
   
 
@@ -2413,14 +2482,36 @@
 <h1 id="chapter-1">Chapter 1<a class="headerlink" href="#chapter-1" title="Permanent link">&para;</a></h1>
 <h2 id="eight-great-ideas">Eight Great Ideas<a class="headerlink" href="#eight-great-ideas" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Design for Moore's Law</li>
-<li>Use abstraction ti Simpify Design</li>
-<li>Make the Common Case Fast</li>
-<li>Performance via Parallelism(并行)</li>
-<li>Performance via Pipelining (流水线)</li>
-<li>Performance via Prediction (预测)</li>
-<li>Hierarchy of Memories (分层存储器)</li>
-<li>Dependency via Redundancy (冗余)</li>
+<li>Design for Moore's Law（设计紧跟摩尔定律）<ul>
+<li>Moore's Law: Integrated circuit resources double every 18-24 months.</li>
+<li>Design for where it will be when finishes rather than design for where it starts.</li>
+</ul>
+</li>
+<li>Use abstraction ti Simpify Design（采用抽象简化设计）<ul>
+<li>层次化、模块化的设计</li>
+</ul>
+</li>
+<li>Make the Common Case Fast （加速大概率事件）</li>
+<li>Performance via Parallelism（通过并行提高性能）</li>
+<li>Performance via Pipelining （通过流水线提高性能）<ul>
+<li>换句话说就是，每个流程同时进行，只不过每一个流程工作的对象是时间上相邻的若干产品；</li>
+<li>相比于等一个产品完全生产完再开始下一个产品的生产，会快很多；</li>
+<li>希望每一个流程的时间是相对均匀的；</li>
+</ul>
+</li>
+<li>Performance via Prediction （通过预测提高性能）<ul>
+<li>例如先当作 if() 条件成立，执行完内部内容，如果后来发现确实成立，那么直接 apply，否则就再重新正常做；</li>
+<li>这么做就好在（又或者说只有这种情况适合预测），预测成功了就加速了，预测失败了纠正的成本也不高；</li>
+</ul>
+</li>
+<li>Hierarchy of Memories （存储器层次）<ul>
+<li>Disk / Tape -&gt; Main Memory(DRAM) -&gt; L2-Cache(SRAM) -&gt; L1-Cache(On-Chip) -&gt; Registers</li>
+</ul>
+</li>
+<li>Dependency via Redundancy（通过冗余提高可靠性）<ul>
+<li>类似于卡车的多个轮胎，一个模块 down 了以后不会剧烈影响整个系统；</li>
+</ul>
+</li>
 </ol>
 <h2 id="performance-analysis">Performance Analysis<a class="headerlink" href="#performance-analysis" title="Permanent link">&para;</a></h2>
 <h3 id="cpu-time">CPU Time<a class="headerlink" href="#cpu-time" title="Permanent link">&para;</a></h3>
