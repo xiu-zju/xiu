@@ -230,19 +230,24 @@ nav:
           - Karnaugh Map: yuyan/Verilog/circuit/4.md
         - Sequential logic: 
           - Latches and Flipflops: yuyan/Verilog/circuit/5.md
+          - Shift registers: yuyan/Verilog/circuit/6.md
   - 杂项:
     - 反序列化漏洞: misc/Bonus/1.md
     - reveal-md制作slides: misc/reveal.md
   - 课程:
+    - courses/index.md
     - 会计学: 
       - courses/accounting/index.md 
       - 总论: courses/accounting/1/1.md
       - 第一章: courses/accounting/2/2.md
-      - 第二章: courses/accounting/3/3.md
-      - 第三章: courses/accounting/4/4.md
-      - 第四章: courses/accounting/5/5.md
-      - 第五章: courses/accounting/6/6.md
-      - 第六章: courses/accounting/7/7.md
+      - 第二章 会计要素与复式记账: courses/accounting/3/3.md
+      - 第三章 会计循环: courses/accounting/4/4.md
+      - 第四章 货币资金与交易性金融资产: courses/accounting/5/5.md
+      - 第五章 应收款项: courses/accounting/6/6.md
+      - 第六章 存货: courses/accounting/7/7.md
+      - 第七章: courses/accounting/8/8.md
+      - 第八章 固定资产: courses/accounting/9/9.md
+      - 第九章: courses/accounting/10/10.md
     - 高级数据结构与算法分析:
       - AVL Trees, Splay Trees & Amortized: courses/ads/1/1.md
       - Red-Black Trees & B+ Tree: courses/ads/2/2.md
@@ -255,6 +260,7 @@ nav:
     - 计算机组成:
       - Chapter 1: courses/jz/1/1.md
       - Chapter 2: courses/jz/2/2.md
+      - Chapter 3: courses/jz/3/3.md
     - 大学物理实验:
       - 绪论: courses/dawushiyan/1/1.md
   - 友链: link/link.md
