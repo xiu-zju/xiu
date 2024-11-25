@@ -103,15 +103,6 @@ plugins:
   # https://squidfunk.github.io/mkdocs-material/setup/setting-up-tags/
   # https://squidfunk.github.io/mkdocs-material/plugins/tags/#meta.tags
   - tags
-  - encryptcontent: # now just for one page, need to be improved
-      password: !ENV ${MY_SECRET_PASSWORD}
-      title_prefix: "🔒 "
-      remember_password: True
-      summary: '这段内容已经被加密保护。'
-      placeholder: '请输入密码'
-      encryption_info_message: '如果你想看这段内容，请联系管理员。'
-      default_expire_dalay: 48
-      decryption_failure_message: '密码错误'
 
 markdown_extensions:
   - toc:
@@ -188,9 +179,11 @@ extra_css:
   - https://unpkg.com/katex@0/dist/katex.min.css
 
 extra_javascript:
-  - javascripts/katex.js
-  - https://unpkg.com/katex@0/dist/katex.min.js
-  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+  # - javascripts/katex.js
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+  # - https://unpkg.com/katex@0/dist/katex.min.js
+  # - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
 
 
 
@@ -261,6 +254,8 @@ nav:
       - Chapter 1: courses/jz/1/1.md
       - Chapter 2: courses/jz/2/2.md
       - Chapter 3: courses/jz/3/3.md
+      - Chapter 4: courses/jz/4/4.md
+      - Chapter 5: courses/jz/5/5.md
     - 大学物理实验:
       - 绪论: courses/dawushiyan/1/1.md
   - 友链: link/link.md
