@@ -2306,6 +2306,12 @@
       
         
       
+        
+      
+        
+      
+        
+      
     
     
       
@@ -2370,6 +2376,69 @@
   
   <span class="md-ellipsis">
     Chapter 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../courses/jz/3/3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../courses/jz/4/4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../courses/jz/5/5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 5
   </span>
   
 
@@ -2871,7 +2940,7 @@ However, the procedural if statement provides a new way to make mistakes. The ci
 <p>Syntactically-correct code does not necessarily result in a reasonable circuit (combinational logic + flip-flops). The usual reason is: "What happens in the cases other than those you specified?". Verilog's answer is: Keep the outputs unchanged.</p>
 <p>This behaviour of "keep outputs unchanged" means the current state needs to be remembered, and thus produces a latch. Combinational logic (e.g., logic gates) cannot remember any state. Watch out for Warning (10240): ... inferring latch(es)" messages. Unless the latch was intentional, it almost always indicates a bug. Combinational circuits must have a value assigned to all outputs under all conditions. This usually means you always need else clauses or a default value assigned to the outputs.</p>
 <h2 id="always-case">Always case<a class="headerlink" href="#always-case" title="Permanent link">&para;</a></h2>
-<p>Case statements in Verilog are nearly equivalent to a sequence of if-elseif-else that compares one expression to a list of others. Its syntax and functionality differs from the switch statement in C.
+<p>Case statements in Verilog are nearly equivalent to a sequence of if-elseif-else that compares one expression to a list of others. Its syntax and functionality differs from the switch statement in C.</p>
 <div class="language-verilog highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Verilog</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -2890,9 +2959,11 @@ However, the procedural if statement provides a new way to make mistakes. The ci
 </span><span id="__span-9-8"><span class="w">    </span><span class="k">endcase</span>
 </span><span id="__span-9-9"><span class="k">end</span>
 </span></code></pre></div></td></tr></table></div>
-- The case statement begins with case and each "case item" ends with a colon. There is no "switch".
-- Each case item can execute exactly one statement. This makes the "break" used in C unnecessary. But this means that if you need more than one statement, you must use begin ... end.
-- Duplicate (and partially overlapping) case items are permitted. The first one that matches is used. C does not allow duplicate case items.</p>
+<ul>
+<li>The case statement begins with case and each "case item" ends with a colon. There is no "switch".</li>
+<li>Each case item can execute exactly one statement. This makes the "break" used in C unnecessary. But this means that if you need more than one statement, you must use begin ... end.</li>
+<li>Duplicate (and partially overlapping) case items are permitted. The first one that matches is used. C does not allow duplicate case items.</li>
+</ul>
 <h2 id="always-casez">Always casez<a class="headerlink" href="#always-casez" title="Permanent link">&para;</a></h2>
 <div class="language-verilog highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Verilog</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
@@ -2915,9 +2986,12 @@ However, the procedural if statement provides a new way to make mistakes. The ci
 <h2 id="reduction">Reduction<a class="headerlink" href="#reduction" title="Permanent link">&para;</a></h2>
 <p>You're already familiar with bitwise operations between two values, e.g., a &amp; b or a ^ b. Sometimes, you want to create a wide gate that operates on all of the bits of one vector, like (a[0] &amp; a[1] &amp; a[2] &amp; a[3] ... ), which gets tedious if the vector is long.</p>
 <p>The reduction operators can do AND, OR, and XOR of the bits of a vector, producing one bit of output:</p>
-<p>&amp; a[3:0]     // AND: a[3]&amp;a[2]&amp;a[1]&amp;a[0]. Equivalent to (a[3:0] == 4'hf)
-| b[3:0]     // OR:  b[3]|b[2]|b[1]|b[0]. Equivalent to (b[3:0] != 4'h0)
-^ c[2:0]     // XOR: c[2]^c[1]^c[0]
+<p><div class="language-verilog highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Verilog</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><span class="o">&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w">     </span><span class="c1">// AND: a[3]&amp;a[2]&amp;a[1]&amp;a[0]. Equivalent to (a[3:0] == 4&#39;hf)</span>
+</span><span id="__span-11-2"><span class="o">|</span><span class="w"> </span><span class="n">b</span><span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w">     </span><span class="c1">// OR:  b[3]|b[2]|b[1]|b[0]. Equivalent to (b[3:0] != 4&#39;h0)</span>
+</span><span id="__span-11-3"><span class="o">^</span><span class="w"> </span><span class="n">c</span><span class="p">[</span><span class="mh">2</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w">     </span><span class="c1">// XOR: c[2]^c[1]^c[0]</span>
+</span></code></pre></div></td></tr></table></div>
 These are unary operators that have only one operand (similar to the NOT operators ! and ~). You can also invert the outputs of these to create NAND, NOR, and XNOR gates, e.g., (~&amp; d[7:0]).</p>
 <h2 id="error-prone-points">Error-prone points<a class="headerlink" href="#error-prone-points" title="Permanent link">&para;</a></h2>
 <div class="language-verilog highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Verilog</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -2930,17 +3004,17 @@ These are unary operators that have only one operand (similar to the NOT operato
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><span class="k">module</span><span class="w"> </span><span class="n">top_module</span><span class="p">(</span><span class="w"> </span>
-</span><span id="__span-11-2"><span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="p">[</span><span class="mh">254</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">in</span><span class="p">,</span>
-</span><span id="__span-11-3"><span class="w">    </span><span class="k">output</span><span class="w"> </span><span class="p">[</span><span class="mh">7</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">out</span><span class="w"> </span><span class="p">);</span>
-</span><span id="__span-11-4"><span class="w">    </span><span class="k">integer</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
-</span><span id="__span-11-5"><span class="w">    </span><span class="k">always</span><span class="w"> </span><span class="p">@(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">begin</span>
-</span><span id="__span-11-6"><span class="w">        </span><span class="n">out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0</span><span class="p">;</span>
-</span><span id="__span-11-7"><span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mh">255</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mh">1</span><span class="p">)</span><span class="w"> </span><span class="k">begin</span>
-</span><span id="__span-11-8"><span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">in</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mh">1</span><span class="p">)</span><span class="w"> </span><span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="o">+</span><span class="w"> </span><span class="mh">1</span><span class="p">;</span>
-</span><span id="__span-11-9"><span class="w">        </span><span class="k">end</span>
-</span><span id="__span-11-10"><span class="w">    </span><span class="k">end</span>
-</span><span id="__span-11-11"><span class="k">endmodule</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><span class="k">module</span><span class="w"> </span><span class="n">top_module</span><span class="p">(</span><span class="w"> </span>
+</span><span id="__span-12-2"><span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="p">[</span><span class="mh">254</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">in</span><span class="p">,</span>
+</span><span id="__span-12-3"><span class="w">    </span><span class="k">output</span><span class="w"> </span><span class="p">[</span><span class="mh">7</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">out</span><span class="w"> </span><span class="p">);</span>
+</span><span id="__span-12-4"><span class="w">    </span><span class="k">integer</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+</span><span id="__span-12-5"><span class="w">    </span><span class="k">always</span><span class="w"> </span><span class="p">@(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">begin</span>
+</span><span id="__span-12-6"><span class="w">        </span><span class="n">out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0</span><span class="p">;</span>
+</span><span id="__span-12-7"><span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mh">255</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mh">1</span><span class="p">)</span><span class="w"> </span><span class="k">begin</span>
+</span><span id="__span-12-8"><span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="n">in</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mh">1</span><span class="p">)</span><span class="w"> </span><span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="o">+</span><span class="w"> </span><span class="mh">1</span><span class="p">;</span>
+</span><span id="__span-12-9"><span class="w">        </span><span class="k">end</span>
+</span><span id="__span-12-10"><span class="w">    </span><span class="k">end</span>
+</span><span id="__span-12-11"><span class="k">endmodule</span>
 </span></code></pre></div></td></tr></table></div>
 <ul>
 <li>for循环必须在always块或者initial里面</li>
@@ -2980,40 +3054,40 @@ These are unary operators that have only one operand (similar to the NOT operato
 <span class="normal">31</span>
 <span class="normal">32</span>
 <span class="normal">33</span>
-<span class="normal">34</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><span class="k">module</span><span class="w"> </span><span class="n">top_module</span><span class="p">(</span><span class="w"> </span>
-</span><span id="__span-12-2"><span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="p">[</span><span class="mh">399</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span>
-</span><span id="__span-12-3"><span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="n">cin</span><span class="p">,</span>
-</span><span id="__span-12-4"><span class="w">    </span><span class="k">output</span><span class="w"> </span><span class="n">cout</span><span class="p">,</span>
-</span><span id="__span-12-5"><span class="w">    </span><span class="k">output</span><span class="w"> </span><span class="p">[</span><span class="mh">399</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span>
-</span><span id="__span-12-6"><span class="p">);</span>
-</span><span id="__span-12-7"><span class="w">    </span><span class="kt">wire</span><span class="w"> </span><span class="p">[</span><span class="mh">99</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">c</span><span class="p">;</span>
-</span><span id="__span-12-8">
-</span><span id="__span-12-9"><span class="w">    </span><span class="c1">// 实例化第一个BCD加法器</span>
-</span><span id="__span-12-10"><span class="w">    </span><span class="n">bcd_fadd</span><span class="w"> </span><span class="n">bcd0</span><span class="w"> </span><span class="p">(</span>
-</span><span id="__span-12-11"><span class="w">        </span><span class="p">.</span><span class="n">a</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]),</span>
-</span><span id="__span-12-12"><span class="w">        </span><span class="p">.</span><span class="n">b</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]),</span>
-</span><span id="__span-12-13"><span class="w">        </span><span class="p">.</span><span class="n">cin</span><span class="p">(</span><span class="n">cin</span><span class="p">),</span>
-</span><span id="__span-12-14"><span class="w">        </span><span class="p">.</span><span class="n">cout</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="mh">0</span><span class="p">]),</span>
-</span><span id="__span-12-15"><span class="w">        </span><span class="p">.</span><span class="n">sum</span><span class="p">(</span><span class="n">sum</span><span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">])</span>
-</span><span id="__span-12-16"><span class="w">    </span><span class="p">);</span>
-</span><span id="__span-12-17">
-</span><span id="__span-12-18"><span class="w">    </span><span class="c1">// 使用generate语句来实例化剩下的99个BCD加法器</span>
-</span><span id="__span-12-19"><span class="w">    </span><span class="k">genvar</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
-</span><span id="__span-12-20"><span class="w">    </span><span class="k">generate</span>
-</span><span id="__span-12-21"><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mh">100</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mh">1</span><span class="p">)</span><span class="w"> </span><span class="k">begin</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">bcd_fadd_block</span>
-</span><span id="__span-12-22"><span class="w">            </span><span class="n">bcd_fadd</span><span class="w"> </span><span class="n">bcd1</span><span class="w"> </span><span class="p">(</span>
-</span><span id="__span-12-23"><span class="w">                </span><span class="p">.</span><span class="n">a</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mh">4</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="mh">3</span><span class="o">:</span><span class="mh">4</span><span class="o">*</span><span class="n">i</span><span class="p">]),</span>
-</span><span id="__span-12-24"><span class="w">                </span><span class="p">.</span><span class="n">b</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="mh">4</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="mh">3</span><span class="o">:</span><span class="mh">4</span><span class="o">*</span><span class="n">i</span><span class="p">]),</span>
-</span><span id="__span-12-25"><span class="w">                </span><span class="p">.</span><span class="n">cin</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mh">1</span><span class="p">]),</span>
-</span><span id="__span-12-26"><span class="w">                </span><span class="p">.</span><span class="n">cout</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span>
-</span><span id="__span-12-27"><span class="w">                </span><span class="p">.</span><span class="n">sum</span><span class="p">(</span><span class="n">sum</span><span class="p">[</span><span class="mh">4</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="mh">3</span><span class="o">:</span><span class="mh">4</span><span class="o">*</span><span class="n">i</span><span class="p">])</span>
-</span><span id="__span-12-28"><span class="w">            </span><span class="p">);</span>
-</span><span id="__span-12-29"><span class="w">        </span><span class="k">end</span>
-</span><span id="__span-12-30"><span class="w">    </span><span class="k">endgenerate</span>
-</span><span id="__span-12-31">
-</span><span id="__span-12-32"><span class="w">    </span><span class="k">assign</span><span class="w"> </span><span class="n">cout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="p">[</span><span class="mh">99</span><span class="p">];</span>
-</span><span id="__span-12-33">
-</span><span id="__span-12-34"><span class="k">endmodule</span>
+<span class="normal">34</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1"><span class="k">module</span><span class="w"> </span><span class="n">top_module</span><span class="p">(</span><span class="w"> </span>
+</span><span id="__span-13-2"><span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="p">[</span><span class="mh">399</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">,</span>
+</span><span id="__span-13-3"><span class="w">    </span><span class="k">input</span><span class="w"> </span><span class="n">cin</span><span class="p">,</span>
+</span><span id="__span-13-4"><span class="w">    </span><span class="k">output</span><span class="w"> </span><span class="n">cout</span><span class="p">,</span>
+</span><span id="__span-13-5"><span class="w">    </span><span class="k">output</span><span class="w"> </span><span class="p">[</span><span class="mh">399</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span>
+</span><span id="__span-13-6"><span class="p">);</span>
+</span><span id="__span-13-7"><span class="w">    </span><span class="kt">wire</span><span class="w"> </span><span class="p">[</span><span class="mh">99</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="w"> </span><span class="n">c</span><span class="p">;</span>
+</span><span id="__span-13-8">
+</span><span id="__span-13-9"><span class="w">    </span><span class="c1">// 实例化第一个BCD加法器</span>
+</span><span id="__span-13-10"><span class="w">    </span><span class="n">bcd_fadd</span><span class="w"> </span><span class="n">bcd0</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-13-11"><span class="w">        </span><span class="p">.</span><span class="n">a</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]),</span>
+</span><span id="__span-13-12"><span class="w">        </span><span class="p">.</span><span class="n">b</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]),</span>
+</span><span id="__span-13-13"><span class="w">        </span><span class="p">.</span><span class="n">cin</span><span class="p">(</span><span class="n">cin</span><span class="p">),</span>
+</span><span id="__span-13-14"><span class="w">        </span><span class="p">.</span><span class="n">cout</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="mh">0</span><span class="p">]),</span>
+</span><span id="__span-13-15"><span class="w">        </span><span class="p">.</span><span class="n">sum</span><span class="p">(</span><span class="n">sum</span><span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">])</span>
+</span><span id="__span-13-16"><span class="w">    </span><span class="p">);</span>
+</span><span id="__span-13-17">
+</span><span id="__span-13-18"><span class="w">    </span><span class="c1">// 使用generate语句来实例化剩下的99个BCD加法器</span>
+</span><span id="__span-13-19"><span class="w">    </span><span class="k">genvar</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+</span><span id="__span-13-20"><span class="w">    </span><span class="k">generate</span>
+</span><span id="__span-13-21"><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mh">100</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mh">1</span><span class="p">)</span><span class="w"> </span><span class="k">begin</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">bcd_fadd_block</span>
+</span><span id="__span-13-22"><span class="w">            </span><span class="n">bcd_fadd</span><span class="w"> </span><span class="n">bcd1</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-13-23"><span class="w">                </span><span class="p">.</span><span class="n">a</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mh">4</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="mh">3</span><span class="o">:</span><span class="mh">4</span><span class="o">*</span><span class="n">i</span><span class="p">]),</span>
+</span><span id="__span-13-24"><span class="w">                </span><span class="p">.</span><span class="n">b</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="mh">4</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="mh">3</span><span class="o">:</span><span class="mh">4</span><span class="o">*</span><span class="n">i</span><span class="p">]),</span>
+</span><span id="__span-13-25"><span class="w">                </span><span class="p">.</span><span class="n">cin</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mh">1</span><span class="p">]),</span>
+</span><span id="__span-13-26"><span class="w">                </span><span class="p">.</span><span class="n">cout</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span>
+</span><span id="__span-13-27"><span class="w">                </span><span class="p">.</span><span class="n">sum</span><span class="p">(</span><span class="n">sum</span><span class="p">[</span><span class="mh">4</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="mh">3</span><span class="o">:</span><span class="mh">4</span><span class="o">*</span><span class="n">i</span><span class="p">])</span>
+</span><span id="__span-13-28"><span class="w">            </span><span class="p">);</span>
+</span><span id="__span-13-29"><span class="w">        </span><span class="k">end</span>
+</span><span id="__span-13-30"><span class="w">    </span><span class="k">endgenerate</span>
+</span><span id="__span-13-31">
+</span><span id="__span-13-32"><span class="w">    </span><span class="k">assign</span><span class="w"> </span><span class="n">cout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">c</span><span class="p">[</span><span class="mh">99</span><span class="p">];</span>
+</span><span id="__span-13-33">
+</span><span id="__span-13-34"><span class="k">endmodule</span>
 </span></code></pre></div></td></tr></table></div>
 
 
@@ -3142,11 +3216,9 @@ These are unary operators that have only one operand (similar to the NOT operato
     
       <script src="../../../assets/javascripts/bundle.ad660dcc.min.js"></script>
       
-        <script src="../../../javascripts/katex.js"></script>
+        <script src="../../../javascripts/mathjax.js"></script>
       
-        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
-      
-        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
   </body>
