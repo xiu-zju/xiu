@@ -1887,8 +1887,6 @@
       
         
       
-        
-      
     
     
       
@@ -2079,27 +2077,6 @@
   
   <span class="md-ellipsis">
     Dynamic Programming
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ads/9/9/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Greedy Method
   </span>
   
 
@@ -3092,38 +3069,38 @@
 <p>在二进制加法中，每一位的计算分为三部分：</p>
 <ol>
 <li>
-<p><strong>生成进位信号</strong> (Generate, G)：当两个加数的对应位都为1时会产生进位，表示为：
-   $$
-   G_i = A_i \cdot B_i
-   $$</p>
+<p><strong>生成进位信号</strong> (Generate, G)：当两个加数的对应位都为1时会产生进位，表示为：</p>
+<div class="arithmatex">\[
+G_i = A_i \cdot B_i
+\]</div>
 </li>
 <li>
-<p><strong>传播进位信号</strong> (Propagate, P)：当两个加数的对应位中至少有一个为1时，进位可以被传播，表示为：
-   $$
-   P_i = A_i + B_i
-   $$</p>
+<p><strong>传播进位信号</strong> (Propagate, P)：当两个加数的对应位中至少有一个为1时，进位可以被传播，表示为：</p>
+<div class="arithmatex">\[
+P_i = A_i + B_i
+\]</div>
 </li>
 <li>
-<p><strong>计算进位信号</strong> (Carry, C)：根据生成和传播信号，计算第 <span class="arithmatex">\( i+1 \)</span> 位的进位：
-   $$
-   C_{i+1} = G_i + P_i \cdot C_i
-   $$</p>
+<p><strong>计算进位信号</strong> (Carry, C)：根据生成和传播信号，计算第 <span class="arithmatex">\( i+1 \)</span> 位的进位：</p>
+<div class="arithmatex">\[
+C_{i+1} = G_i + P_i \cdot C_i
+\]</div>
 </li>
 </ol>
 <p>通过这种方式，可以将进位的计算过程并行化，而不需要逐级等待前一位的进位信号。</p>
 <p><center></p>
 <p><img alt="alt text" src="../image/CleanShot%202024-11-21%20at%2014.35.48%402x.png" width="200px" />
 </center></p>
-<p>超前进位加法器的关键在于提前计算出所有进位信号 <span class="arithmatex">\( C_i \)</span>，公式为：
-$$
+<p>超前进位加法器的关键在于提前计算出所有进位信号 <span class="arithmatex">\( C_i \)</span>，公式为：</p>
+<div class="arithmatex">\[
 C_1 = G_0 + P_0 \cdot C_0
-$$
-$$
+\]</div>
+<div class="arithmatex">\[
 C_2 = G_1 + P_1 \cdot C_1 = G_1 + P_1 \cdot (G_0 + P_0 \cdot C_0)
-$$
-$$
+\]</div>
+<div class="arithmatex">\[
 C_3 = G_2 + P_2 \cdot C_2 = G_2 + P_2 \cdot (G_1 + P_1 \cdot (G_0 + P_0 \cdot C_0))
-$$</p>
+\]</div>
 <p>以此类推，通过递归展开公式，可以同时计算多个进位信号。</p>
 <p><center></p>
 <p><img alt="alt text" src="../image/CleanShot%202024-11-21%20at%2014.38.47%402x.png" width="300px" />
