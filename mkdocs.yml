@@ -252,6 +252,8 @@ nav:
       - Dynamic Programming: courses/ads/8/8.md
       - Greedy Method: courses/ads/9/9.md
       - NP-Completeness: courses/ads/10/10.md
+      - Approximation: courses/ads/11/11.md
+      - Local Search: courses/ads/12/12.md
     - 计算机组成:
       - Chapter 1: courses/jz/1/1.md
       - Chapter 2: courses/jz/2/2.md
