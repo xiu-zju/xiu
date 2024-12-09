@@ -2229,6 +2229,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#np-hard" class="md-nav__link">
+    <span class="md-ellipsis">
+      NP-hard问题
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-formal-language-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Formal-language Framework
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clique-problem-vertex-cover-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clique problem &amp; Vertex cover problem
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2635,6 +2662,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#np-hard" class="md-nav__link">
+    <span class="md-ellipsis">
+      NP-hard问题
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-formal-language-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      A Formal-language Framework
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clique-problem-vertex-cover-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clique problem &amp; Vertex cover problem
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2696,17 +2750,82 @@
 <p>并非所有可计算的问题都是NP问题。例如，考虑判断一个图是否没有哈密顿回路的问题。这需要列出所有的回路进行判断，是一个超多项式时间复杂度的问题。</p>
 </div>
 <p>我们能确定<span class="arithmatex">\(P \subseteq NP\)</span>，但是我们搞不清楚<span class="arithmatex">\(P \subset NP\)</span>是否正确。例如哈密顿回路问题。</p>
+<div class="admonition warning">
+<p class="admonition-title">重要</p>
+<ul>
+<li>确定性图灵机可以用来求解P问题（多项式时间内）</li>
+<li>确定性图灵机可以用来验证NP问题（多项式时间内）</li>
+<li>非确定图灵机可以用来求解NP问题（多项式时间内）</li>
+<li>非确定图灵机不能用来验证NP-hard问题（多项式时间内）</li>
+</ul>
+</div>
 <h2 id="npc">NPC问题<a class="headerlink" href="#npc" title="Permanent link">&para;</a></h2>
-<p>NPC问题是所有NP问题中最难的那一类问题。一个NPC问题有如下性质：所有NP问题都可以多项式规约于NPC问题。</p>
+<p>NPC问题是所有NP问题中最难的那一类问题。一个NPC问题有如下性质：<strong>所有NP问题都可以多项式规约于NPC问题。</strong></p>
 <p>问题之间的关系如图所示：
 <img alt="alt text" src="../image/image2.png" />
 由规约知，所有的NPC问题难度都是<strong>等价的</strong>，所以证明了一个NPC问题有多项式解法，那就是相当于证明了所有的问题都有多项式解法，那就证明了<span class="arithmatex">\(P = NP\)</span>。</p>
 <p>Given any instance <span class="arithmatex">\(\alpha \in \text{Problem A}\)</span>, if we can find a program <span class="arithmatex">\(R(\alpha) \rightarrow \beta \in \text{Problem B}\)</span> with <span class="arithmatex">\(T_R(N) = O(N^{k1})\)</span>, and another program <span class="arithmatex">\(D(\beta)\)</span> to get an answer in time <span class="arithmatex">\(O(N^{k2})\)</span>. Moreover, if the answer for <span class="arithmatex">\(\beta\)</span> is the same as the answer for <span class="arithmatex">\(\alpha\)</span>, then</p>
 <p><img alt="alt text" src="../image/image3.png" /></p>
+<p>第一个被证明为NPC的问题是SAT（电路可满足）问题。</p>
 <h2 id="_3">多项式规约<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p><img alt="alt text" src="../image/image4.png" />
 已知哈密顿回路问题是NPC，证旅行商问题也是NPC。</p>
 <p>首先证明旅行商问题是NP问题（答案在多项式时间内可验证）。显然可以在多项式时间内验证。我们要加上红色的边来将这张图补成完全图。现在来看这张图。若原图中没有哈密顿回路，那么一定要经过一条红色的边，那么旅行商问题的解一定是V+1或更多。</p>
+<h2 id="np-hard">NP-hard问题<a class="headerlink" href="#np-hard" title="Permanent link">&para;</a></h2>
+<ul>
+<li>所有的NP问题都可以用多项式时间规约到NP-hard问题</li>
+<li>但是NP-hard问题不一定是NP问题</li>
+</ul>
+<p><strong>即使NPC问题发现了多项式级的算法，NP-Hard问题有可能仍然无法得到多项式级的算法。</strong>事实上，由于NP-Hard放宽了限定条件，它将有可能比所有的NPC问题的时间复杂度更高从而更难以解决。</p>
+<p><img alt="alt text" src="../image/image5.png" width="250px" /></p>
+<h2 id="a-formal-language-framework">A Formal-language Framework<a class="headerlink" href="#a-formal-language-framework" title="Permanent link">&para;</a></h2>
+<p>形式化语言框架</p>
+<ul>
+<li>一个抽象问题Q是一个问题的实例(Instances)和问题的解(Solutions)之间的二元映射关系</li>
+<li>编码：通过编码将其转化为具体问题（喂给图灵机）</li>
+<li>一些定义：</li>
+</ul>
+<p><img alt="alt text" src="../image/CleanShot%202024-12-09%20at%2021.55.55%402x.png" /></p>
+<ul>
+<li>语言可被<strong>判定</strong>：A language L is decided by an algorithm A if every binary string in L is accepted by A and every binary string not in L is rejected by A（还要关注L之外的字符串，里面为1，外面为0）（若L被判定，L的子集不一定能被判定）</li>
+<li>语言可被<strong>接受</strong>：To accept a language, an algorithm need only worry about strings in L, but to decide a language, it must correctly accept or reject every string in {0, 1}*（只要关注L里面的字符串就行，里面也为1）（若L被接受，那么L的子集也被接受）</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>P逻辑上的定义：   </p>
+<div class="arithmatex">\[ 
+P = \{ L ⊆ \{0, 1\}^* : \text{there exists an algorithm A that decides L in polynomial time} \} 
+\]</div>
+<p>NP的定义：</p>
+<p>A language L belongs to NP iff there exist a two-input polynomial-time algorithm A and a constant c such that </p>
+<div class="arithmatex">\[ 
+L = \{ x ∈ \{0, 1\}^* : \text{there exists a certificate } y \text{ with } |y| = O(|x|^c) \text{ such that } A(x, y) = 1 \} 
+\]</div>
+<p>We say that algorithm A verifies language L in polynomial time.</p>
+</div>
+<p><img alt="alt text" src="../image/CleanShot%202024-12-09%20at%2022.17.20%402x.png" width="600px" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>P ⊆ co-NP</li>
+<li>P ⊆ co-NP ∩ NP</li>
+</ul>
+</div>
+<p>A language L ⊆ {0, 1}* is NP-complete if</p>
+<ol>
+<li><span class="arithmatex">\(L ∈ NP\)</span>, and</li>
+<li><span class="arithmatex">\(L’ ≤_P L\)</span> for every <span class="arithmatex">\(L’ ∈ NP\)</span>.</li>
+</ol>
+<h2 id="clique-problem-vertex-cover-problem">Clique problem &amp; Vertex cover problem<a class="headerlink" href="#clique-problem-vertex-cover-problem" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Clique problem: Given an undirected graph <span class="arithmatex">\(G = (V, E)\)</span> and an integer <span class="arithmatex">\(K\)</span>, does <span class="arithmatex">\(G\)</span> contain a complete subgraph (clique) of (at least) <span class="arithmatex">\(K\)</span> vertices?</li>
+<li>Vertex cover problem: Given an undirected graph <span class="arithmatex">\(G = (V, E)\)</span> and an integer <span class="arithmatex">\(K\)</span>, does <span class="arithmatex">\(G\)</span> contain a subset <span class="arithmatex">\(V' ⊆ V\)</span> such that <span class="arithmatex">\(|V'|\)</span> is (at most) <span class="arithmatex">\(K\)</span> and every edge in <span class="arithmatex">\(G\)</span> has a vertex in <span class="arithmatex">\(V'\)</span> (vertex cover)?</li>
+</ul>
+<p>证明<strong>分团问题</strong>是NP完备，我们可以很简单的将<strong>顶点覆盖问题</strong>多项式归约成这个问题。因为存在一个大小是k以上的分团，等价于它的补图中存在一个大小是k以上的独立集。</p>
+<details class="example">
+<summary>具体证明</summary>
+<p><img alt="alt text" src="../image/CleanShot%202024-12-09%20at%2022.31.49%402x.png" /></p>
+</details>
 
 
 
