@@ -20,7 +20,7 @@ theme:
     - content.action.edit
     - content.code.annotate
     - navigation.tracking
-
+  favicon: images/favicon.png
   font: false
   icon:
     logo: material/notebook-outline
@@ -241,6 +241,9 @@ nav:
       - 第七章 长期股权投资: courses/accounting/8/8.md
       - 第八章 固定资产: courses/accounting/9/9.md
       - 第九章 无形资产: courses/accounting/10/10.md
+      - 第十章 负债: courses/accounting/11/11.md
+      - 第十一章 所有者权益: courses/accounting/12/12.md
+      - 第十二章 收入、费用和利润: courses/accounting/13/13.md
     - 高级数据结构与算法分析:
       - AVL Trees, Splay Trees & Amortized: courses/ads/1/1.md
       - Red-Black Trees & B+ Tree: courses/ads/2/2.md
@@ -254,6 +257,7 @@ nav:
       - NP-Completeness: courses/ads/10/10.md
       - Approximation: courses/ads/11/11.md
       - Local Search: courses/ads/12/12.md
+      - Randomized Algorithm: courses/ads/13/13.md
     - 计算机组成:
       - Chapter 1: courses/jz/1/1.md
       - Chapter 2: courses/jz/2/2.md
