@@ -258,6 +258,7 @@ nav:
       - Approximation: courses/ads/11/11.md
       - Local Search: courses/ads/12/12.md
       - Randomized Algorithm: courses/ads/13/13.md
+      - Parallel Algorithm: courses/ads/14/14.md
     - 计算机组成:
       - Chapter 1: courses/jz/1/1.md
       - Chapter 2: courses/jz/2/2.md
