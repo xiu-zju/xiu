@@ -18,7 +18,7 @@
         <link rel="prev" href="../../12/12/">
       
       
-        <link rel="next" href="../../../jz/1/1/">
+        <link rel="next" href="../../14/14/">
       
       
       <link rel="icon" href="../../../../images/favicon.png">
@@ -1605,6 +1605,10 @@
       
         
       
+        
+      
+        
+      
     
     
       
@@ -1877,6 +1881,48 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../accounting/12/12/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第十一章 所有者权益
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../accounting/13/13/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第十二章 收入、费用和利润
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1895,6 +1941,8 @@
   
     
     
+      
+        
       
         
       
@@ -2314,10 +2362,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#quicksort" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quicksort
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../14/14/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Parallel Algorithm
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -2675,6 +2753,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#quicksort" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quicksort
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2709,7 +2796,7 @@
 <p><span class="arithmatex">\(n\)</span>个人依次来面试，每个人都有能力值<span class="arithmatex">\(q_i\)</span>。面试一个人花费<span class="arithmatex">\(C_i\)</span>，对一个人的签订费是<span class="arithmatex">\(C_h\)</span>。目标是尽可能少花费，雇下能力值最高的人。</p>
 <p>假设M个人被雇佣了，那么cost是<span class="arithmatex">\(O(NC_i+MC_h)\)</span>。</p>
 <h3 id="naive-solution">Naive Solution<a class="headerlink" href="#naive-solution" title="Permanent link">&para;</a></h3>
-<p><div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -2737,9 +2824,13 @@
 </span><span id="__span-0-13"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Best</span><span class="p">;</span>
 </span><span id="__span-0-14"><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div>
-- 最坏情况是能力值单调递增，cost是<span class="arithmatex">\(O(NC_h)\)</span>。（忽略<span class="arithmatex">\(C_i\)</span>，因为比较小）
-- 如果是random，分析如下：
-    <img alt="alt text" src="../image/CleanShot%202024-12-10%20at%2011.03.35%402x.png" /></p>
+<ul>
+<li>最坏情况是能力值单调递增，cost是<span class="arithmatex">\(O(NC_h)\)</span>。（忽略<span class="arithmatex">\(C_i\)</span>，因为比较小）</li>
+<li>
+<p>如果是random，分析如下：</p>
+<p><img alt="alt text" src="../image/CleanShot%202024-12-10%20at%2011.03.35%402x.png" width="500px" /></p>
+</li>
+</ul>
 <h3 id="randomized-algorithm">Randomized Algorithm<a class="headerlink" href="#randomized-algorithm" title="Permanent link">&para;</a></h3>
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -2809,7 +2900,7 @@
 <span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><span class="kt">int</span><span class="w"> </span><span class="nf">OnlineHiring</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">EventType</span><span class="w"> </span><span class="n">C</span><span class="p">[</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">N</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">k</span><span class="p">)</span>
 </span><span id="__span-3-2"><span class="p">{</span>
 </span><span id="__span-3-3"><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">Best</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="p">;</span>
-</span><span id="__span-3-4"><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">BestQ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="err"></span><span class="w"> </span><span class="p">;</span>
+</span><span id="__span-3-4"><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">BestQ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">inf</span><span class="w"> </span><span class="p">;</span>
 </span><span id="__span-3-5"><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;=</span><span class="n">k</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-3-6"><span class="w">        </span><span class="n">Qi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">interview</span><span class="p">(</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="p">);</span>
 </span><span id="__span-3-7"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">Qi</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">BestQ</span><span class="w"> </span><span class="p">)</span><span class="w">   </span><span class="n">BestQ</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Qi</span><span class="p">;</span>
@@ -2824,6 +2915,40 @@
 </span><span id="__span-3-16"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">Best</span><span class="p">;</span>
 </span><span id="__span-3-17"><span class="p">}</span>
 </span></code></pre></div></td></tr></table></div></p>
+<p>定义如下变量：</p>
+<p><span class="arithmatex">\(S_i = \text{the } i \text{th applicant is the best}\)</span></p>
+<p>什么时候<span class="arithmatex">\(S_i\)</span>为真？   <br />
+答：</p>
+<p>{ A:= the best one is at position i }
+and { B:=  no one at positions k+1 ~ i–1 are hired }    </p>
+<p>易知这两者是独立的，所以<span class="arithmatex">\(P(AB) = P(A) \cdot P(B)\)</span>.</p>
+<div class="arithmatex">\[
+Pr[S_i] = Pr[A \cap B] = P[A] \cdot P[B] = \frac{1}{N} \cdot \frac{k}{(i-1)} = \frac{k}{N(i-1)}
+\]</div>
+<div class="arithmatex">\[
+Pr[S] = \sum_{i=k+1}^{N} Pr[S_i] = \sum_{i=k+1}^{N} \frac{k}{N(i-1)} = \frac{k}{N} \sum_{i=k}^{N-1} \frac{1}{i}
+\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>"no one at positions <span class="arithmatex">\(k+1\)</span> to <span class="arithmatex">\(i-1\)</span> are hired" 为什么是 <span class="arithmatex">\(\frac{k}{i-1}\)</span>？因为要想这之间没有被雇佣的，那么就要求 <span class="arithmatex">\(1\)</span> 到 <span class="arithmatex">\(i-1\)</span> 中最优秀的落入 <span class="arithmatex">\(1\)</span> 到 <span class="arithmatex">\(k\)</span> 的区域中。</p>
+</div>
+<p>我们可以证明：</p>
+<div class="arithmatex">\[
+\int_{k}^{N} \frac{1}{x} \, dx \leq \sum_{i=k}^{N} \frac{1}{i} \leq \int_{k-1}^{N-1} \frac{1}{x} \, dx
+\]</div>
+<div class="arithmatex">\[
+\frac{k}{N} ln(\frac{N}{k}) \leq Pr[S] \leq \frac{k}{N} ln(\frac{N-1}{k-1})
+\]</div>
+<p>我们要求<span class="arithmatex">\(\max E(x)\)</span>，对于<span class="arithmatex">\(f(k) = \frac{k}{N} ln(\frac{N}{k})\)</span>，求个导，得出当<span class="arithmatex">\(k=\frac{N}{e}\)</span>时，取得最大。</p>
+<h2 id="quicksort">Quicksort<a class="headerlink" href="#quicksort" title="Permanent link">&para;</a></h2>
+<p>Deterministic Quicksort</p>
+<ul>
+<li><span class="arithmatex">\(\Theta(N^2)\)</span> worst-case running time</li>
+<li><span class="arithmatex">\(\Theta(N \log N)\)</span> average case running time, <em>assuming every input permutation is equally likely</em></li>
+</ul>
+<p><strong>Central splitter</strong> := the pivot that divides the set so that each side contains at least n/4.</p>
+<p>选择的次数的期望就是2。</p>
+<p><img alt="alt text" src="../image/CleanShot%202024-12-21%20at%2018.01.58%402x.png" /></p>
 
 
 

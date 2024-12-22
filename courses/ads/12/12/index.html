@@ -1605,6 +1605,10 @@
       
         
       
+        
+      
+        
+      
     
     
       
@@ -1877,6 +1881,48 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../accounting/12/12/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第十一章 所有者权益
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../accounting/13/13/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第十二章 收入、费用和利润
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1895,6 +1941,8 @@
   
     
     
+      
+        
       
         
       
@@ -2282,17 +2330,17 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#hopfield-neural-networks" class="md-nav__link">
     <span class="md-ellipsis">
       经典问题：Hopfield Neural Networks
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2326,6 +2374,27 @@
   
   <span class="md-ellipsis">
     Randomized Algorithm
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../14/14/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Parallel Algorithm
   </span>
   
 
@@ -2676,17 +2745,17 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#hopfield-neural-networks" class="md-nav__link">
     <span class="md-ellipsis">
       经典问题：Hopfield Neural Networks
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2742,8 +2811,8 @@
 </ul>
 <p>定义以下：</p>
 <ul>
-<li>S~S': S' is a neighboring solution of S~S' can be obtained by a small modification of S.</li>
-<li>N(S) is the neighborhood of S – the set { S': S ~ S' }.</li>
+<li><span class="arithmatex">\(S ～ S'\)</span>: <span class="arithmatex">\(S'\)</span> is a neighboring solution of <span class="arithmatex">\(S - S'\)</span> can be obtained by a small modification of <span class="arithmatex">\(S\)</span>.</li>
+<li><span class="arithmatex">\(N(S)\)</span> is the neighborhood of <span class="arithmatex">\(S\)</span> – the set <span class="arithmatex">\(\{ S': S ～ S' \}\)</span>.</li>
 </ul>
 <div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -2798,7 +2867,7 @@
 <span class="normal">16</span>
 <span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><span class="n">SolutionType</span><span class="w"> </span><span class="nf">Metropolis</span><span class="p">()</span>
 </span><span id="__span-1-2"><span class="p">{</span><span class="w">   </span><span class="n">Define</span><span class="w"> </span><span class="n">constants</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">T</span><span class="p">;</span>
-</span><span id="__span-1-3"><span class="w">    </span><span class="n">Start</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">feasible</span><span class="w"> </span><span class="n">solution</span><span class="w"> </span><span class="n">S</span><span class="w"> </span><span class="err"></span><span class="w"> </span><span class="n">FS</span><span class="w"> </span><span class="p">;</span>
+</span><span id="__span-1-3"><span class="w">    </span><span class="n">Start</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">feasible</span><span class="w"> </span><span class="n">solution</span><span class="w"> </span><span class="n">S</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">FS</span><span class="w"> </span><span class="p">;</span>
 </span><span id="__span-1-4"><span class="w">    </span><span class="n">MinCost</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cost</span><span class="p">(</span><span class="n">S</span><span class="p">);</span>
 </span><span id="__span-1-5"><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-1-6"><span class="w">        </span><span class="n">S</span><span class="err">’</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Randomly</span><span class="w"> </span><span class="n">chosen</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="n">N</span><span class="p">(</span><span class="n">S</span><span class="p">);</span><span class="w"> </span>
@@ -2824,14 +2893,14 @@
 </div>
 <h3 id="simulated-annealing">Simulated Annealing<a class="headerlink" href="#simulated-annealing" title="Permanent link">&para;</a></h3>
 <p>温度逐渐降低。设计出一个温度表：
-Cooling schedule: T = { T1 , T2 , … }</p>
-<h3 id="hopfield-neural-networks">经典问题：Hopfield Neural Networks<a class="headerlink" href="#hopfield-neural-networks" title="Permanent link">&para;</a></h3>
+Cooling schedule: <span class="arithmatex">\(T = \{ T1 , T2 , … \}\)</span></p>
+<h2 id="hopfield-neural-networks">经典问题：Hopfield Neural Networks<a class="headerlink" href="#hopfield-neural-networks" title="Permanent link">&para;</a></h2>
 <p>Graph <span class="arithmatex">\(G = (V, E)\)</span> with integer edge weights <span class="arithmatex">\(w\)</span> (positive or negative).</p>
 <ul>
-<li>If <span class="arithmatex">\(w_e &lt; 0\)</span>, where <span class="arithmatex">\(e = (u, v)\)</span>, then <span class="arithmatex">\(u\)</span> and <span class="arithmatex">\(v\)</span> want to have the same state (+1 or -1);</li>
-<li>If <span class="arithmatex">\(w_e &gt; 0\)</span>, then <span class="arithmatex">\(u\)</span> and <span class="arithmatex">\(v\)</span> want different states.</li>
+<li>If <span class="arithmatex">\(w_e &lt; 0\)</span>, where <span class="arithmatex">\(e = (u, v)\)</span>, then <span class="arithmatex">\(u\)</span> and <span class="arithmatex">\(v\)</span> want to have the <strong>same state</strong> (+1 or -1);</li>
+<li>If <span class="arithmatex">\(w_e &gt; 0\)</span>, then <span class="arithmatex">\(u\)</span> and <span class="arithmatex">\(v\)</span> want <strong>different states</strong>.</li>
 </ul>
-<p>我们易知<span class="arithmatex">\(w_eS_uS_v &lt; 0\)</span>。满足此条件的称为好边，反之坏边。点<span class="arithmatex">\(u\)</span>是满足的如果关联好边的权重大于坏边的权重。</p>
+<p>我们易知满足条件的边满足<span class="arithmatex">\(w_eS_uS_v &lt; 0\)</span>。满足此条件的称为好边，反之坏边。点<span class="arithmatex">\(u\)</span>是<strong>满足的</strong>如果关联好边的权重大于坏边的权重。</p>
 <p><center>
 <img alt="alt text" src="../image/CleanShot%202024-12-03%20at%2010.58.30%402x.png" width="200px" />
 </center></p>
@@ -2864,7 +2933,7 @@ Cooling schedule: T = { T1 , T2 , … }</p>
 <p>每一个局部最优解都是稳定的。所以不一定是全局最优解。</p>
 </div>
 <details class="question">
-<summary>如何证明每次翻转都会增加权重？</summary>
+<summary>如何证明最多需要边的权重次翻转？</summary>
 <p><img alt="alt text" src="../image/CleanShot%202024-12-03%20at%2011.40.44%402x.png" /></p>
 </details>
 <h2 id="the-maximum-cut-problem">经典问题：The Maximum Cut Problem<a class="headerlink" href="#the-maximum-cut-problem" title="Permanent link">&para;</a></h2>
@@ -2878,8 +2947,8 @@ Cooling schedule: T = { T1 , T2 , … }</p>
 </div>
 <ul>
 <li>Problem:  To maximize <span class="arithmatex">\(w(A, B)\)</span>.</li>
-<li>Feasible solution set FS : any partition of <span class="arithmatex">\((A, B)\)</span></li>
-<li>S ~ S': S' can be obtained from S by moving one node from A to B, or one from B to A.</li>
+<li>Feasible solution set <span class="arithmatex">\(FS\)</span> : any partition of <span class="arithmatex">\((A, B)\)</span></li>
+<li><span class="arithmatex">\(S ～ S'\)</span>: <span class="arithmatex">\(S'\)</span> can be obtained from <span class="arithmatex">\(S\)</span> by moving one node from <span class="arithmatex">\(A\)</span> to <span class="arithmatex">\(B\)</span>, or one from <span class="arithmatex">\(B\)</span> to <span class="arithmatex">\(A\)</span>.</li>
 </ul>
 <p>转化为Hopfield Neural Networks：团内接坏边，团外接好边（因为好边的权重大于坏边）</p>
 <p><center>
@@ -2907,6 +2976,18 @@ Cooling schedule: T = { T1 , T2 , … }</p>
 <summary>如何证明2-approximation？</summary>
 <p><img alt="alt text" src="../image/CleanShot%202024-12-03%20at%2011.49.51%402x.png" /></p>
 </details>
+<ul>
+<li>1976年，证明了2-approximation</li>
+<li>1995年，证明了1.1382-approximation</li>
+<li>1997年，证明了除非P=NP，否则呢不存在17/16-approximation</li>
+</ul>
+<p>MAX-CUT may not in polynomial time.</p>
+<p>当提升过小时停止算法</p>
+<p><strong>Big-improvement-flip</strong></p>
+<p><img alt="alt text" src="../image/CleanShot%202024-12-21%20at%2016.26.53%402x.png" /></p>
+<p>K-L algorithm</p>
+<p><img alt="alt text" src="../image/CleanShot%202024-12-21%20at%2016.30.07%402x.png" /></p>
+<p>但是目前没能证明它是多少approximation。</p>
 
 
 
