@@ -1,0 +1,86 @@
+/* 霞鹜文楷常规体 */
+@font-face {
+    font-family: 'LXGW WenKai';
+    src: url('fonts/LXGWWenKai-Light.ttf') format('truetype');
+    font-weight: 300; /* Light */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'LXGW WenKai';
+    src: url('fonts/LXGWWenKai-Regular.ttf') format('truetype');
+    font-weight: 400; /* Regular */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'LXGW WenKai';
+    src: url('fonts/LXGWWenKai-Medium.ttf') format('truetype');
+    font-weight: 500; /* Medium */
+    font-style: normal;
+}
+
+/* 霞鹜文楷等宽体 */
+@font-face {
+    font-family: 'LXGW WenKai Mono';
+    src: url('fonts/LXGWWenKaiMono-Light.ttf') format('truetype');
+    font-weight: 300; /* Light */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'LXGW WenKai Mono';
+    src: url('fonts/LXGWWenKaiMono-Regular.ttf') format('truetype');
+    font-weight: 400; /* Regular */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'LXGW WenKai Mono';
+    src: url('fonts/LXGWWenKaiMono-Medium.ttf') format('truetype');
+    font-weight: 500; /* Medium */
+    font-style: normal;
+}
+
+/* 覆盖 MkDocs 主题的默认字体 */
+body {
+    font-family: 'LXGW WenKai', sans-serif !important;
+}
+
+/* 覆盖导航栏字体 */
+.md-header,
+.md-tabs {
+    font-family: 'LXGW WenKai', sans-serif !important;
+}
+
+/* 覆盖侧边栏字体 */
+.md-nav {
+    font-family: 'LXGW WenKai', sans-serif !important;
+}
+
+/* 覆盖按钮字体 */
+.md-button {
+    font-family: 'LXGW WenKai', sans-serif !important;
+}
+
+/* 正文使用霞鹜文楷常规体 */
+.md-typeset {
+    font-family: 'LXGW WenKai', sans-serif;
+    font-weight: 500;
+}
+
+/* 标题使用 Medium 字重 */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+    font-family: 'LXGW WenKai', sans-serif;
+    font-weight: 600; /* Medium */
+}
+
+/* 强调文本使用 Medium 字重 */
+.md-typeset strong {
+    font-weight: 500; /* Medium */
+}

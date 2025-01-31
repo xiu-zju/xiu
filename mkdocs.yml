@@ -175,6 +175,7 @@ extra_css:
   - css/custom.css
   - css/card.css
   - css/flink.css
+  - css/LXGW.css
   - css/changelog_extra.css
   - https://unpkg.com/katex@0/dist/katex.min.css
 
@@ -227,12 +228,14 @@ nav:
   - 杂项:
     - 反序列化漏洞: misc/Bonus/1.md
     - reveal-md制作slides: misc/reveal.md
+  - 课外:
+    - CS106L: 
+      - Streams: extracurricular/CS106L/1/streams.md
   - 课程:
     - courses/index.md
     - 会计学: 
       - courses/accounting/index.md 
-      - 总论: courses/accounting/1/1.md
-      - 第一章: courses/accounting/2/2.md
+      - 第一章 总论: courses/accounting/1/1.md
       - 第二章 会计要素与复式记账: courses/accounting/3/3.md
       - 第三章 会计循环: courses/accounting/4/4.md
       - 第四章 货币资金与交易性金融资产: courses/accounting/5/5.md
@@ -244,6 +247,7 @@ nav:
       - 第十章 负债: courses/accounting/11/11.md
       - 第十一章 所有者权益: courses/accounting/12/12.md
       - 第十二章 收入、费用和利润: courses/accounting/13/13.md
+      - 第十三章 财务报告: courses/accounting/14/14.md
     - 高级数据结构与算法分析:
       - AVL Trees, Splay Trees & Amortized: courses/ads/1/1.md
       - Red-Black Trees & B+ Tree: courses/ads/2/2.md
@@ -259,6 +263,7 @@ nav:
       - Local Search: courses/ads/12/12.md
       - Randomized Algorithm: courses/ads/13/13.md
       - Parallel Algorithm: courses/ads/14/14.md
+      - External Sorting: courses/ads/15/15.md
     - 计算机组成:
       - Chapter 1: courses/jz/1/1.md
       - Chapter 2: courses/jz/2/2.md
