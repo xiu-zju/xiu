@@ -169,9 +169,8 @@ markdown_extensions:
   - footnotes
 
 extra_css:
-  # - https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css
-  # - https://cdn.tonycrane.cc/lxgw/lxgwscreen.css
-  - https://cdn.jsdelivr.net/gh/lxgw/LxgwWenkai-Web/css/lxgwwenkai.css
+  - https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css
+  - https://gcore.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css
   - css/tasklist.css
   - css/LXGW.css
   - css/custom.css
