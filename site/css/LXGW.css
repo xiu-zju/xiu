@@ -1,80 +1,26 @@
-/* 霞鹜文楷标准体（通过 CDN 加载） */
-@font-face {
-    font-family: 'LXGW WenKai';
-    src: url('https://npm.elemecdn.com/lxgw-wenkai-webfont@1.1.0/LXGWWenKai-Light.ttf') format('truetype');
-    font-weight: 300;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'LXGW WenKai';
-    src: url('https://npm.elemecdn.com/lxgw-wenkai-webfont@1.1.0/LXGWWenKai-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'LXGW WenKai';
-    src: url('https://npm.elemecdn.com/lxgw-wenkai-webfont@1.1.0/LXGWWenKai-Medium.ttf') format('truetype');
-    font-weight: 500;
-    font-style: normal;
-}
-
-/* 霞鹜文楷等宽体（通过 CDN 加载） */
-@font-face {
-    font-family: 'LXGW WenKai Mono';
-    src: url('https://npm.elemecdn.com/lxgw-wenkai-webfont@1.1.0/LXGWWenKaiMono-Light.ttf') format('truetype');
-    font-weight: 300;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'LXGW WenKai Mono';
-    src: url('https://npm.elemecdn.com/lxgw-wenkai-webfont@1.1.0/LXGWWenKaiMono-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'LXGW WenKai Mono';
-    src: url('https://npm.elemecdn.com/lxgw-wenkai-webfont@1.1.0/LXGWWenKaiMono-Medium.ttf') format('truetype');
-    font-weight: 500;
-    font-style: normal;
-}
-
-/* 字体应用规则保持不变 */
-body {
-    font-family: 'LXGW WenKai', sans-serif !important;
-}
-
-.md-header,
-.md-tabs {
-    font-family: 'LXGW WenKai', sans-serif !important;
-}
-
-.md-nav {
-    font-family: 'LXGW WenKai', sans-serif !important;
-}
-
-.md-button {
-    font-family: 'LXGW WenKai', sans-serif !important;
-}
-
-.md-typeset {
-    font-family: 'LXGW WenKai', sans-serif;
-    font-weight: 500;
-}
-
-.md-typeset h1,
-.md-typeset h2,
-.md-typeset h3,
-.md-typeset h4,
-.md-typeset h5,
-.md-typeset h6 {
-    font-family: 'LXGW WenKai', sans-serif;
-    font-weight: 600;
-}
-
-.md-typeset strong {
-    font-weight: 500;
-}
+:root {
+    --md-text-font: "JetBrains Mono", "LXGW WenKai Screen"; 
+    --md-code-font: "JetBrains Mono";
+  }
+  
+  #particles-js{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+  
+  .md-typeset h1,
+  .md-typeset h2,
+  .md-typeset h3,
+  .md-typeset h4,
+  .md-typeset h5,
+  .md-typeset h6 {
+      font-weight: bold;
+      font-family: "LXGW WenKai Screen";
+  }
+  
+  .md-header__topic {
+    font-weight: bold;
+  }
