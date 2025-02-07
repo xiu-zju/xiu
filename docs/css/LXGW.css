@@ -1,74 +1,70 @@
+/* 霞鹜文楷标准体（通过 CDN 加载） */
 @font-face {
     font-family: 'LXGW WenKai';
-    src: url('fonts/LXGWWenKai-Light.ttf') format('truetype');
-    font-weight: 300; /* Light */
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'LXGW WenKai';
-    src: url('fonts/LXGWWenKai-Regular.ttf') format('truetype');
-    font-weight: 400; /* Regular */
+    src: url('https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/fonts/LXGWWenKai-Light.ttf') format('truetype');
+    font-weight: 300;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'LXGW WenKai';
-    src: url('fonts/LXGWWenKai-Medium.ttf') format('truetype');
-    font-weight: 500; /* Medium */
-    font-style: normal;
-}
-
-/* 霞鹜文楷等宽体 */
-@font-face {
-    font-family: 'LXGW WenKai Mono';
-    src: url('fonts/LXGWWenKaiMono-Light.ttf') format('truetype');
-    font-weight: 300; /* Light */
+    src: url('https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/fonts/LXGWWenKai-Regular.ttf') format('truetype');
+    font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
+    font-family: 'LXGW WenKai';
+    src: url('https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/fonts/LXGWWenKai-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* 霞鹜文楷等宽体（通过 CDN 加载） */
+@font-face {
     font-family: 'LXGW WenKai Mono';
-    src: url('fonts/LXGWWenKaiMono-Regular.ttf') format('truetype');
-    font-weight: 400; /* Regular */
+    src: url('https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/fonts/LXGWWenKaiMono-Light.ttf') format('truetype');
+    font-weight: 300;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'LXGW WenKai Mono';
-    src: url('fonts/LXGWWenKaiMono-Medium.ttf') format('truetype');
-    font-weight: 500; /* Medium */
+    src: url('https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/fonts/LXGWWenKaiMono-Regular.ttf') format('truetype');
+    font-weight: 400;
     font-style: normal;
 }
 
-/* 覆盖 MkDocs 主题的默认字体 */
+@font-face {
+    font-family: 'LXGW WenKai Mono';
+    src: url('https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/fonts/LXGWWenKaiMono-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* 字体应用规则保持不变 */
 body {
     font-family: 'LXGW WenKai', sans-serif !important;
 }
 
-/* 覆盖导航栏字体 */
 .md-header,
 .md-tabs {
     font-family: 'LXGW WenKai', sans-serif !important;
 }
 
-/* 覆盖侧边栏字体 */
 .md-nav {
     font-family: 'LXGW WenKai', sans-serif !important;
 }
 
-/* 覆盖按钮字体 */
 .md-button {
     font-family: 'LXGW WenKai', sans-serif !important;
 }
 
-/* 正文使用霞鹜文楷常规体 */
 .md-typeset {
     font-family: 'LXGW WenKai', sans-serif;
     font-weight: 500;
 }
 
-/* 标题使用 Medium 字重 */
 .md-typeset h1,
 .md-typeset h2,
 .md-typeset h3,
@@ -76,10 +72,9 @@ body {
 .md-typeset h5,
 .md-typeset h6 {
     font-family: 'LXGW WenKai', sans-serif;
-    font-weight: 600; /* Medium */
+    font-weight: 600;
 }
 
-/* 强调文本使用 Medium 字重 */
 .md-typeset strong {
-    font-weight: 500; /* Medium */
+    font-weight: 500;
 }
