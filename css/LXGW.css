@@ -1,21 +1,21 @@
 /* 霞鹜文楷标准体（通过 CDN 加载） */
 @font-face {
     font-family: 'LXGW WenKai';
-    src: url('https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/fonts/LXGWWenKai-Light.ttf') format('truetype');
+    src: url('https://npm.elemecdn.com/lxgw-wenkai-webfont@1.1.0/fonts/LXGWWenKai-Light.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'LXGW WenKai';
-    src: url('https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/fonts/LXGWWenKai-Regular.ttf') format('truetype');
+    src: url('https://npm.elemecdn.com/lxgw-wenkai-webfont@1.1.0/fonts/LXGWWenKai-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'LXGW WenKai';
-    src: url('https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/fonts/LXGWWenKai-Medium.ttf') format('truetype');
+    src: url('https://npm.elemecdn.com/lxgw-wenkai-webfont@1.1.0/fonts/LXGWWenKai-Medium.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
 }
@@ -23,21 +23,21 @@
 /* 霞鹜文楷等宽体（通过 CDN 加载） */
 @font-face {
     font-family: 'LXGW WenKai Mono';
-    src: url('https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/fonts/LXGWWenKaiMono-Light.ttf') format('truetype');
+    src: url('https://npm.elemecdn.com/lxgw-wenkai-webfont@1.1.0/fonts/LXGWWenKaiMono-Light.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'LXGW WenKai Mono';
-    src: url('https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/fonts/LXGWWenKaiMono-Regular.ttf') format('truetype');
+    src: url('https://npm.elemecdn.com/lxgw-wenkai-webfont@1.1.0/fonts/LXGWWenKaiMono-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'LXGW WenKai Mono';
-    src: url('https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/fonts/LXGWWenKaiMono-Medium.ttf') format('truetype');
+    src: url('https://npm.elemecdn.com/lxgw-wenkai-webfont@1.1.0/fonts/LXGWWenKaiMono-Medium.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
 }
