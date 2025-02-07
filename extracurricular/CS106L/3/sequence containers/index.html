@@ -15,6 +15,10 @@
         <link rel="canonical" href="https://xiu-zju.github.io/xiu/extracurricular/CS106L/3/sequence%20containers/">
       
       
+        <link rel="prev" href="../../2/types%20and%20streams2/">
+      
+      
+        <link rel="next" href="../../../../courses/">
       
       
       <link rel="icon" href="../../../../images/favicon.png">
@@ -22,7 +26,7 @@
     
     
       
-        <title>Sequence - xiu的笔记本</title>
+        <title>Sequence containers - xiu的笔记本</title>
       
     
     
@@ -171,7 +175,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Sequence
+              Sequence containers
             
           </span>
         </div>
@@ -327,16 +331,20 @@
         
   
   
+    
+  
   
     
     
       
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../../1/streams/" class="md-tabs__link">
           
   
@@ -1532,8 +1540,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -1542,17 +1552,20 @@
     
     
       
+        
+        
+      
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -1563,7 +1576,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             课外
@@ -1574,10 +1587,16 @@
                 
   
   
+    
   
   
+  
     
     
+      
+        
+      
+        
       
         
       
@@ -1587,11 +1606,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
         
           
           <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
@@ -1605,7 +1624,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_1">
             <span class="md-nav__icon md-icon"></span>
             CS106L
@@ -1628,6 +1647,163 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/types%20and%20streams2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Types and streamsII
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Sequence containers
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Sequence containers
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sequence-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sequence containers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sequence containers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stdvector" class="md-nav__link">
+    <span class="md-ellipsis">
+      std::vector
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stddeque" class="md-nav__link">
+    <span class="md-ellipsis">
+      std::deque
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#container-adaptors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Container adaptors
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#associative-containers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Associative Containers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iteraters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Iteraters
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Iteraters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2913,6 +3089,176 @@
 <li>advance the iterator one: <code>iter++</code></li>
 <li>check if we have hit the end by comparing to <code>mySet.end()</code>: <code>if(iter == mySet.end()) return;</code></li>
 </ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><strong>第一种方式（基于范围的 for 循环）</strong></p>
+<p><div class="language-cpp highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">elem</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">freqMap</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-2"><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">elem</span><span class="p">.</span><span class="n">first</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">elem</span><span class="p">.</span><span class="n">second</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+</span><span id="__span-0-3"><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+✅ <strong>特点：</strong></p>
+<ul>
+<li><strong>使用范围 for 循环</strong>（C++11 引入）。</li>
+<li><code>auto elem</code> 代表 <code>std::pair&lt;const Key, Value&gt;</code>，即 <code>std::map</code> 的键值对。</li>
+<li><code>elem.first</code> 访问键，<code>elem.second</code> 访问值。</li>
+<li><strong>底层是拷贝遍历</strong>（<code>elem</code> 是 <code>std::pair</code> 的副本，而非引用）。</li>
+<li>适用于 <code>std::map</code> 和 <code>std::unordered_map</code> 等 STL 容器。</li>
+</ul>
+<p>🛑 <strong>缺点：</strong></p>
+<ul>
+<li>每次遍历时会拷贝 <code>std::pair</code>，如果 <code>freqMap</code> 很大，拷贝开销较高。</li>
+<li><strong>解决方案</strong>：使用 <strong>引用</strong>，避免不必要的拷贝：</li>
+</ul>
+<div class="language-cpp highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">elem</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">freqMap</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-2"><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">elem</span><span class="p">.</span><span class="n">first</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">elem</span><span class="p">.</span><span class="n">second</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+</span><span id="__span-1-3"><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<hr />
+<p><strong>第二种方式（基于迭代器的 while 循环）</strong>
+<div class="language-cpp highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">it</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">freqMap</span><span class="p">.</span><span class="n">end</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-2"><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">it</span><span class="o">-&gt;</span><span class="n">first</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">it</span><span class="o">-&gt;</span><span class="n">second</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+</span><span id="__span-2-3"><span class="w">    </span><span class="o">++</span><span class="n">it</span><span class="p">;</span>
+</span><span id="__span-2-4"><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+✅ <strong>特点：</strong></p>
+<ul>
+<li><strong>使用迭代器手动遍历 <code>std::map</code></strong>。</li>
+<li><code>it</code> 是 <code>std::map&lt;Key, Value&gt;::iterator</code> 类型的变量（需要在循环前初始化）。</li>
+<li><code>it-&gt;first</code> 访问键，<code>it-&gt;second</code> 访问值。</li>
+<li><strong>不会产生拷贝开销</strong>（直接访问原始数据）。</li>
+</ul>
+<p>🛑 <strong>注意点：</strong></p>
+<ul>
+<li>需要在循环前声明并初始化 <code>it</code>：
+<div class="language-cpp highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><span class="k">auto</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">freqMap</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="w"> </span><span class="c1">// 必须初始化</span>
+</span></code></pre></div></td></tr></table></div></li>
+<li>手动管理 <code>it</code>，必须 <strong>确保 <code>++it</code>，避免死循环</strong>。</li>
+<li>适用于 <strong>可能需要删除元素的情况</strong>（<code>erase(it)</code> 需要用迭代器）。</li>
+</ul>
+<hr />
+<p><strong>第三种方式（结构化绑定的范围 for 循环，C++17）</strong>
+<div class="language-cpp highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="p">[</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">val</span><span class="p">]</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">freqMap</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-4-2"><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+</span><span id="__span-4-3"><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+✅ <strong>特点：</strong></p>
+<ul>
+<li><strong>使用 C++17 的结构化绑定</strong>（<code>std::pair</code> 解构）。</li>
+<li><code>key</code> 直接绑定 <code>first</code>，<code>val</code> 直接绑定 <code>second</code>，写法更简洁。</li>
+<li>仍然是 <strong>拷贝遍历</strong>，如果 <code>val</code> 是对象，可能有开销。</li>
+<li><strong>解决方案</strong>（使用引用，避免拷贝）：</li>
+</ul>
+<div class="language-cpp highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="p">[</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">val</span><span class="p">]</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">freqMap</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-2"><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">val</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+</span><span id="__span-5-3"><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<p><strong>三者的区别与关联</strong></p>
+<table>
+<thead>
+<tr>
+<th>遍历方式</th>
+<th>适用场景</th>
+<th>是否拷贝</th>
+<th>代码简洁性</th>
+<th>适用 C++ 版本</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>范围 for 循环 (<code>for (auto elem : freqMap)</code>)</strong></td>
+<td>适用于所有 STL 容器</td>
+<td><strong>是</strong>（除非 <code>auto&amp;</code>）</td>
+<td>简洁</td>
+<td>C++11+</td>
+</tr>
+<tr>
+<td><strong>迭代器 while (<code>while (it != freqMap.end())</code>)</strong></td>
+<td>需要删除元素或更灵活控制遍历</td>
+<td><strong>否</strong></td>
+<td>较繁琐</td>
+<td>C++98+</td>
+</tr>
+<tr>
+<td><strong>结构化绑定 (<code>for (auto [key, val] : freqMap)</code>)</strong></td>
+<td>代码更直观，可读性更好</td>
+<td><strong>是</strong>（除非 <code>auto&amp;</code>）</td>
+<td>最简洁</td>
+<td>C++17+</td>
+</tr>
+</tbody>
+</table>
+<p>✅ <strong>推荐方案</strong>：</p>
+<ol>
+<li><strong>若无特殊需求</strong>，优先使用 <strong>C++17 结构化绑定遍历</strong>（更简洁）。</li>
+<li><strong>避免拷贝</strong>，使用 <code>const auto&amp;</code>：
+<div class="language-cpp highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="p">[</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">val</span><span class="p">]</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">freqMap</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* ... */</span><span class="w"> </span><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div></li>
+<li><strong>需要修改或删除元素</strong>，使用迭代器：
+<div class="language-cpp highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">freqMap</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">freqMap</span><span class="p">.</span><span class="n">end</span><span class="p">();</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-7-2"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">it</span><span class="o">-&gt;</span><span class="n">second</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">freqMap</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">it</span><span class="p">);</span>
+</span><span id="__span-7-3"><span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="o">++</span><span class="n">it</span><span class="p">;</span>
+</span><span id="__span-7-4"><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div></li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<div class="language-cpp highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C++</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><span class="n">set</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span><span class="w"> </span><span class="n">iter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">elems</span><span class="p">.</span><span class="n">lower_bound</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span><span class="w"> </span><span class="c1">// find smallest element &gt;= key</span>
+</span><span id="__span-8-2"><span class="n">set</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span><span class="w"> </span><span class="n">end</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">elems</span><span class="p">.</span><span class="n">upper_bound</span><span class="p">(</span><span class="mi">6</span><span class="p">);</span><span class="w"> </span><span class="c1">// find smallest element &gt; key</span>
+</span><span id="__span-8-3"><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;start: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">iter</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, end: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">end</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+</span><span id="__span-8-4">
+</span><span id="__span-8-5"><span class="k">for</span><span class="p">(;</span><span class="w"> </span><span class="n">iter</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">end</span><span class="p">;</span><span class="w"> </span><span class="n">iter</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-8-6"><span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">iter</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="p">;</span>
+</span><span id="__span-8-7"><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>[a, b]</th>
+<th>[a, b)</th>
+<th>(a, b]</th>
+<th>(a, b)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>begin</td>
+<td>lower_bound(a)</td>
+<td>lower_bound(a)</td>
+<td>upper_bound(a)</td>
+<td>upper_bound(a)</td>
+</tr>
+<tr>
+<td>end</td>
+<td>upper_bound(b)</td>
+<td>lower_bound(b)</td>
+<td>upper_bound(b)</td>
+<td>lower_bound(b)</td>
+</tr>
+</tbody>
+</table>
+</div>
 
 
 
