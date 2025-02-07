@@ -169,13 +169,14 @@ markdown_extensions:
   - footnotes
 
 extra_css:
-  - https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css
-  - https://cdn.tonycrane.cc/lxgw/lxgwscreen.css
+  # - https://cdn.tonycrane.cc/jbmono/jetbrainsmono.css
+  # - https://cdn.tonycrane.cc/lxgw/lxgwscreen.css
+  - https://cdn.jsdelivr.net/gh/lxgw/LxgwWenkai-Web/css/lxgwwenkai.css
   - css/tasklist.css
+  - css/LXGW.css
   - css/custom.css
   - css/card.css
   - css/flink.css
-  - css/LXGW.css
   - css/changelog_extra.css
   - https://unpkg.com/katex@0/dist/katex.min.css
 
@@ -231,6 +232,8 @@ nav:
   - 课外:
     - CS106L: 
       - Streams: extracurricular/CS106L/1/streams.md
+      - Types and streamsII: extracurricular/CS106L/2/types and streams2.md
+      - Sequence containers: extracurricular/CS106L/3/sequence containers.md
   - 课程:
     - courses/index.md
     - 会计学: 
