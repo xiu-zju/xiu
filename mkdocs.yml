@@ -65,7 +65,7 @@ validation:
 extra:
   analytics:
     provider: google
-    feedback:
+    feedback: G-6Y55WNMPVM
       title: 激励
       ratings:
         - icon: fontawesome/regular/hand-back-fist
@@ -145,27 +145,16 @@ markdown_extensions:
   # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/#+toc.permalink
   - toc:
       permalink: true # 固定标题位置为当前位置
-  # [代码语法高亮]
-  # https://squidfunk.github.io/mkdocs-material/reference/code-blocks/#code-blocks
-  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#highlight
   - pymdownx.highlight:
-      # 显示行号
       linenums: true
-      # 显示编程语言名称
       auto_title: true
-      # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#+pymdownx.highlight.line_spans
       line_spans: __span
-      # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/#+pymdownx.highlight.pygments_lang_class
       pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
-  # [Markdown 提示]
-  # https://squidfunk.github.io/mkdocs-material/reference/admonitions/
   - admonition
   - pymdownx.details
-  # [Markdown footnote 语法支持]
-  # https://squidfunk.github.io/mkdocs-material/reference/footnotes/
   - footnotes
 
 extra_css:
