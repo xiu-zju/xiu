@@ -183,6 +183,7 @@ extra_javascript:
   # - javascripts/katex.js
   - javascripts/mathjax.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+  - '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'
   # - https://unpkg.com/katex@0/dist/katex.min.js
   # - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
 
@@ -274,4 +275,7 @@ nav:
       - Chapter 5: courses/jz/5/5.md
     - 大学物理实验:
       - 绪论: courses/dawushiyan/1/1.md
+    - 数据库系统:
+      - Chapter 1: courses/DB/1/1.md
+      - Chapter 2: courses/DB/2/2.md
   - 友链: link/link.md

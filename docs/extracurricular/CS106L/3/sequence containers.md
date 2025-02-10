@@ -184,3 +184,25 @@ Iteraters allows iteration over **any container**, whether it is ordered or not.
     |---|---|---|---|---|
     |begin|lower_bound(a)|lower_bound(a)|upper_bound(a)|upper_bound(a)|
     |end|upper_bound(b)|lower_bound(b)|upper_bound(b)|lower_bound(b)|
+
+### Types
+#### Input Iterators
+
+For sequential, single-pass input. Read only.
+
+#### Output Iterators
+
+For sequential, single-pass output. Write only.
+
+#### Forward Iterators
+
+Combines input and output iterators, + can make multiple passes.
+
+Can read from and write to (if not const iterator).
+
+#### Bidirectional Iterators
+
+Same as forward iterators, + ca go backwards with the decrement operator (--).
+
+#### Ramdom Access Iterators
+
