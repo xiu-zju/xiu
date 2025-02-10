@@ -65,7 +65,8 @@ validation:
 extra:
   analytics:
     provider: google
-    feedback: G-6Y55WNMPVM
+    property: G-6Y55WNMPVM
+    feedback:
       title: 激励
       ratings:
         - icon: fontawesome/regular/hand-back-fist
