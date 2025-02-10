@@ -180,12 +180,10 @@ extra_css:
   - https://unpkg.com/katex@0/dist/katex.min.css
 
 extra_javascript:
-  # - javascripts/katex.js
   - javascripts/mathjax.js
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
   - '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'
-  # - https://unpkg.com/katex@0/dist/katex.min.js
-  # - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+  - javascripts/clarity.js
 
 
 
