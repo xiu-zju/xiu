@@ -1,23 +1,24 @@
 name: WakaTime Readme
-
 on:
   schedule:
-    - cron: '0 0 * * *'  # 每天运行一次
-  workflow_dispatch:     # 允许手动触发
+    - cron: '0 0 * * *'  # UTC时间每天0点运行
+  workflow_dispatch:
 
 jobs:
   update-readme:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
+      - uses: actions/checkout@v4
+
+      - name: 初始化文档目录
+        run: mkdir -p docs && echo -e "## 编程统计\n<!--START_SECTION:waka-->\n<!--END_SECTION:waka-->" > docs/index.md
+
       - uses: anmol098/waka-readme-stats@master
         with:
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           SECTION_NAME: waka
-          COMMIT_MESSAGE: "Updated WakaTime stats"
-          entryPoint: "docs/index.md"  # 指定你的文件路径
-          SHOW_OS: true
-          SHOW_PROJECTS: true
-          SHOW_LANGUAGE: true
-          SHOW_TOTAL_CODE_TIME: true
-          SHOW_EDITORS: true
+          COMMIT_MESSAGE: "自动更新编程统计"
+          SHOW_LOC_CHART: false  # 关闭代码行数图表避免冲突
