@@ -15,4 +15,9 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           SECTION_NAME: waka
           COMMIT_MESSAGE: "Updated WakaTime stats"
-          TARGET_FILE: docs/index.md
+          entryPoint: "docs/index.md"  # 指定你的文件路径
+          SHOW_OS: true
+          SHOW_PROJECTS: true
+          SHOW_LANGUAGE: true
+          SHOW_TOTAL_CODE_TIME: true
+          SHOW_EDITORS: true
