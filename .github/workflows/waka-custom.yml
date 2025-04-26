@@ -1,0 +1,25 @@
+name: WakaTime Metrics
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # 每天 00:00 UTC 运行
+  workflow_dispatch:     # 允许手动触发
+
+jobs:
+  update-wakatime:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Update WakaTime stats
+        uses: lowlighter/waka-readme@master
+        with:
+          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
+          filename: docs/index.md     # ✅ 写入任意位置的文件
+          show_title: true
+          timezone: "Asia/Shanghai"
+          show_total: true
+          show_languages: true
+          show_os: false
+          show_editors: false
