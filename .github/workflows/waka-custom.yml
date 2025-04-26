@@ -1,28 +1,23 @@
-name: WakaTime Updater
+name: WakaTime Stats Updater
 on:
   schedule:
-    - cron: '0 18 * * *'  # UTC 时间每天 18:00 运行
+    - cron: '0 18 * * *'  # UTC时间每天18点运行
   workflow_dispatch:
 
 jobs:
-  update:
+  update-stats:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: write  # 必须授予写入权限（网页5）
     steps:
       - uses: actions/checkout@v4
 
-      - name: 初始化文档结构
-        run: |
-          mkdir -p docs
-          [ -f docs/index.md ] || echo -e "# Stats\n<!--START_SECTION:waka-->\n<!--END_SECTION:waka-->" > docs/index.md
-
-      - uses: anmol098/waka-readme-stats@master
+      - name: Generate WakaTime Stats
+        uses: anmol098/waka-readme-stats@master
         with:
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-          GH_REPOSITORY: xiu-zju/xiu
           SECTION_NAME: waka
           SHOW_OS: true
           SHOW_PROJECTS: true
-          DEBUG_LOGGING: true
+          DEBUG_LOGGING: true  # 开启调试日志
