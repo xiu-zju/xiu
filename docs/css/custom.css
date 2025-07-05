@@ -25,25 +25,47 @@
   }
 }
 
-.md-typeset h1, .md-typeset h2 {
-  font-weight: 600;
-}
-
-.md-typeset h3 {
-  font-weight: 500;
-}
-
-.md-typeset h1, .md-typeset h2, .md-typeset h3, .md-typeset h4 {
-  letter-spacing: 0;
-}
-
 .md-typeset {
-  font-size: .7rem;
+  font-size: .735rem;
 }
 
-.md-typeset h3 {
-  font-weight: 600;
+/* ========== 标题样式（不同颜色模式） ========== */
+
+/* 通用：一级标题加 #，其他级别按需加 ##、### 等 */
+
+.md-typeset h2::before {
+  content: "# ";
 }
+.md-typeset h3::before {
+  content: "## ";
+}
+.md-typeset h4::before {
+  content: "### ";
+}
+
+/* ✅ 浅色模式下的标题颜色设置 */
+/* [data-md-color-scheme="default"] .md-typeset h1 {
+  color: #1a3f7f;
+} */
+[data-md-color-scheme="default"] .md-typeset h2 {
+  color: #1a3f7f;
+}
+[data-md-color-scheme="default"] .md-typeset h3 {
+  color: #5c9dde;
+}
+[data-md-color-scheme="default"] .md-typeset h4 {
+  color: #73a2d2;
+}
+
+/* ✅ 深色模式下：保留前缀，不更改颜色 */
+[data-md-color-scheme="slate"] .md-typeset h1::before,
+[data-md-color-scheme="slate"] .md-typeset h2::before,
+[data-md-color-scheme="slate"] .md-typeset h3::before,
+[data-md-color-scheme="slate"] .md-typeset h4::before {
+  color: inherit;  /* 避免覆盖深色配色中的标题默认颜色 */
+}
+
+
 
 .md-typeset code:not(pre code) {
   font-size: inherit;
@@ -55,7 +77,7 @@
   --md-primary-bg-color: #000000;
   --md-typeset-a-color: #555555;
   --md-footer-fg-color: #000000;
-  --md-footer-bg-color: #efefef;
+  --md-footer-bg-color: #cfdbe8;
   --md-footer-bg-color--dark: #b6daf4;
   --md-footer-fg-color--light: #000000;
   --md-footer-fg-color--lighter: #000000;

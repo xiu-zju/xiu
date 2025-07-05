@@ -13,13 +13,15 @@ theme:
   features:
     - navigation.tabs
     - navigation.top
+    - navigation.footer
     - navigation.indexes
+    - navigation.tracking
+    - navigation.prune
     - search.suggest
     - search.highlight
     - content.code.copy
     - content.action.edit
     - content.code.annotate
-    - navigation.tracking
   favicon: images/favicon.png
   font: false
   icon:
@@ -167,6 +169,7 @@ extra_css:
   - css/card.css
   - css/flink.css
   - css/changelog_extra.css
+  - css/fold_toc.css
   - https://unpkg.com/katex@0/dist/katex.min.css
 
 extra_javascript:
@@ -174,12 +177,12 @@ extra_javascript:
   - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
   - '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'
   - javascripts/clarity.js
-
-
+  - javascripts/toc_collapse.js
 
 # [Navigtion]
 nav:
   - 语言类:
+    - yuyan/index.md
     - C:
       - yuyan/C/index.md
       - 0 C语言前瞻: yuyan/C/C语言前瞻.md
@@ -214,6 +217,11 @@ nav:
         - Sequential logic: 
           - Latches and Flipflops: yuyan/Verilog/circuit/5.md
           - Shift registers: yuyan/Verilog/circuit/6.md
+    - Rust:
+      - yuyan/Rust/index.md
+      - Rust语言基础学习:
+        - 项目入门: yuyan/Rust/Rust语言基础学习/项目入门/1.md
+        - 语言基础: yuyan/Rust/Rust语言基础学习/语言基础/1.md
   - 杂项:
     - 反序列化漏洞: misc/Bonus/1.md
     - reveal-md制作slides: misc/reveal.md
@@ -239,7 +247,8 @@ nav:
       - 第十一章 所有者权益: courses/accounting/12/12.md
       - 第十二章 收入、费用和利润: courses/accounting/13/13.md
       - 第十三章 财务报告: courses/accounting/14/14.md
-    - 高级数据结构与算法分析:
+    - 高级数据结构与算法分析: 
+      - courses/ads/index.md
       - AVL Trees, Splay Trees & Amortized: courses/ads/1/1.md
       - Red-Black Trees & B+ Tree: courses/ads/2/2.md
       - Invert File Index: courses/ads/3/3.md
@@ -262,9 +271,14 @@ nav:
       - Chapter 4: courses/jz/4/4.md
       - Chapter 5: courses/jz/5/5.md
     - 中国文化与翻译:
+      - courses/中国文化与翻译/index.md
       - Class 1: courses/中国文化与翻译/1.md
       - Class 2: courses/中国文化与翻译/2.md
       - Class 3: courses/中国文化与翻译/3.md
       - Class 4: courses/中国文化与翻译/4.md
       - Class 5: courses/中国文化与翻译/5.md
+      - Class 6: courses/中国文化与翻译/7.md
+      - Class 7: courses/中国文化与翻译/9.md
+      - Class 8: courses/中国文化与翻译/10.md
+      - Class 9: courses/中国文化与翻译/11.md
   - 友链: link/link.md
