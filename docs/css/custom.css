@@ -42,6 +42,9 @@
 .md-typeset h4::before {
   content: "### ";
 }
+.md-typeset h5::before {
+  content: "#### ";
+}
 
 /* ✅ 浅色模式下的标题颜色设置 */
 /* [data-md-color-scheme="default"] .md-typeset h1 {
@@ -54,6 +57,9 @@
   color: #5c9dde;
 }
 [data-md-color-scheme="default"] .md-typeset h4 {
+  color: #73a2d2;
+}
+[data-md-color-scheme="default"] .md-typeset h5 {
   color: #73a2d2;
 }
 
