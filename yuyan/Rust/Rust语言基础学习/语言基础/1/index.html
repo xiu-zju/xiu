@@ -1290,6 +1290,57 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#232" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3.2 引用与借用
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3.2 引用与借用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      引用与解引用
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      不可变引用
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      可变引用
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      垂悬引用
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1886,6 +1937,57 @@
   <a href="#_24" class="md-nav__link">
     <span class="md-ellipsis">
       函数的传值与返回
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#232" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3.2 引用与借用
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3.2 引用与借用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      引用与解引用
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      不可变引用
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      可变引用
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      垂悬引用
     </span>
   </a>
   
@@ -2618,6 +2720,138 @@
 </span><span id="__span-31-22"><span class="p">}</span><span class="w"> </span><span class="c1">// 这里，some_integer 移出作用域。不会有特殊操作</span>
 </span></code></pre></div></td></tr></table></div>
 <p>所有权很强大，避免了内存的不安全性，但是也带来了一个新麻烦：<strong>总是把一个值传来传去来使用它</strong>。传入一个函数，很可能还要从该函数传出去，结果就是语言表达变得非常啰嗦，幸运的是，Rust 提供了新功能解决这个问题。</p>
+<h3 id="232">2.3.2 引用与借用<a class="headerlink" href="#232" title="Permanent link">&para;</a></h3>
+<h4 id="_25">引用与解引用<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h4>
+<p>常规引用是一个指针类型，指向了对象存储的内存地址。</p>
+<div class="language-rust highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Rust</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-32-1"><span class="k">fn</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-32-2"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</span><span id="__span-32-3"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">x</span><span class="p">;</span>
+</span><span id="__span-32-4"><span class="w">    </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span>
+</span><span id="__span-32-5"><span class="w">    </span><span class="fm">assert_eq!</span><span class="p">(</span><span class="o">*</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">);</span>
+</span><span id="__span-32-6"><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<h4 id="_26">不可变引用<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h4>
+<p>&amp; 符号即是引用，它们允许你使用值，但是不获取所有权。</p>
+<p><img alt="Alt text" src="../image.png" /></p>
+<p>正如变量默认不可变一样，引用指向的值默认也是不可变的，没事，来一起看看如何解决这个问题。</p>
+<h4 id="_27">可变引用<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h4>
+<div class="language-rust highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Rust</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-33-1"><span class="k">fn</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-33-2"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span><span class="p">::</span><span class="n">from</span><span class="p">(</span><span class="s">&quot;Hello, world!&quot;</span><span class="p">);</span>
+</span><span id="__span-33-3"><span class="w">    </span><span class="n">change_string</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">s</span><span class="p">);</span>
+</span><span id="__span-33-4"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="p">);</span>
+</span><span id="__span-33-5"><span class="p">}</span>
+</span><span id="__span-33-6">
+</span><span id="__span-33-7"><span class="k">fn</span><span class="w"> </span><span class="nf">change_string</span><span class="p">(</span><span class="n">s</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="nc">mut</span><span class="w"> </span><span class="nb">String</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-33-8"><span class="w">    </span><span class="n">s</span><span class="p">.</span><span class="n">push_str</span><span class="p">(</span><span class="s">&quot; from Rust!&quot;</span><span class="p">);</span>
+</span><span id="__span-33-9"><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>这是可以直接调用 some_string.push_str(...) 的原因是：Rust 在方法调用中会自动解引用（类似 C++ 的 -&gt; 语法糖）。所以 some_string.push_str(...) 实际上等价于 (<em>some_string).push_str(...)。这种自动解引用叫做</em><em>自动引用与解引用</em>*（Deref coercion）。</p>
+</div>
+<p><strong>1. 同一作用域，特定数据只能有一个可变引用！</strong></p>
+<p>这种限制的好处就是使 Rust 在编译期就避免数据竞争，数据竞争可由以下行为造成：</p>
+<ul>
+<li>两个或更多的指针同时访问同一数据</li>
+<li>至少有一个指针被用来写入数据</li>
+<li>没有同步数据访问的机制</li>
+</ul>
+<p><strong>2. 可变引用与不可变引用不能同时存在！</strong></p>
+<p>多个不可变借用被允许是因为没有人会去试图修改数据，每个人都只读这一份数据而不做修改，因此不用担心数据被污染。</p>
+<div class="admonition quote">
+<p class="admonition-title">用一个很形象的例子来说明这两个原则</p>
+<p><img alt="Alt text" src="../d583698b5ee60f177e42e2d9dcb9b1f0.png" /></p>
+</div>
+<div class="admonition bug">
+<p class="admonition-title">错误代码赏析</p>
+<div class="language-rust highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Rust</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-34-1"><span class="cp">#[allow(unused_variables)]</span>
+</span><span id="__span-34-2"><span class="k">fn</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-34-3"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">s</span><span class="p">:</span><span class="w"> </span><span class="kp">&amp;</span><span class="kt">str</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Hello, World!&quot;</span><span class="p">;</span><span class="w"> </span><span class="c1">// ① s 是 *不可变* 的字符串切片</span>
+</span><span id="__span-34-4"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">s</span><span class="p">;</span><span class="w">                    </span><span class="c1">// ② r 是对 s 的 *不可变借用*</span>
+</span><span id="__span-34-5"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">r1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">s</span><span class="p">;</span><span class="w">               </span><span class="c1">// ③ 试图对同一个 s 进行 *可变借用*</span>
+</span><span id="__span-34-6"><span class="w">    </span><span class="n">r1</span><span class="p">.</span><span class="n">push_str</span><span class="p">(</span><span class="s">&quot; This is a mutable reference.&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// ④ push_str 并不适用于 &amp;str</span>
+</span><span id="__span-34-7"><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>问题</th>
+<th>出错原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>s</code> 本身没有用 <code>mut</code> 声明</td>
+<td>不能把一个 <strong>不可变绑定</strong> 再拿去做 <code>&amp;mut</code> 借用。</td>
+</tr>
+<tr>
+<td>2</td>
+<td>已经有 <code>r = &amp;s</code> 的 <strong>不可变借用</strong></td>
+<td>按借用规则：同一时刻要么若干个不可变借用，要么一个可变借用，二者不能并存。</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>&amp;mut s</code> 的类型其实是 <code>&amp;mut &amp;str</code></td>
+<td>只是把“指针变量”本身设为可变，<strong>并不能</strong> 修改字符串内容。</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>push_str</code> 只在 <code>String</code>/<code>&amp;mut String</code> 上可用</td>
+<td><code>&amp;str</code>（字符串切片）是只读视图，没有 <code>push_str</code> 方法。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>NLL</strong></p>
+<div class="language-rust highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Rust</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-35-1"><span class="k">fn</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-35-2"><span class="w">   </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span><span class="p">::</span><span class="n">from</span><span class="p">(</span><span class="s">&quot;hello&quot;</span><span class="p">);</span>
+</span><span id="__span-35-3">
+</span><span id="__span-35-4"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">r1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">s</span><span class="p">;</span>
+</span><span id="__span-35-5"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">r2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">s</span><span class="p">;</span>
+</span><span id="__span-35-6"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{} and {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">r1</span><span class="p">,</span><span class="w"> </span><span class="n">r2</span><span class="p">);</span>
+</span><span id="__span-35-7"><span class="w">    </span><span class="c1">// 新编译器中，r1,r2作用域在这里结束</span>
+</span><span id="__span-35-8">
+</span><span id="__span-35-9"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">r3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">s</span><span class="p">;</span>
+</span><span id="__span-35-10"><span class="w">    </span><span class="fm">println!</span><span class="p">(</span><span class="s">&quot;{}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">r3</span><span class="p">);</span>
+</span><span id="__span-35-11"><span class="p">}</span><span class="w"> </span><span class="c1">// 老编译器中，r1、r2、r3作用域在这里结束</span>
+</span><span id="__span-35-12"><span class="w">  </span><span class="c1">// 新编译器中，r3作用域在这里结束</span>
+</span></code></pre></div></td></tr></table></div>
+<p>对于这种编译器优化行为，Rust 专门起了一个名字 —— Non-Lexical Lifetimes(NLL)，专门用于找到某个引用在作用域(})结束前就不再被使用的代码位置。</p>
+<p>虽然这种借用错误有的时候会让我们很郁闷，但是你只要想想这是 Rust 提前帮你发现了潜在的 BUG，其实就开心了，虽然减慢了开发速度，但是从长期来看，大幅减少了后续开发和运维成本。</p>
+<h4 id="_28">垂悬引用<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h4>
+<p>悬垂引用也叫做悬垂指针，意思为指针指向某个值后，这个值被释放掉了，而指针仍然存在，其指向的内存可能不存在任何值或已被其它变量重新使用。在 Rust 中编译器可以确保引用永远也不会变成悬垂状态：当你获取数据的引用后，编译器可以确保数据不会在引用结束前被释放，要想释放数据，必须先停止其引用的使用。</p>
 
 
 
