@@ -5,7 +5,7 @@ repo_name: xiu
 site_author: 胥涵坤
 site_description: 胥涵坤的笔记本
 
-copyright: 'Copyright &copy 2024 xiu.'
+copyright: 'Copyright &copy 2024-2025 xiu.'
 
 theme:
   name: 'material'
@@ -97,6 +97,9 @@ extra:
       link: http://xiu-zju.github.io/xiu/Me/dashang/?h=%E4%BD%A0%E6%84%BF%E6%84%8F
 
 plugins:
+  - toc
+  - statistics:
+      words_per_minute: 150
   - search:
       separator: '[\s\u200b\-]'
   #    lang:
@@ -135,17 +138,10 @@ markdown_extensions:
       custom_checkbox: true
   - pymdownx.highlight:
       anchor_linenums: true
-  # [数学公式支持]
-  # https://squidfunk.github.io/mkdocs-material/reference/math/#katex
   - pymdownx.arithmatex:
       generic: true
-  # [图片功能支持]
-  # https://squidfunk.github.io/mkdocs-material/reference/images/
-  # 给 Markdown 图片语法后面添加 `{width="300"}` 设置大小
   - attr_list
   - md_in_html
-  # [给标题添加链接]
-  # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/#+toc.permalink
   - toc:
       permalink: true # 固定标题位置为当前位置
   - pymdownx.highlight:
@@ -181,47 +177,47 @@ extra_javascript:
 
 # [Navigtion]
 nav:
-  - 语言类:
-    - yuyan/index.md
+  - 编程语言:
+    - Programming language/index.md
     - C:
-      - yuyan/C/index.md
-      - 0 C语言前瞻: yuyan/C/C语言前瞻.md
-      - 1 C语言基本语法: yuyan/C/C语言基本语法.md
-      - 2 数据类型、运算符和表达式: yuyan/C/数据类型、运算符和表达式.md
-      - 2.5 关键字: yuyan/C/关键字.md
-      - 3 选择结构: yuyan/C/选择结构.md
-      - 4 循环: yuyan/C/循环.md
-      - 5 数组: yuyan/C/数组.md
-      - 8 指针: yuyan/C/指针.md
-      - 10 文件: yuyan/C/文件.md
+      - Programming language/C/index.md
+      - 0 C语言前瞻: Programming language/C/C语言前瞻.md
+      - 1 C语言基本语法: Programming language/C/C语言基本语法.md
+      - 2 数据类型、运算符和表达式: Programming language/C/数据类型、运算符和表达式.md
+      - 3 选择结构: Programming language/C/选择结构.md
+      - 4 循环: Programming language/C/循环.md
+      - 5 数组: Programming language/C/数组.md
+      - 8 指针: Programming language/C/指针.md
+      - 10 文件: Programming language/C/文件.md
+      - Appendix 关键字: Programming language/C/关键字.md
     - HTML: 
-      - 排版标签: yuyan/qianduan/1/1.md
-      - 字体标签和超链接: yuyan/qianduan/1/2.md
+      - 排版标签: Programming language/HTML/1/1.md
+      - 字体标签和超链接: Programming language/HTML/1/2.md
     - Python:
-      - Python概述: yuyan/Python/1/1.md
-      - Python基本数据类型: yuyan/Python/2/2.md
-      - Python数据转换: yuyan/Python/3/3.md
-      - Python运算符: yuyan/Python/4/4.md
-      - Python推导式: yuyan/Python/5/5.md
-      - Python迭代器和生成器: yuyan/Python/6/6.md
-      - Python函数: yuyan/Python/7/7.md
-      - Python装饰器: yuyan/Python/8/8.md
+      - Python概述: Programming language/Python/1/1.md
+      - Python基本数据类型: Programming language/Python/2/2.md
+      - Python数据转换: Programming language/Python/3/3.md
+      - Python运算符: Programming language/Python/4/4.md
+      - Python推导式: Programming language/Python/5/5.md
+      - Python迭代器和生成器: Programming language/Python/6/6.md
+      - Python函数: Programming language/Python/7/7.md
+      - Python装饰器: Programming language/Python/8/8.md
     - Verilog:
-      - yuyan/Verilog/index.md
-      - Verilog language: yuyan/Verilog/1.md
+      - Programming language/Verilog/index.md
+      - Verilog language: Programming language/Verilog/1.md
       - Circuits:
         - Combinational logic: 
-          - Multiplexers: yuyan/Verilog/circuit/2.md
-          - Arithmetic circuits: yuyan/Verilog/circuit/3.md
-          - Karnaugh Map: yuyan/Verilog/circuit/4.md
+          - Multiplexers: Programming language/Verilog/circuit/2.md
+          - Arithmetic circuits: Programming language/Verilog/circuit/3.md
+          - Karnaugh Map: Programming language/Verilog/circuit/4.md
         - Sequential logic: 
-          - Latches and Flipflops: yuyan/Verilog/circuit/5.md
-          - Shift registers: yuyan/Verilog/circuit/6.md
+          - Latches and Flipflops: Programming language/Verilog/circuit/5.md
+          - Shift registers: Programming language/Verilog/circuit/6.md
     - Rust:
-      - yuyan/Rust/index.md
+      - Programming language/Rust/index.md
       - Rust语言基础学习:
-        - 项目入门: yuyan/Rust/Rust语言基础学习/项目入门/1.md
-        - 语言基础: yuyan/Rust/Rust语言基础学习/语言基础/1.md
+        - 项目入门: Programming language/Rust/Rust语言基础学习/项目入门/1.md
+        - 语言基础: Programming language/Rust/Rust语言基础学习/语言基础/1.md
   - 杂项:
     - 反序列化漏洞: misc/Bonus/1.md
     - reveal-md制作slides: misc/reveal.md
@@ -230,55 +226,55 @@ nav:
       - Streams: extracurricular/CS106L/1/streams.md
       - Types and streamsII: extracurricular/CS106L/2/types and streams2.md
       - Sequence containers: extracurricular/CS106L/3/sequence containers.md
-  - 课程:
-    - courses/index.md
+  - 课内课程:
+    - Courses/index.md
     - 会计学: 
-      - courses/accounting/index.md 
-      - 第一章 总论: courses/accounting/1/1.md
-      - 第二章 会计要素与复式记账: courses/accounting/3/3.md
-      - 第三章 会计循环: courses/accounting/4/4.md
-      - 第四章 货币资金与交易性金融资产: courses/accounting/5/5.md
-      - 第五章 应收款项: courses/accounting/6/6.md
-      - 第六章 存货: courses/accounting/7/7.md
-      - 第七章 长期股权投资: courses/accounting/8/8.md
-      - 第八章 固定资产: courses/accounting/9/9.md
-      - 第九章 无形资产: courses/accounting/10/10.md
-      - 第十章 负债: courses/accounting/11/11.md
-      - 第十一章 所有者权益: courses/accounting/12/12.md
-      - 第十二章 收入、费用和利润: courses/accounting/13/13.md
-      - 第十三章 财务报告: courses/accounting/14/14.md
+      - Courses/Accounting/index.md 
+      - 第一章 总论: Courses/Accounting/1/1.md
+      - 第二章 会计要素与复式记账: Courses/Accounting/3/3.md
+      - 第三章 会计循环: Courses/Accounting/4/4.md
+      - 第四章 货币资金与交易性金融资产: Courses/Accounting/5/5.md
+      - 第五章 应收款项: Courses/Accounting/6/6.md
+      - 第六章 存货: Courses/Accounting/7/7.md
+      - 第七章 长期股权投资: Courses/Accounting/8/8.md
+      - 第八章 固定资产: Courses/Accounting/9/9.md
+      - 第九章 无形资产: Courses/Accounting/10/10.md
+      - 第十章 负债: Courses/Accounting/11/11.md
+      - 第十一章 所有者权益: Courses/Accounting/12/12.md
+      - 第十二章 收入、费用和利润: Courses/Accounting/13/13.md
+      - 第十三章 财务报告: Courses/Accounting/14/14.md
     - 高级数据结构与算法分析: 
-      - courses/ads/index.md
-      - AVL Trees, Splay Trees & Amortized: courses/ads/1/1.md
-      - Red-Black Trees & B+ Tree: courses/ads/2/2.md
-      - Invert File Index: courses/ads/3/3.md
-      - Leftist Heap & Skew Heap: courses/ads/4/4.md
-      - Binomial Queue: courses/ads/5/5.md
-      - Backtracking: courses/ads/6/6.md
-      - Divide and Conquer: courses/ads/7/7.md
-      - Dynamic Programming: courses/ads/8/8.md
-      - Greedy Method: courses/ads/9/9.md
-      - NP-Completeness: courses/ads/10/10.md
-      - Approximation: courses/ads/11/11.md
-      - Local Search: courses/ads/12/12.md
-      - Randomized Algorithm: courses/ads/13/13.md
-      - Parallel Algorithm: courses/ads/14/14.md
-      - External Sorting: courses/ads/15/15.md
+      - Courses/ADS/index.md
+      - AVL Trees, Splay Trees & Amortized: Courses/ADS/1/1.md
+      - Red-Black Trees & B+ Tree: Courses/ADS/2/2.md
+      - Invert File Index: Courses/ADS/3/3.md
+      - Leftist Heap & Skew Heap: Courses/ADS/4/4.md
+      - Binomial Queue: Courses/ADS/5/5.md
+      - Backtracking: Courses/ADS/6/6.md
+      - Divide and Conquer: Courses/ADS/7/7.md
+      - Dynamic Programming: Courses/ADS/8/8.md
+      - Greedy Method: Courses/ADS/9/9.md
+      - NP-Completeness: Courses/ADS/10/10.md
+      - Approximation: Courses/ADS/11/11.md
+      - Local Search: Courses/ADS/12/12.md
+      - Randomized Algorithm: Courses/ADS/13/13.md
+      - Parallel Algorithm: Courses/ADS/14/14.md
+      - External Sorting: Courses/ADS/15/15.md
     - 计算机组成:
-      - Chapter 1: courses/jz/1/1.md
-      - Chapter 2: courses/jz/2/2.md
-      - Chapter 3: courses/jz/3/3.md
-      - Chapter 4: courses/jz/4/4.md
-      - Chapter 5: courses/jz/5/5.md
+      - Chapter 1: Courses/CO/1/1.md
+      - Chapter 2: Courses/CO/2/2.md
+      - Chapter 3: Courses/CO/3/3.md
+      - Chapter 4: Courses/CO/4/4.md
+      - Chapter 5: Courses/CO/5/5.md
     - 中国文化与翻译:
-      - courses/中国文化与翻译/index.md
-      - Class 1: courses/中国文化与翻译/1.md
-      - Class 2: courses/中国文化与翻译/2.md
-      - Class 3: courses/中国文化与翻译/3.md
-      - Class 4: courses/中国文化与翻译/4.md
-      - Class 5: courses/中国文化与翻译/5.md
-      - Class 6: courses/中国文化与翻译/7.md
-      - Class 7: courses/中国文化与翻译/9.md
-      - Class 8: courses/中国文化与翻译/10.md
-      - Class 9: courses/中国文化与翻译/11.md
+      - Courses/Translation/index.md
+      - Class 1: Courses/Translation/1.md
+      - Class 2: Courses/Translation/2.md
+      - Class 3: Courses/Translation/3.md
+      - Class 4: Courses/Translation/4.md
+      - Class 5: Courses/Translation/5.md
+      - Class 6: Courses/Translation/7.md
+      - Class 7: Courses/Translation/9.md
+      - Class 8: Courses/Translation/10.md
+      - Class 9: Courses/Translation/11.md
   - 友链: link/link.md
