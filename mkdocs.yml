@@ -218,9 +218,6 @@ nav:
       - Rust语言基础学习:
         - 项目入门: Programming language/Rust/Rust语言基础学习/项目入门/1.md
         - 语言基础: Programming language/Rust/Rust语言基础学习/语言基础/1.md
-  - 杂项:
-    - 反序列化漏洞: misc/Bonus/1.md
-    - reveal-md制作slides: misc/reveal.md
   - 课外:
     - CS106L: 
       - Streams: extracurricular/CS106L/1/streams.md
@@ -277,4 +274,7 @@ nav:
       - Class 7: Courses/Translation/9.md
       - Class 8: Courses/Translation/10.md
       - Class 9: Courses/Translation/11.md
+  - 杂项:
+    - 反序列化漏洞: misc/Bonus/1.md
+    - reveal-md制作slides: misc/reveal.md
   - 友链: link/link.md
