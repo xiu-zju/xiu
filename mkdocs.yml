@@ -218,11 +218,21 @@ nav:
       - Rust语言基础学习:
         - 项目入门: Programming language/Rust/Rust语言基础学习/项目入门/1.md
         - 语言基础: Programming language/Rust/Rust语言基础学习/语言基础/1.md
-  - 课外:
+  - 课外积累:
+    - Extracurricular/index.md
     - CS106L: 
-      - Streams: extracurricular/CS106L/1/streams.md
-      - Types and streamsII: extracurricular/CS106L/2/types and streams2.md
-      - Sequence containers: extracurricular/CS106L/3/sequence containers.md
+      - Extracurricular/CS106L/index.md
+      - Streams: Extracurricular/CS106L/1/streams.md
+      - Types and streamsII: Extracurricular/CS106L/2/types and streams2.md
+      - Sequence containers: Extracurricular/CS106L/3/sequence containers.md
+    - USTC 计算机网络:
+      - Extracurricular/USTC_CN/index.md
+      - 第一章 计算机网络概述: Extracurricular/USTC_CN/1/1.md
+      - 第二章 应用层: Extracurricular/USTC_CN/2/2.md
+      - 第三章 传输层: Extracurricular/USTC_CN/3/3.md
+      - 第四章 网络层：数据平面: Extracurricular/USTC_CN/4/4.md
+      - 第五章 网络层：控制平面: Extracurricular/USTC_CN/5/5.md
+      - 第六章 链路层和局域网: Extracurricular/USTC_CN/6/6.md
   - 课内课程:
     - Courses/index.md
     - 会计学: 
