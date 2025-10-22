@@ -284,6 +284,16 @@ nav:
       - Class 7: Courses/Translation/9.md
       - Class 8: Courses/Translation/10.md
       - Class 9: Courses/Translation/11.md
+    - 计算机网络:
+      - 物理层: Courses/CN/2/1.md
+    - 操作系统: 
+      - Chapter 1: Courses/OS/1/1.md
+      - Chapter 2: Courses/OS/2/2.md
+      - Chapter 3: Courses/OS/3/3.md
+      - Chapter 4: Courses/OS/4/4.md
+      - Chapter 5: Courses/OS/5/5.md
+      - Chapter 6: Courses/OS/6/6.md
+      - Chapter 7: Courses/OS/7/7.md
   - 杂项:
     - 反序列化漏洞: misc/Bonus/1.md
     - reveal-md制作slides: misc/reveal.md
