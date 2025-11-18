@@ -294,6 +294,8 @@ nav:
       - Chapter 5: Courses/OS/5/5.md
       - Chapter 6: Courses/OS/6/6.md
       - Chapter 7: Courses/OS/7/7.md
+      - Chapter 8: Courses/OS/8/8.md
+      - Chapter 9: Courses/OS/9/9.md
   - 杂项:
     - 反序列化漏洞: misc/Bonus/1.md
     - reveal-md制作slides: misc/reveal.md
