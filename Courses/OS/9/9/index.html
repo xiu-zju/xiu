@@ -1,0 +1,2560 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="胥涵坤的笔记本">
+      
+      
+        <meta name="author" content="胥涵坤">
+      
+      
+        <link rel="canonical" href="https://xiu-zju.github.io/xiu/Courses/OS/9/9/">
+      
+      
+        <link rel="prev" href="../../8/8/">
+      
+      
+        <link rel="next" href="../../../../misc/Bonus/1/">
+      
+      
+      <link rel="icon" href="../../../../images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
+    
+    
+      
+        <title>Chapter 9 - xiu的笔记本</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+  
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+  
+  <style>:root{--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M320 96a32 32 0 1 1-64 0 32 32 0 1 1 64 0m21.1 80C367 158.8 384 129.4 384 96c0-53-43-96-96-96s-96 43-96 96c0 33.4 17 62.8 42.9 80H224c-17.7 0-32 14.3-32 32s14.3 32 32 32h32v208h-48c-53 0-96-43-96-96v-6.1l7 7c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9L97 263c-9.4-9.4-24.6-9.4-33.9 0L7 319c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l7-7v6.1c0 88.4 71.6 160 160 160h160c88.4 0 160-71.6 160-160v-6.1l7 7c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-56-56c-9.4-9.4-24.6-9.4-33.9 0l-56 56c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l7-7v6.1c0 53-43 96-96 96h-48V240h32c17.7 0 32-14.3 32-32s-14.3-32-32-32h-10.9z"/></svg>');--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="m368.4 18.3-55.7 55.8 125.2 125.2 55.7-55.7c21.9-21.9 21.9-57.3 0-79.2l-46-46.1c-21.9-21.9-57.3-21.9-79.2 0M288 94.6l-9.2 2.8-144.1 43.2c-19.9 6-35.7 21.2-42.3 41L3.8 445.8c-3.8 11.3-1 23.9 7.3 32.4l153.6-153.5c-3-6.3-4.7-13.3-4.7-20.7 0-26.5 21.5-48 48-48s48 21.5 48 48-21.5 48-48 48c-7.4 0-14.4-1.7-20.7-4.7L33.7 500.9c8.6 8.3 21.1 11.2 32.4 7.3l264.3-88.6c19.7-6.6 35-22.4 41-42.3l43.2-144.1 2.7-9.2z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M40 48c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24h48c13.3 0 24-10.7 24-24V72c0-13.3-10.7-24-24-24zm152 16c-17.7 0-32 14.3-32 32s14.3 32 32 32h288c17.7 0 32-14.3 32-32s-14.3-32-32-32zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32h288c17.7 0 32-14.3 32-32s-14.3-32-32-32zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32h288c17.7 0 32-14.3 32-32s-14.3-32-32-32zM16 232v48c0 13.3 10.7 24 24 24h48c13.3 0 24-10.7 24-24v-48c0-13.3-10.7-24-24-24H40c-13.3 0-24 10.7-24 24m24 136c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24h48c13.3 0 24-10.7 24-24v-48c0-13.3-10.7-24-24-24z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M272 384c9.6-31.9 29.5-59.1 49.2-86.2 5.2-7.1 10.4-14.2 15.4-21.4 19.8-28.5 31.4-63 31.4-100.3C368 78.8 289.2 0 192 0S16 78.8 16 176c0 37.3 11.6 71.9 31.4 100.3 5 7.2 10.2 14.3 15.4 21.4 19.8 27.1 39.7 54.4 49.2 86.2h160zm-80 128c44.2 0 80-35.8 80-80v-16H112v16c0 44.2 35.8 80 80 80m-80-336c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-61.9 50.1-112 112-112 8.8 0 16 7.2 16 16s-7.2 16-16 16c-44.2 0-80 35.8-80 80"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512m-86.2-346.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1 0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6-13.3 0-24-10.7-24-24v-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1 0-8.4-6.8-15.1-15.1-15.1h-58.3c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1-64 0"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32m0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24m32 224a32 32 0 1 0-64 0 32 32 0 1 0 64 0"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3c4.97 0 9 3.58 9 8s-6 10-9 10-9-5.58-9-10 4.03-8 9-8m-1.69 7.93C9.29 9.29 7.47 8.58 6.25 9.34s-1.38 2.71-.36 4.35c1.03 1.64 2.85 2.35 4.07 1.59 1.22-.78 1.37-2.71.35-4.35m3.38 0c-1.02 1.64-.87 3.57.35 4.35 1.22.76 3.04.05 4.07-1.59 1.02-1.64.86-3.59-.36-4.35s-3.04-.05-4.06 1.59M12 17.75c-2 0-2.5-.75-2.5-.75 0 .03.5 2 2.5 2s2.5-2 2.5-2-.5.75-2.5.75"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32v11.5c0 49.9-60.3 74.9-95.6 39.6l-8.2-8.1C107.7 62.5 87.5 62.5 75 75s-12.5 32.8 0 45.3l8.2 8.2c35.2 35.2 10.2 95.5-39.7 95.5H32c-17.7 0-32 14.3-32 32s14.3 32 32 32h11.5c49.9 0 74.9 60.3 39.6 95.6l-8.1 8.2c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l8.2-8.2c35.3-35.3 95.6-10.3 95.6 39.6V480c0 17.7 14.3 32 32 32s32-14.3 32-32v-11.5c0-49.9 60.3-74.9 95.6-39.6l8.2 8.2c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-8.2-8.2c-35.3-35.3-10.3-95.6 39.6-95.6h11.5c17.7 0 32-14.3 32-32s-14.3-32-32-32h-11.5c-49.9 0-74.9-60.3-39.6-95.6l8.2-8.2c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-8.2 8.2C348.3 118.4 288 93.4 288 43.5zM176 224a48 48 0 1 1 96 0 48 48 0 1 1-96 0m128 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M320 0c17.7 0 32 14.3 32 32v64h120c39.8 0 72 32.2 72 72v272c0 39.8-32.2 72-72 72H168c-39.8 0-72-32.2-72-72V168c0-39.8 32.2-72 72-72h120V32c0-17.7 14.3-32 32-32M208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16zM264 256a40 40 0 1 0-80 0 40 40 0 1 0 80 0m152 40a40 40 0 1 0 0-80 40 40 0 1 0 0 80M48 224h16v192H48c-26.5 0-48-21.5-48-48v-96c0-26.5 21.5-48 48-48m544 0c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48h-16V224z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M288 0H128c-17.7 0-32 14.3-32 32s14.3 32 32 32v132.8c0 11.8-3.3 23.5-9.5 33.5L10.3 406.2C3.6 417.2 0 429.7 0 442.6 0 480.9 31.1 512 69.4 512h309.2c38.3 0 69.4-31.1 69.4-69.4 0-12.8-3.6-25.4-10.3-36.4L329.5 230.4c-6.2-10.1-9.5-21.7-9.5-33.5V64c17.7 0 32-14.3 32-32S337.7 0 320 0zm-96 196.8V64h64v132.8c0 23.7 6.6 46.9 19 67.1l34.5 56.1h-171l34.5-56.1c12.4-20.2 19-43.4 19-67.1"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6 31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5 50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5l112.2-112.3c31.5-31.5 82.5-31.5 114 0 27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0z"/></svg>');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../../css/toc_extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
+    
+      <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css">
+    
+      <link rel="stylesheet" href="../../../../css/tasklist.css">
+    
+      <link rel="stylesheet" href="../../../../css/LXGW.css">
+    
+      <link rel="stylesheet" href="../../../../css/custom.css">
+    
+      <link rel="stylesheet" href="../../../../css/card.css">
+    
+      <link rel="stylesheet" href="../../../../css/flink.css">
+    
+      <link rel="stylesheet" href="../../../../css/changelog_extra.css">
+    
+      <link rel="stylesheet" href="../../../../css/fold_toc.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-6Y55WNMPVM"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-6Y55WNMPVM",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-6Y55WNMPVM",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#virtual-memory" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../../.." title="xiu的笔记本" class="md-header__button md-logo" aria-label="xiu的笔记本" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4zM3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7zm2-2v2h2V5zm0 14h2v-2H5zm0-6h2v-2H5z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            xiu的笔记本
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Chapter 9
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="indigo"  aria-label="切换至夜间模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至夜间模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="切换至日间模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至日间模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/xiu-zju/xiu" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"/></svg>
+  </div>
+  <div class="md-source__repository">
+    xiu
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../Programming%20language/" class="md-tabs__link">
+          
+  
+    
+  
+  编程语言
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../Extracurricular/" class="md-tabs__link">
+          
+  
+    
+  
+  课外积累
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../" class="md-tabs__link">
+          
+  
+    
+  
+  课内课程
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../misc/Bonus/1/" class="md-tabs__link">
+          
+  
+    
+  
+  杂项
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../link/link/" class="md-tabs__link">
+        
+  
+    
+  
+  友链
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="xiu的笔记本" class="md-nav__button md-logo" aria-label="xiu的笔记本" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 4v6l-2-2-2 2V4H9v16h10V4zM3 7V5h2V4a2 2 0 0 1 2-2h12c1.05 0 2 .95 2 2v16c0 1.05-.95 2-2 2H7c-1.05 0-2-.95-2-2v-1H3v-2h2v-4H3v-2h2V7zm2-2v2h2V5zm0 14h2v-2H5zm0-6h2v-2H5z"/></svg>
+
+    </a>
+    xiu的笔记本
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/xiu-zju/xiu" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"/></svg>
+  </div>
+  <div class="md-source__repository">
+    xiu
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../Programming%20language/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    编程语言
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../Extracurricular/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    课外积累
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    课内课程
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            课内课程
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../Accounting/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    会计学
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../ADS/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    高级数据结构与算法分析
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../CO/1/1/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    计算机组成
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../Translation/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    中国文化与翻译
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../CN/2/1/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    计算机网络
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    操作系统
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            操作系统
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1/1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2/2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3/3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4/4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 4
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5/5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 5
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6/6.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 6
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7/7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 7
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../8/8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 8
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Chapter 9
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Chapter 9
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#91" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.1 背景
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#92-demand-paging" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2 Demand Paging
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#93-copy-on-write" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.3 Copy-on-write
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#94-page-replacement" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.4 Page Replacement
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.4 Page Replacement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#first-in-first-out-fifo-page-replacement" class="md-nav__link">
+    <span class="md-ellipsis">
+      First-In-First-Out (FIFO) Page Replacement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimal-page-replacement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimal Page Replacement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#least-recently-used-lru-page-replacement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Least Recently Used (LRU) Page Replacement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#counting-based-page-replacement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Counting-Based Page Replacement
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#95-allocation-of-frames" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.5 Allocation of Frames
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.5 Allocation of Frames">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed-allocation-priority-allocation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fixed Allocation &amp; Priority Allocation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#global-vs-local-allocation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Global vs. Local Allocation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#96-thrashing" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.6 Thrashing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.6 Thrashing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#working-set-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working-Set Model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#page-fault-frequency-scheme" class="md-nav__link">
+    <span class="md-ellipsis">
+      Page-Fault Frequency Scheme
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#97-memory-mapped-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.7 Memory-Mapped Files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#98-allocating-kernel-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.8 Allocating Kernel Memory
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.8 Allocating Kernel Memory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#buddy-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Buddy System
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slab-allocation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slab Allocation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prepageing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prepageing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#99-other-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.9 Other Considerations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.9 Other Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#page-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      Page Size
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tlb" class="md-nav__link">
+    <span class="md-ellipsis">
+      TLB
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#program-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Program Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#io-interlock" class="md-nav__link">
+    <span class="md-ellipsis">
+      I/O Interlock
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#910-operating-system-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.10 Operating-System Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.10 Operating-System Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows-xp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows XP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solaris" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solaris
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+    <a href="../../../../misc/Bonus/1/" class="md-nav__link">
+      
+  
+  <span class="md-ellipsis">
+    杂项
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../link/link/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    友链
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#91" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.1 背景
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#92-demand-paging" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2 Demand Paging
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#93-copy-on-write" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.3 Copy-on-write
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#94-page-replacement" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.4 Page Replacement
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.4 Page Replacement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#first-in-first-out-fifo-page-replacement" class="md-nav__link">
+    <span class="md-ellipsis">
+      First-In-First-Out (FIFO) Page Replacement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optimal-page-replacement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimal Page Replacement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#least-recently-used-lru-page-replacement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Least Recently Used (LRU) Page Replacement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#counting-based-page-replacement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Counting-Based Page Replacement
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#95-allocation-of-frames" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.5 Allocation of Frames
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.5 Allocation of Frames">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fixed-allocation-priority-allocation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fixed Allocation &amp; Priority Allocation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#global-vs-local-allocation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Global vs. Local Allocation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#96-thrashing" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.6 Thrashing
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.6 Thrashing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#working-set-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Working-Set Model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#page-fault-frequency-scheme" class="md-nav__link">
+    <span class="md-ellipsis">
+      Page-Fault Frequency Scheme
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#97-memory-mapped-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.7 Memory-Mapped Files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#98-allocating-kernel-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.8 Allocating Kernel Memory
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.8 Allocating Kernel Memory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#buddy-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      Buddy System
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slab-allocation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slab Allocation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prepageing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prepageing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#99-other-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.9 Other Considerations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.9 Other Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#page-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      Page Size
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tlb" class="md-nav__link">
+    <span class="md-ellipsis">
+      TLB
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#program-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Program Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#io-interlock" class="md-nav__link">
+    <span class="md-ellipsis">
+      I/O Interlock
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#910-operating-system-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.10 Operating-System Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.10 Operating-System Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows-xp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Windows XP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#solaris" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solaris
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/xiu-zju/xiu/edit/master/docs/Courses/OS/9/9.md" title="编辑此页" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="virtual-memory">Virtual Memory<a class="headerlink" href="#virtual-memory" title="Permanent link">&para;</a></h1>
+<div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 2638 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 10 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 13 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 18 分钟</p>
+</div>
+<h2 id="91">9.1 背景<a class="headerlink" href="#91" title="Permanent link">&para;</a></h2>
+<ul>
+<li>虚拟内存——“用户逻辑内存与物理内存的分离”<ul>
+<li>逻辑内存空间可以远大于物理内存空间</li>
+<li>程序可以执行而不必完全装入内存。只有当前需要的部分才装入内存</li>
+<li>允许地址空间被多个进程共享</li>
+<li>允许更有效的进程创建</li>
+</ul>
+</li>
+<li>虚拟内存可以被创建通过：<ul>
+<li>需求分页（demand paging）</li>
+<li>需求分段（demand segmentation）</li>
+</ul>
+</li>
+</ul>
+<p><img alt="Alt text" src="../image.png" width="600px" /></p>
+<p>在硬盘区域开辟了一个内存大小2倍的交换区（swap space）。为什么是2倍？当映射关系不够时，操作系统可以将一些内存页换出到交换区，从而腾出内存空间给新的页。这也就是所谓的“按需换页”。</p>
+<h2 id="92-demand-paging">9.2 Demand Paging<a class="headerlink" href="#92-demand-paging" title="Permanent link">&para;</a></h2>
+<ul>
+<li>仅当进程需要某页时才将其调入内存<ul>
+<li>更少的I/O需求</li>
+<li>更少的内存需求</li>
+<li>更快的响应</li>
+<li>更多用户</li>
+</ul>
+</li>
+</ul>
+<p>在硬盘上，应用程序以可执行文件（例如 .exe）的形式被存放在某种文件容器结构中；但当程序第一次被加载运行时，操作系统不会直接以这种磁盘格式来执行，而是把其中的指令和数据按需取出、解析，并重新组织成适合在内存中运行的格式，也就是被划分成一个个固定大小的页面（page）放入相应的内存分区。磁盘上的 .exe 文件格式与内存中的页面布局完全不同，前者是为了存储和链接而设计，而后者是为了地址转换和分页管理而存在。当发生换页时，操作系统会把页面的内容写入交换区（swap）作为临时副本，因此 swap 里保存的也是内存页面的拷贝，而不是原始 .exe 文件的结构。</p>
+<p><strong>Valid-Invalid Bit</strong></p>
+<p>每个页表项都有一个有效-无效位（valid-invalid bit），用来指示该页是否在内存中。一开始，所有页表项都被标记为无效（invalid）。当进程试图访问一个页时，如果该页的页表项被标记为无效，操作系统会触发一个缺页异常（page fault），并将所需的页从磁盘加载到内存中，然后更新页表项为有效（valid）。</p>
+<p><strong>Page Fault</strong></p>
+<ul>
+<li>第一次访问都是缺页</li>
+<li>因某种原因被换出的页再次被访问时也会发生缺页</li>
+</ul>
+<p>处理的步骤：</p>
+<ol>
+<li>操作系统查找另一个表（kept with PCB）来决定<ul>
+<li>只是不在内存中</li>
+<li>不合法的访问 -&gt; 终止进程</li>
+</ul>
+</li>
+<li>选择一个空闲的帧；如果没有，则选择一个要换出的帧</li>
+<li>将所需的页从磁盘读入所选的帧</li>
+<li>更新页表和内存映射表</li>
+<li>将 valid-invalid 位设置为有效</li>
+<li>重启导致缺页的指令</li>
+</ol>
+<p><strong>Performance of Demand Paging</strong></p>
+<ul>
+<li>Page Fault Rate (p)：$ 0 \le p \le 1.0 $<ul>
+<li>if $ p = 0 $, no page faults</li>
+<li>if $ p = 1 $, every reference is a page fault</li>
+</ul>
+</li>
+<li>Effective Access Time (EAT)：<ul>
+<li>$ \text{memory access time} = \text{ma}</li>
+<li>$ \text{page fault service time} = \text{pft} $<ul>
+<li>$ \text{pft} = \text{page fault overhead} + \text{swap page out} + \text{swap page in} + \text{restart overhead} $</li>
+</ul>
+</li>
+<li>$ EAT = (1 - p) \time ma + p \time pft $</li>
+</ul>
+</li>
+</ul>
+<h2 id="93-copy-on-write">9.3 Copy-on-write<a class="headerlink" href="#93-copy-on-write" title="Permanent link">&para;</a></h2>
+<ul>
+<li>允许父子进程共享同一页，直到其中一个进程试图修改该页，这时才为该进程创建该页的副本</li>
+<li>COW的概念：<ul>
+<li>父进程和子进程的页表项都标记为只读</li>
+<li>当其中一个进程试图写入该页时，会引发一个保护异常</li>
+<li>操作系统会为该进程分配一个新的页，将原页的内容复制到新页中，然后更新该进程的页表项以指向新页，并将其标记为可读写</li>
+</ul>
+</li>
+</ul>
+<p><img alt="Alt text" src="../image-1.png" width="400px" />
+<img alt="Alt text" src="../image-2.png" width="400px" /></p>
+<p><strong>What happens if there is no free frame?</strong></p>
+<ul>
+<li>Page replacement —— 选择一个页进行换出，以便为新页腾出空间<ul>
+<li>算法</li>
+<li>性能</li>
+</ul>
+</li>
+<li>一些页可能被多次带进内存中</li>
+</ul>
+<h2 id="94-page-replacement">9.4 Page Replacement<a class="headerlink" href="#94-page-replacement" title="Permanent link">&para;</a></h2>
+<ul>
+<li>使用 modifyd/dirty 位来减少换出页的数量<ul>
+<li>如果一个页自从被调入内存后没有被修改过，则不需要将其写回磁盘</li>
+<li>每个页表项都有一个修改位（modified/dirty bit），当页被修改时，该位被设置为1；否则为0</li>
+</ul>
+</li>
+<li>页面替换算法：<ul>
+<li>先进先出（FIFO）</li>
+<li>最少使用（LRU）</li>
+<li>最少使用次数（LFU）</li>
+<li>时钟算法（Clock）</li>
+</ul>
+</li>
+</ul>
+<h3 id="first-in-first-out-fifo-page-replacement">First-In-First-Out (FIFO) Page Replacement<a class="headerlink" href="#first-in-first-out-fifo-page-replacement" title="Permanent link">&para;</a></h3>
+<p><img alt="Alt text" src="../image-3.png" width="600px" />
+<img alt="Alt text" src="../image-4.png" width="600px" /></p>
+<h3 id="optimal-page-replacement">Optimal Page Replacement<a class="headerlink" href="#optimal-page-replacement" title="Permanent link">&para;</a></h3>
+<p><img alt="Alt text" src="../image-5.png" width="600px" />
+<img alt="Alt text" src="../image-6.png" width="600px" /></p>
+<h3 id="least-recently-used-lru-page-replacement">Least Recently Used (LRU) Page Replacement<a class="headerlink" href="#least-recently-used-lru-page-replacement" title="Permanent link">&para;</a></h3>
+<p><img alt="Alt text" src="../image-7.png" width="600px" />
+<img alt="Alt text" src="../image-8.png" width="600px" /></p>
+<p>当有两个进程在这种方式下优先级一样时，这时候我们换出最先来的页。</p>
+<p>有多少页数，这个方法就要维护多少个count值。而且每次访问页时，都要更新对应的count值，更新代价太高了。</p>
+<ul>
+<li>近似算法<ul>
+<li>使用一个栈来记录最近使用的页<ul>
+<li>每次访问一个页时，将其从栈中移除并推到栈顶</li>
+<li>当需要换出页时，选择栈底的页</li>
+<li>不严谨</li>
+</ul>
+</li>
+<li>使用一个参考位（reference bit）<ul>
+<li>每个页表项都有一个参考位，表示该页是否被访问过</li>
+<li>一开始，所有参考位都被设置为0</li>
+<li>定期清除所有页的参考位</li>
+<li>当需要换出页时，选择第一个参考位为0的页</li>
+</ul>
+</li>
+<li>Second Chance Algorithm<ul>
+<li>这是对 FIFO 算法的改进</li>
+<li>需要 reference bit</li>
+<li>将所有页组织成一个循环队列</li>
+<li>需要维护一个指针，指向下一个要检查的页</li>
+<li>如果参考位为1<ul>
+<li>将参考位清0</li>
+<li>暂时保留该页在内存中</li>
+<li>在时钟顺序（循环队列）中向前扫描以寻找要替换的页时，总是应用相同的规则</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="counting-based-page-replacement">Counting-Based Page Replacement<a class="headerlink" href="#counting-based-page-replacement" title="Permanent link">&para;</a></h3>
+<ul>
+<li>LFU (Least Frequently Used)<ul>
+<li>维护一个计数器，记录每个页被访问的次数</li>
+<li>当需要换出页时，选择访问次数最少的页</li>
+</ul>
+</li>
+<li>MFU (Most Frequently Used)<ul>
+<li>基于这样的假设：最近被访问次数多的页可能已经完成了它的任务</li>
+<li>当需要换出页时，选择访问次数最多的页</li>
+</ul>
+</li>
+</ul>
+<h2 id="95-allocation-of-frames">9.5 Allocation of Frames<a class="headerlink" href="#95-allocation-of-frames" title="Permanent link">&para;</a></h2>
+<h3 id="fixed-allocation-priority-allocation">Fixed Allocation &amp; Priority Allocation<a class="headerlink" href="#fixed-allocation-priority-allocation" title="Permanent link">&para;</a></h3>
+<ul>
+<li>每个进程最少需要分配一定数量的帧<ul>
+<li>反之会导致频繁的缺页中断</li>
+<li>称为“驻留集”（resident set）</li>
+</ul>
+</li>
+<li>两个主要的分配策略<ul>
+<li>固定分配<ul>
+<li>每个进程分配固定数量的帧</li>
+<li>可能导致某些进程频繁缺页，而其他进程有空闲帧</li>
+</ul>
+</li>
+<li>优先级分配<ul>
+<li>根据进程的优先级分配帧</li>
+<li>高优先级进程获得更多的帧</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="global-vs-local-allocation">Global vs. Local Allocation<a class="headerlink" href="#global-vs-local-allocation" title="Permanent link">&para;</a></h3>
+<ul>
+<li>全局分配<ul>
+<li>所有进程共享所有可用的帧</li>
+<li>当一个进程发生缺页时，可以从任何其他进程中换出帧</li>
+</ul>
+</li>
+<li>局部分配<ul>
+<li>每个进程只能从其分配的帧中进行替换</li>
+<li>防止一个进程占用过多的帧，影响其他进程的性能</li>
+</ul>
+</li>
+</ul>
+<h2 id="96-thrashing">9.6 Thrashing<a class="headerlink" href="#96-thrashing" title="Permanent link">&para;</a></h2>
+<p>有时我也没做磁盘的工作，但是磁盘一直在工作。</p>
+<ul>
+<li>如果一个进程没有足够的页面，它就会频繁地发生缺页中断，这种现象称为颠簸。这会导致：<ul>
+<li>低CPU利用率</li>
+<li>在paging device排队，ready queue变空</li>
+<li>操作系统认为需要提高多道程序设计级别</li>
+<li>更多的进程 -&gt; 更少的页数/进程 -&gt; 更多的颠簸</li>
+</ul>
+</li>
+</ul>
+<p><img alt="Alt text" src="../image-9.png" width="500px" /></p>
+<p><strong>Demand Paging and Thrashing</strong></p>
+<h3 id="working-set-model">Working-Set Model<a class="headerlink" href="#working-set-model" title="Permanent link">&para;</a></h3>
+<ul>
+<li>工作集（working set）——进程在一段时间内所使用的页面集合<ul>
+<li>定义：$ WSS_i (t, \Delta) $ 是进程 $ P_i $ 在时间 $ t $ 之前的时间间隔 $ \Delta $ 内所引用的页面集合<ul>
+<li>如果 $ \Delta $ 太小，可能无法包含进程的全部局部性</li>
+<li>如果 $ \Delta $ 太大，可能包含不相关的页面</li>
+<li>如果 $ \Delta = \infty $，则工作集等同于进程的全部页面</li>
+</ul>
+</li>
+<li>通过跟踪页面引用历史来确定工作集</li>
+<li>工作集大小 $ D = \sum_{i=1}^{N} |WSS_i| $<ul>
+<li>如果 $ D &gt; $ 可用帧数，则发生颠簸</li>
+<li>如果 $ D &lt; $ 可用帧数，则系统处于稳定状态</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Keeping Track of the Working Set</strong></p>
+<ul>
+<li>使用时间间隔计时器进行近似<ul>
+<li>每个进程有一个定时器，在每个 $ \Delta $ 时间单位后触发</li>
+<li>当定时器触发时，操作系统检查每个页面的参考位<ul>
+<li>如果参考位为1，则将其加入工作集，并将参考位清0</li>
+<li>如果参考位为0，则将其从工作集中移除</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>有一个隐形规则，页面会被尽量加载回原来的位置，而不是去寻找一个新的位置</li>
+</ul>
+<h3 id="page-fault-frequency-scheme">Page-Fault Frequency Scheme<a class="headerlink" href="#page-fault-frequency-scheme" title="Permanent link">&para;</a></h3>
+<ul>
+<li>通过监控页面错误率来调整分配给进程的帧数<ul>
+<li>如果页面错误率高于某个阈值，说明进程需要更多的帧，则增加分配的帧数</li>
+<li>如果页面错误率低于某个阈值，说明进程有多余的帧，则减少分配的帧数</li>
+</ul>
+</li>
+</ul>
+<h2 id="97-memory-mapped-files">9.7 Memory-Mapped Files<a class="headerlink" href="#97-memory-mapped-files" title="Permanent link">&para;</a></h2>
+<ul>
+<li>将文件映射到进程的地址空间，使得文件的内容<strong>可以像内存一样被访问</strong><ul>
+<li>允许按需加载文件内容</li>
+<li>支持共享内存映射文件</li>
+<li>提高文件I/O性能</li>
+</ul>
+</li>
+</ul>
+<p><img alt="Alt text" src="../image-11.png" width="500px" /></p>
+<div class="admonition danger">
+<p class="admonition-title">Memory-Mapped Shared Memory 和 Copy-on-write 的区别</p>
+<ul>
+<li>Memory-Mapped Shared Memory 允许多个进程共享同一文件的映射，任何一个进程对映射区域的修改都会反映到文件中，并且其他进程也能看到这些修改</li>
+<li>Copy-on-write 则是在父子进程之间共享内存页，一旦当其中一个进程尝试修改该页，就为该进程创建该页的副本，从而实现独立的修改</li>
+</ul>
+</div>
+<p><img alt="Alt text" src="../image-10.png" width="600px" /></p>
+<div class="admonition question">
+<p class="admonition-title">为什么 memory-mapped files 比传统的 read() 和 write() 更快？</p>
+<ul>
+<li>传统的 read() 和 write() 需要多次<strong>系统调用</strong>，涉及用户态和内核态的切换，开销较大</li>
+<li>memory-mapped files 通过将文件直接映射到进程的地址空间，允许进程直接访问文件内容，触发 demand paging，调用层次少，减少了系统调用的次数，提高了性能</li>
+</ul>
+</div>
+<h2 id="98-allocating-kernel-memory">9.8 Allocating Kernel Memory<a class="headerlink" href="#98-allocating-kernel-memory" title="Permanent link">&para;</a></h2>
+<p>操作系统编程和普通的应用程序编程有很大的不同，没有虚拟内存的保护。这也就意味着，内核代码可以直接访问物理内存地址，而不需要经过虚拟地址转换。</p>
+<ul>
+<li>内核从专门的内核内存池中分配内存，这个内存池通常是预先分配好的，或者通过特殊的内存管理机制来管理。<ul>
+<li>内核要分配各种大小的结构，需要减少碎片</li>
+<li>一些内核呢村需要连续的物理内存</li>
+</ul>
+</li>
+</ul>
+<p>所以大多数系统不会对内核代码和数据采用分页机制。</p>
+<h3 id="buddy-system">Buddy System<a class="headerlink" href="#buddy-system" title="Permanent link">&para;</a></h3>
+<ul>
+<li>从由物理上连续的页面组成的固定大小段中分配内存</li>
+<li>内存被划分为大小为 $ 2^k $ 的块<ul>
+<li>当请求内存时，找到最小的 $ 2^k $ 块来满足请求</li>
+<li>如果没有合适的块，则将更大的块分割成两个伙伴块，直到找到合适的大小</li>
+<li>释放内存时，检查相邻的伙伴块是否也空闲，如果是，则合并成更大的块</li>
+</ul>
+</li>
+</ul>
+<p><img alt="Alt text" src="../image-12.png" width="500px" /></p>
+<p>这种方法下，internal fragmentation 能保证小于 50%。</p>
+<h3 id="slab-allocation">Slab Allocation<a class="headerlink" href="#slab-allocation" title="Permanent link">&para;</a></h3>
+<ul>
+<li>预先分配一组对象缓存（slabs）来满足内核对象的分配需求</li>
+<li>内核中所有的结构体是不允许动态变化大小的，所以这些结构体都是固定大小的。与其每次分配和释放内存时都去找合适的内存块，不如预先分配好一大块内存，然后将其划分为多个固定大小的缓存区（slabs），每个缓存区用于存放特定类型的内核对象。</li>
+<li>也有缺点：<ul>
+<li>不能很好地处理大小变化的对象</li>
+<li>可能会导致内存碎片</li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">限制进程数量的值</p>
+<ol>
+<li>pid 的位数限制</li>
+<li>slab 分配器的限制</li>
+</ol>
+</div>
+<h3 id="prepageing">Prepageing<a class="headerlink" href="#prepageing" title="Permanent link">&para;</a></h3>
+<ul>
+<li>预分配<ul>
+<li>为了减少进程初始化造成的大量缺页</li>
+<li>在进程被引用前为这个进程准备一些页</li>
+<li>但如果这个被准备的页并没有被使用，那么 I/O 和内存就被浪费了</li>
+<li>假设 s 个页被预分配，$ \alpha $ 是被使用的页的比例<ul>
+<li>Is benefit: $ s \time a $ saved page faults &gt; or &lt; cost: $ s \time (1 - \alpha) \time$?</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="99-other-considerations">9.9 Other Considerations<a class="headerlink" href="#99-other-considerations" title="Permanent link">&para;</a></h2>
+<h3 id="page-size">Page Size<a class="headerlink" href="#page-size" title="Permanent link">&para;</a></h3>
+<p>Page 如果大，那么 table 就会变小，也就会节省内存，但是内部碎片会变多，一旦发生 page fault，代价会变大。</p>
+<h3 id="tlb">TLB<a class="headerlink" href="#tlb" title="Permanent link">&para;</a></h3>
+<ul>
+<li>TLB Reach<ul>
+<li>增加 Page Size，通过 TLB 访问的内存也就变大（不太现实）</li>
+<li>动态允许多种 Page Size</li>
+</ul>
+</li>
+</ul>
+<h3 id="program-structure">Program Structure<a class="headerlink" href="#program-structure" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Each row is stored in one page，也就是说每一行数据都存储在一个独立的页中</li>
+</ul>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">128</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-2"><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">128</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-3"><span class="w">        </span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-0-4"><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-5"><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<p>128 page faults</p>
+<div class="language-c highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">C</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">N</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-2"><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">N</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-3"><span class="w">        </span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+</span><span id="__span-1-4"><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-1-5"><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div>
+<p>128 * 128 = 16384 page faults</p>
+<h3 id="io-interlock">I/O Interlock<a class="headerlink" href="#io-interlock" title="Permanent link">&para;</a></h3>
+<p>有些页是不能被换出的，比如内核使用的页等等</p>
+<ul>
+<li>处理 I/O 操作时，必须确保相关的页在内存中<ul>
+<li>使用锁定页（locked pages）来防止它们被换出</li>
+<li>在启动 I/O 操作前锁定页，I/O 完成后解锁页</li>
+</ul>
+</li>
+</ul>
+<h2 id="910-operating-system-examples">9.10 Operating-System Examples<a class="headerlink" href="#910-operating-system-examples" title="Permanent link">&para;</a></h2>
+<h3 id="windows-xp">Windows XP<a class="headerlink" href="#windows-xp" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>使用按需分页，并采用“聚簇 (clustering)”技术。</strong>
+  聚簇指的是在发生缺页时，不只加载发生缺页的那一页，还会将其周围的一些页面一起加载到内存中，提高预取效率。</p>
+</li>
+<li>
+<p><strong>为每个进程分配“工作集最小值”和“工作集最大值”（通常为 50–345 页）。</strong>
+  工作集表示一个进程当前在内存中的活跃页集合。</p>
+</li>
+<li>
+<p><strong>工作集最小值（working set minimum）是系统保证进程至少会拥有的页面数量。</strong></p>
+</li>
+<li>
+<p><strong>进程最多可以拥有其工作集最大值（working set maximum）定义的页数。</strong>
+  如果进程在达到最大值后继续发生缺页，则只能在本进程内部进行页面替换（即局部替换策略）。</p>
+</li>
+<li>
+<p><strong>当系统的可用物理内存低于某个阈值时，系统会自动启动“工作集修剪（working set trimming）”，以恢复足够的可用内存。</strong></p>
+</li>
+<li>
+<p><strong>工作集修剪会从那些拥有超过其工作集最小值页面的进程中，回收多余的页面。</strong></p>
+</li>
+</ul>
+<h3 id="solaris">Solaris<a class="headerlink" href="#solaris" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>维护一个空闲页列表，用于分配给发生缺页的进程。</strong></p>
+</li>
+<li>
+<p><strong>Lotsfree：空闲内存阈值参数。</strong>
+  当系统的可用内存降到 <em>低于</em> lotsfree 时，系统开始进行页面换出（paging out）。</p>
+</li>
+<li>
+<p><strong>Desfree：空闲内存更低的阈值参数。</strong>
+  当可用内存低于 desfree 时，系统会<strong>提高页面换出的频率</strong>，加速回收内存。</p>
+</li>
+<li>
+<p><strong>Minfree：最低阈值。</strong>
+  当可用内存低于 minfree 时，系统会启动<strong>交换（swapping）</strong>，将整个进程换出到磁盘。</p>
+</li>
+<li>
+<p><strong>页面换出操作由 pageout 进程执行。</strong></p>
+</li>
+<li>
+<p><strong>pageout 使用改进时钟算法（modified clock algorithm）扫描并选择可换出的页面。</strong></p>
+</li>
+<li>
+<p><strong>scanrate 表示 pageout 扫描页面的速度，范围从 slowscan（低速扫描）到 fastscan（高速扫描）。</strong></p>
+</li>
+<li>
+<p><strong>pageout 调用的频率取决于空闲内存量：可用内存越少，pageout 调用越频繁，用以加速回收页面。</strong></p>
+</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        激励
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="请我喝一杯呗～" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M144 64c0-8.8 7.2-16 16-16s16 7.2 16 16c0 9.1 5.1 17.4 13.3 21.5s17.9 3.2 25.1-2.3c2.7-2 6-3.2 9.6-3.2 8.8 0 16 7.2 16 16 0 9.1 5.1 17.4 13.3 21.5s17.9 3.2 25.1-2.3c2.7-2 6-3.2 9.6-3.2 8.8 0 16 7.2 16 16 0 9.1 5.1 17.4 13.3 21.5s17.9 3.2 25.1-2.3c2.7-2 6-3.2 9.6-3.2 8.8 0 16 7.2 16 16v104c0 31.3-20 58-48 67.9-9.6 3.4-16 12.5-16 22.6V488c0 13.3 10.7 24 24 24s24-10.7 24-24V370.2c38-20.1 64-60.1 64-106.2V160c0-35.3-28.7-64-64-64-2.8 0-5.6.2-8.3.5A63.83 63.83 0 0 0 288 64c-2.8 0-5.6.2-8.3.5A63.83 63.83 0 0 0 224 32c-2.8 0-5.6.2-8.3.5A63.83 63.83 0 0 0 160 0c-35.3 0-64 28.7-64 64v64.3c-11.7 7.4-22.5 16.4-32 26.9l17.8 16.1L64 155.2l-9.4 10.5C40 181.8 32 202.8 32 224.6v12.8c0 49.6 24.2 96.1 64.8 124.5l13.8-19.7-13.8 19.7 8.9 6.2c6.9 4.8 14.4 8.6 22.3 11.3V488c0 13.3 10.7 24 24 24s24-10.7 24-24V359.9c0-12.6-9.8-23.1-22.4-23.9-7.3-.5-14.3-2.9-20.3-7.1l-13.1 18.7 13.1-18.7-8.9-6.2C96.6 303.1 80 271.3 80 237.4v-12.8c0-9.9 3.7-19.4 10.3-26.8l9.4-10.5c3.8-4.2 7.9-8.1 12.3-11.6V208c0 8.8 7.2 16 16 16s16-7.2 16-16V64"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              <center> 你愿意请我喝一杯吗(*´∀`)~♥ </center> <img src="https://s2.loli.net/2024/07/01/ydYtQnqeWTwrsRf.jpg" width=200px>
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../../8/8/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Chapter 8">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                Chapter 8
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../../../misc/Bonus/1/" class="md-footer__link md-footer__link--next" aria-label="下一页: 反序列化漏洞">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                反序列化漏洞
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy 2024-2025 xiu.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/xiu-zju" target="_blank" rel="noopener" title="xiu&#39;s GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://space.bilibili.com/523501905" target="_blank" rel="noopener" title="Bilibili 晴香部长" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M488.6 104.1c16.7 18.1 24.4 39.7 23.3 65.7v202.4c-.4 26.4-9.2 48.1-26.5 65.1-17.2 17-39.1 25.9-65.5 26.7H92.02c-26.45-.8-48.21-9.8-65.28-27.2C9.682 419.4.767 396.5 0 368.2V169.8c.767-26 9.682-47.6 26.74-65.7C43.81 87.75 65.57 78.77 92.02 78h29.38L96.05 52.19c-5.75-5.73-8.63-13-8.63-21.79 0-8.8 2.88-16.06 8.63-21.797C101.8 2.868 109.1 0 117.9 0q13.2 0 21.9 8.603L213.1 78h88l74.5-69.397C381.7 2.868 389.2 0 398 0q13.2 0 21.9 8.603c5.7 5.737 8.6 12.997 8.6 21.797 0 8.79-2.9 16.06-8.6 21.79L394.6 78h29.3c26.4.77 48 9.75 64.7 26.1m-38.8 69.7c-.4-9.6-3.7-17.4-10.7-23.5-5.2-6.1-14-9.4-22.7-9.8H96.05c-9.59.4-17.45 3.7-23.58 9.8-6.14 6.1-9.4 13.9-9.78 23.5v194.4c0 9.2 3.26 17 9.78 23.5s14.38 9.8 23.58 9.8H416.4c9.2 0 17-3.3 23.3-9.8s9.7-14.3 10.1-23.5zm-264.3 42.7c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2-6.2 6.3-14 9.5-23.6 9.5s-17.5-3.2-23.6-9.5-9.4-14-9.8-23.2v-33.3c.4-9.1 3.8-16.9 10.1-23.2s13.2-9.6 23.3-10c9.2.4 17 3.7 23.3 10m191.5 0c6.3 6.3 9.7 14.1 10.1 23.2V273c-.4 9.2-3.7 16.9-9.8 23.2s-14 9.5-23.6 9.5-17.4-3.2-23.6-9.5c-7-6.3-9.4-14-9.7-23.2v-33.3c.3-9.1 3.7-16.9 10-23.2s14.1-9.6 23.3-10c9.2.4 17 3.7 23.3 10"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="None" target="_blank" rel="noopener" title="xiu&#39;s QQ 768958636" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M433.754 420.445c-11.526 1.393-44.86-52.741-44.86-52.741 0 31.345-16.136 72.247-51.051 101.786 16.842 5.192 54.843 19.167 45.803 34.421-7.316 12.343-125.51 7.881-159.632 4.037-34.122 3.844-152.316 8.306-159.632-4.037-9.045-15.25 28.918-29.214 45.783-34.415-34.92-29.539-51.059-70.445-51.059-101.792 0 0-33.334 54.134-44.859 52.741-5.37-.65-12.424-29.644 9.347-99.704 10.261-33.024 21.995-60.478 40.144-105.779C60.683 98.063 108.982.006 224 0c113.737.006 163.156 96.133 160.264 214.963 18.118 45.223 29.912 72.85 40.144 105.778 21.768 70.06 14.716 99.053 9.346 99.704"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="http://xiu-zju.github.io/xiu/Me/dashang/?h=%E4%BD%A0%E6%84%BF%E6%84%8F" target="_blank" rel="noopener" title="打赏支持" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M96 64c0-17.7 14.3-32 32-32h384c70.7 0 128 57.3 128 128s-57.3 128-128 128h-32c0 53-43 96-96 96H192c-53 0-96-43-96-96zm384 160h32c35.3 0 64-28.7 64-64s-28.7-64-64-64h-32zM32 416h512c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.top", "navigation.footer", "navigation.indexes", "navigation.tracking", "navigation.prune", "search.suggest", "search.highlight", "content.code.copy", "content.action.edit", "content.code.annotate"], "search": "../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      
+        <script src="../../../../javascripts/clarity.js"></script>
+      
+        <script src="../../../../javascripts/toc_collapse.js"></script>
+      
+    
+  </body>
+</html>
