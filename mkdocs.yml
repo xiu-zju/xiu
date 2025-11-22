@@ -285,7 +285,12 @@ nav:
       - Class 8: Courses/Translation/10.md
       - Class 9: Courses/Translation/11.md
     - 计算机网络:
-      - 物理层: Courses/CN/2/1.md
+      - Courses/CN/index.md
+      - Ch1 引言: Courses/CN/1/1.md
+      - Ch2 物理层: Courses/CN/2/2.md
+      - Ch3 数据链路层: Courses/CN/3/3.md
+      - Ch4 MAC子层: Courses/CN/4/4.md
+      - Ch5 网络层: Courses/CN/5/5.md
     - 操作系统: 
       - Courses/OS/index.md
       - Chapter 1: Courses/OS/1/1.md
